@@ -101,12 +101,12 @@ p, .body-text {
   line-height: 1.75;
 }
 
-/* Label / Tag */
+/* Label / Tag — visível em todos os formatos */
 .label {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   color: var(--gold);
 }
 
@@ -498,13 +498,13 @@ p, .body-text {
   margin-bottom: 16px;
 }
 
-/* Número grande das verticais */
+/* Número das verticais — 50% menor */
 .vertical-number {
-  font-size: 56px;
+  font-size: 28px;
   font-weight: 800;
-  color: rgba(201, 168, 76, 0.15);
+  color: rgba(201, 168, 76, 0.35);
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
 }
 
@@ -548,6 +548,7 @@ p, .body-text {
   h2, .h2 { font-size: 40px; }
   h3, .h3 { font-size: 20px; }
   p, .body-text { font-size: 15px; }
+  .label { font-size: 13px; }
 
   /* Navbar desktop */
   .navbar { padding: 18px 0; }
@@ -579,6 +580,6 @@ p, .body-text {
   /* Footer */
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
 
-  /* Vertical number maior no desktop */
-  .vertical-number { font-size: 72px; }
+  /* Vertical number desktop */
+  .vertical-number { font-size: 36px; }
 }
