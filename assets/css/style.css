@@ -56,50 +56,52 @@ body {
 
 /* Display / Capa */
 .text-display {
-  font-size: clamp(48px, 6vw, 72px);
+  font-size: clamp(52px, 6vw, 80px);
   font-weight: 800;
   color: var(--cream);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 /* H1 */
 h1, .h1 {
-  font-size: clamp(32px, 4vw, 44px);
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.15;
+}
+
+/* H2 — títulos de seção */
+h2, .h2 {
+  font-size: clamp(32px, 3.5vw, 44px);
   font-weight: 700;
   color: var(--cream);
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-/* H2 */
-h2, .h2 {
-  font-size: clamp(20px, 2.5vw, 28px);
-  font-weight: 600;
+/* H3 — títulos de card */
+h3, .h3 {
+  font-size: 20px;
+  font-weight: 700;
   color: var(--cream);
   line-height: 1.3;
 }
 
-/* H3 */
-h3, .h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--cream);
-}
-
 /* Corpo */
 p, .body-text {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* Label / Tag */
 .label {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   color: var(--gold);
 }
 
@@ -112,11 +114,11 @@ p, .body-text {
 }
 
 .section {
-  padding: 80px 0;
+  padding: 104px 0;
 }
 
 .section-sm {
-  padding: 48px 0;
+  padding: 64px 0;
 }
 
 /* ── Navbar ── */
@@ -225,14 +227,28 @@ p, .body-text {
 
 .card {
   background: var(--navy-card);
-  border: 1px solid rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   border-radius: 12px;
-  padding: 32px;
-  transition: border-color 0.2s;
+  padding: 36px;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 .card:hover {
-  border-color: rgba(201, 168, 76, 0.25);
+  border-color: rgba(201, 168, 76, 0.35);
+  box-shadow: 0 0 32px rgba(201, 168, 76, 0.06);
+}
+
+/* Card com destaque — usado em seções de fundo escuro */
+.card-highlight {
+  background: var(--navy-mid);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 12px;
+  padding: 36px;
+  transition: border-color 0.25s;
+}
+
+.card-highlight:hover {
+  border-color: rgba(201, 168, 76, 0.45);
 }
 
 .card-grid {
@@ -257,15 +273,15 @@ p, .body-text {
 
 .badge {
   display: inline-block;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   color: var(--gold);
   background: rgba(201, 168, 76, 0.1);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  border: 1px solid rgba(201, 168, 76, 0.25);
   border-radius: 4px;
-  padding: 4px 10px;
+  padding: 6px 14px;
 }
 
 /* ── Hero ── */
@@ -275,7 +291,8 @@ p, .body-text {
   background: var(--navy-deep);
   display: flex;
   align-items: center;
-  padding-top: 72px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   position: relative;
   overflow: hidden;
 }
