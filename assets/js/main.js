@@ -16,12 +16,26 @@ if (navbar) {
 }
 
 /* ── Mobile menu toggle ── */
-const menuBtn = document.querySelector('.navbar-menu-btn');
-const navLinks = document.querySelector('.navbar-links');
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
 
 if (menuBtn && navLinks) {
   menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+
+    /* Mostra itens mobile-only quando aberto */
+    document.querySelectorAll('.mobile-only-nav').forEach(el => {
+      el.style.display = isOpen ? 'block' : 'none';
+    });
+  });
+
+  /* Fecha menu ao clicar em link */
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', false);
+    });
   });
 }
 

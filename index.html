@@ -10,53 +10,46 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    /* Foto placeholder institucional */
-    .photo-placeholder {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: var(--navy-mid);
-      border: 1px solid rgba(201,168,76,0.15);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
+    /* Diretoria — grids responsivos */
+    .diretoria-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
-    .photo-placeholder svg {
-      opacity: 0.3;
+    @media (min-width: 768px) {
+      .diretoria-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
-    /* Fade-in animação */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    /* Sobre — dois blocos */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Ícone vertical */
-    .vertical-icon {
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
+    @media (min-width: 1024px) {
+      .sobre-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
     }
 
-    /* Mapa global — fundo com grid de pontos */
-    .global-bg {
-      background-image: radial-gradient(rgba(201,168,76,0.15) 1px, transparent 1px);
-      background-size: 32px 32px;
+    /* Governança — dois blocos */
+    .gov-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    @media (min-width: 1024px) {
+      .gov-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    }
+
+    /* Plataforma — dois blocos */
+    .plataforma-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    @media (min-width: 1024px) {
+      .plataforma-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+      .plataforma-grid .plataforma-texto { order: 2; }
+      .plataforma-grid .plataforma-stats { order: 1; }
     }
 
     /* Linha separadora de stat */
@@ -94,18 +87,31 @@
         <img src="assets/img/logo.png" alt="V3 Partners" />
       </a>
 
-      <ul class="navbar-links">
+      <!-- Links — visíveis apenas desktop (1024px+) -->
+      <ul class="navbar-links" id="navLinks">
         <li><a href="#estruturacao">Estruturação</a></li>
-        <li><a href="#verticais">Verticais de Ativos</a></li>
+        <li><a href="#verticais">Verticais</a></li>
         <li><a href="#governanca">Governança</a></li>
         <li><a href="#diretoria">Diretoria</a></li>
         <li><a href="#contato">Contato</a></li>
+        <!-- Item mobile extra -->
+        <li style="display: none;" class="mobile-only-nav">
+          <a href="members/dashboard.html" style="color: var(--gold);">Área do Partner</a>
+        </li>
       </ul>
 
+      <!-- CTA — visível apenas desktop -->
       <div class="navbar-cta">
         <a href="members/dashboard.html" class="btn btn-secondary">Área do Partner</a>
         <a href="partners.html" class="btn btn-primary">Acessar Plataforma OTC</a>
       </div>
+
+      <!-- Hamburguer — visível apenas mobile -->
+      <button class="navbar-menu-btn" id="menuBtn" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -117,23 +123,31 @@
     <div class="container">
       <div style="max-width: 760px;">
 
-        <span class="badge fade-in">Boutique Institucional Multiproduto</span>
-
-        <div class="mt-32 fade-in">
-          <p class="text-display">A Convergência entre o Ativo Real e o Capital Global.</p>
+        <!-- Badge — destaque claro em mobile -->
+        <div class="fade-in">
+          <span class="badge" style="font-size: 12px; padding: 8px 16px; letter-spacing: 0.14em;">
+            Boutique Institucional Multiproduto
+          </span>
         </div>
 
-        <div class="mt-32 fade-in">
-          <p style="font-size: 18px; color: var(--muted); max-width: 600px; line-height: 1.85;">
+        <!-- Headline — equilibrado entre mobile e desktop -->
+        <div class="mt-24 fade-in">
+          <h1 style="font-size: clamp(28px, 5vw, 52px); font-weight: 800; color: var(--cream); line-height: 1.1; letter-spacing: -0.02em; max-width: 680px;">
+            A Convergência entre o Ativo Real e o Capital Global.
+          </h1>
+        </div>
+
+        <div class="mt-24 fade-in">
+          <p style="font-size: clamp(15px, 2vw, 18px); color: var(--muted); max-width: 580px; line-height: 1.85;">
             Estruturação institucional, blindagem jurídica e securitização ágil.
             Conectamos grandes teses de Real Estate, Crédito e Commodities
             à liquidez do mercado financeiro.
           </p>
         </div>
 
-        <div class="fade-in" style="display: flex; gap: 16px; margin-top: 48px; flex-wrap: wrap;">
-          <a href="#estruturacao" class="btn btn-primary" style="font-size: 14px; padding: 14px 28px;">Estruture seu Ativo</a>
-          <a href="partners.html" class="btn btn-secondary" style="font-size: 14px; padding: 14px 28px;">Falar com um Partner</a>
+        <div class="fade-in" style="display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap;">
+          <a href="#estruturacao" class="btn btn-primary">Estruture seu Ativo</a>
+          <a href="partners.html" class="btn btn-secondary">Falar com um Partner</a>
         </div>
 
         <!-- Stats -->
@@ -250,18 +264,19 @@
       <div class="card-grid card-grid-4 fade-in" style="margin-top: 56px;">
 
         <div class="card">
+          <p class="vertical-number">01</p>
           <div class="vertical-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
               <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
               <polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
           </div>
-          <span class="label" style="display: block; margin-bottom: 12px;">01 — Real Estate</span>
-          <h3 style="font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 16px;">Real Estate Estruturado</h3>
+          <h3 style="font-size: clamp(17px, 2vw, 21px); margin-bottom: 12px;">Real Estate Estruturado</h3>
           <p>Originação e estruturação de grandes operações imobiliárias nos formatos Build-to-Suit (BTS), Build-to-Rent (BTR) e Sale & Leaseback (SLB).</p>
         </div>
 
         <div class="card">
+          <p class="vertical-number">02</p>
           <div class="vertical-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
               <rect x="2" y="7" width="20" height="14" rx="2"/>
@@ -269,23 +284,23 @@
               <line x1="12" y1="12" x2="12" y2="16"/>
             </svg>
           </div>
-          <span class="label" style="display: block; margin-bottom: 12px;">02 — Crédito</span>
-          <h3 style="font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 16px;">Crédito & Recebíveis Judiciais</h3>
+          <h3 style="font-size: clamp(17px, 2vw, 21px); margin-bottom: 12px;">Crédito & Recebíveis Judiciais</h3>
           <p>Securitização de direitos creditórios judiciais, grandes lotes de precatórios e teses de alavancagem de crédito com garantia real.</p>
         </div>
 
         <div class="card">
+          <p class="vertical-number">03</p>
           <div class="vertical-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </svg>
           </div>
-          <span class="label" style="display: block; margin-bottom: 12px;">03 — Mineração</span>
-          <h3 style="font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 16px;">Mineração & Commodities</h3>
+          <h3 style="font-size: clamp(17px, 2vw, 21px); margin-bottom: 12px;">Mineração & Commodities</h3>
           <p>Intermediação cross-border, estruturação de negócios e bancarização de metais preciosos e minérios estratégicos — lítio, ouro e commodities globais.</p>
         </div>
 
         <div class="card">
+          <p class="vertical-number">04</p>
           <div class="vertical-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
               <circle cx="12" cy="12" r="10"/>
@@ -293,8 +308,7 @@
               <path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
             </svg>
           </div>
-          <span class="label" style="display: block; margin-bottom: 12px;">04 — M&A</span>
-          <h3 style="font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 16px;">M&A e Negócios Estratégicos</h3>
+          <h3 style="font-size: clamp(17px, 2vw, 21px); margin-bottom: 12px;">M&A e Negócios Estratégicos</h3>
           <p>Assessoria fiduciária em fusões e aquisições e conexão direta com fundos de investimento globais — asiáticos, americanos e europeus.</p>
         </div>
 
@@ -477,7 +491,7 @@
   ══════════════════════════════════════ -->
   <section class="section bg-deep" id="governanca">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;">
+      <div class="gov-grid">
 
         <div class="fade-in">
           <span class="label">Cultura & Governança</span>
@@ -531,9 +545,9 @@
   ══════════════════════════════════════ -->
   <section class="section" style="background: var(--navy-base);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+      <div class="plataforma-grid">
 
-        <div class="fade-in" style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="fade-in plataforma-stats" style="display: flex; flex-direction: column; gap: 16px;">
           <div class="card" style="border-color: rgba(201,168,76,0.2);">
             <span class="label">Liquidação</span>
             <p style="font-size: 28px; font-weight: 800; color: var(--cream); margin-top: 8px;">D+0 OTC</p>
@@ -551,7 +565,7 @@
           </div>
         </div>
 
-        <div class="fade-in">
+        <div class="fade-in plataforma-texto">
           <span class="label">Infraestrutura</span>
           <h2 class="mt-16">Liquidez Global.<br/>Liquidação OTC.</h2>
           <div class="divider-gold"></div>
