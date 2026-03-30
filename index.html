@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V3 Partners — A Convergência entre o Ativo Real e o Capital Global</title>
+  <meta name="description" content="Boutique institucional multiproduto de securitização e estruturação financeira. Real Estate, Crédito, Mineração e M&A Cross-Border." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Foto placeholder institucional */
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--navy-mid);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+    .photo-placeholder svg {
+      opacity: 0.3;
+    }
+
+    /* Fade-in animação */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Ícone vertical */
+    .vertical-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    /* Mapa global — fundo com grid de pontos */
+    .global-bg {
+      background-image: radial-gradient(rgba(201,168,76,0.15) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Linha separadora de stat */
+    .stat-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(201,168,76,0.2);
+    }
+
+    /* Governança bullet */
+    .gov-item {
+      display: flex;
+      gap: 16px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(240,236,228,0.06);
+    }
+    .gov-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/logo.jpeg" alt="V3 Partners" />
+      </a>
+
+      <ul class="navbar-links">
+        <li><a href="#estruturacao">Estruturação</a></li>
+        <li><a href="#verticais">Verticais de Ativos</a></li>
+        <li><a href="#governanca">Governança</a></li>
+        <li><a href="#diretoria">Diretoria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <div class="navbar-cta">
+        <a href="members/dashboard.html" class="btn btn-secondary">Área do Partner</a>
+        <a href="partners.html" class="btn btn-primary">Acessar Plataforma OTC</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 1 — HERO
+  ══════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div style="max-width: 760px;">
+
+        <span class="badge fade-in">Boutique Institucional Multiproduto</span>
+
+        <div class="mt-24 fade-in">
+          <p class="text-display">A Convergência entre o Ativo Real e o Capital Global.</p>
+        </div>
+
+        <div class="mt-24 fade-in">
+          <p style="font-size: 17px; color: var(--muted); max-width: 600px; line-height: 1.8;">
+            Estruturação institucional, blindagem jurídica e securitização ágil.
+            Conectamos grandes teses de Real Estate, Crédito e Commodities
+            à liquidez do mercado financeiro.
+          </p>
+        </div>
+
+        <div class="fade-in" style="display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap;">
+          <a href="#estruturacao" class="btn btn-primary">Estruture seu Ativo</a>
+          <a href="partners.html" class="btn btn-secondary">Falar com um Partner</a>
+        </div>
+
+        <!-- Stats -->
+        <div class="fade-in" style="display: flex; align-items: center; gap: 40px; margin-top: 64px; flex-wrap: wrap;">
+          <div>
+            <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1;">R$ 4,4B</p>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 4px;">em pipeline mapeado</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div>
+            <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1;">4</p>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 4px;">verticais de atuação</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div>
+            <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1;">D+40</p>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 4px;">go-live médio</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 2 — QUEM SOMOS
+  ══════════════════════════════════════ -->
+  <section class="section" id="sobre" style="background: var(--navy-card);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+
+        <div class="fade-in">
+          <span class="label">Quem Somos</span>
+          <h2 class="mt-16">Estruturando Confiança.<br/>Destravando Valor.</h2>
+          <div class="divider-gold"></div>
+          <p class="mt-16">
+            Somos uma securitizadora S.A. e boutique de estruturação financeira multiproduto,
+            nascida da união de lideranças seniores com expertise provada em M&A,
+            Gestão de Risco Fiduciário e Negócios Internacionais.
+          </p>
+          <p class="mt-16">
+            A V3 Partners atua como o elo de confiança entre detentores de ativos complexos
+            da economia real e a liquidez do mercado de capitais. Nossa essência combina a
+            agilidade estratégica de uma boutique de investimentos com o rigor e o compliance
+            exigidos pelas maiores instituições fiduciárias.
+          </p>
+          <p class="mt-16" style="color: var(--gold-light); font-weight: 600; font-size: 15px;">
+            Na V3 Partners, não transacionamos ativos — estruturamos confiança para destravar valor exponencial.
+          </p>
+        </div>
+
+        <div class="fade-in" style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="card">
+            <span class="label">Missão</span>
+            <p class="mt-8">Transformar ativos complexos da economia real em produtos financeiros líquidos, seguros e transparentes, democratizando o acesso ao mercado de capitais com rigor fiduciário intransigente.</p>
+          </div>
+          <div class="card">
+            <span class="label">Visão</span>
+            <p class="mt-8">Ser a securitizadora independente mais confiável do Brasil, líder na estruturação de teses que unem lastro real peso pesado à agilidade da infraestrutura digital OTC.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 3 — VERTICAIS DE ATUAÇÃO
+  ══════════════════════════════════════ -->
+  <section class="section bg-deep" id="verticais">
+    <div class="container">
+
+      <div class="text-center fade-in">
+        <span class="label">Atuação</span>
+        <h2 class="mt-16">Verticais de Ativos</h2>
+        <div style="display: flex; justify-content: center; margin-top: 16px;">
+          <div class="divider-gold"></div>
+        </div>
+        <p class="mt-16" style="max-width: 520px; margin-left: auto; margin-right: auto;">
+          Quatro frentes de estruturação com metodologia fiduciária própria e acesso direto a capital institucional.
+        </p>
+      </div>
+
+      <div class="card-grid card-grid-4 fade-in" style="margin-top: 48px;">
+
+        <div class="card">
+          <div class="vertical-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <span class="label">01</span>
+          <h3 class="mt-8">Real Estate Estruturado</h3>
+          <p class="mt-12">Originação e estruturação de grandes operações imobiliárias nos formatos Build-to-Suit (BTS), Build-to-Rent (BTR) e Sale & Leaseback (SLB).</p>
+        </div>
+
+        <div class="card">
+          <div class="vertical-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/>
+            </svg>
+          </div>
+          <span class="label">02</span>
+          <h3 class="mt-8">Crédito & Recebíveis Judiciais</h3>
+          <p class="mt-12">Securitização de direitos creditórios judiciais, grandes lotes de precatórios e teses de alavancagem de crédito com garantia real.</p>
+        </div>
+
+        <div class="card">
+          <div class="vertical-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <span class="label">03</span>
+          <h3 class="mt-8">Mineração & Commodities</h3>
+          <p class="mt-12">Intermediação cross-border, estruturação de negócios e bancarização de metais preciosos e minérios estratégicos — lítio, ouro e commodities globais.</p>
+        </div>
+
+        <div class="card">
+          <div class="vertical-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+            </svg>
+          </div>
+          <span class="label">04</span>
+          <h3 class="mt-8">M&A e Negócios Estratégicos</h3>
+          <p class="mt-12">Assessoria fiduciária em fusões e aquisições e conexão direta com fundos de investimento globais — asiáticos, americanos e europeus.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 3.5 — PORTFÓLIO DE CRÉDITO
+  ══════════════════════════════════════ -->
+  <section class="section" id="estruturacao" style="background: var(--navy-base);">
+    <div class="container">
+
+      <div class="fade-in" style="max-width: 600px; margin-bottom: 48px;">
+        <span class="label">Estruturação</span>
+        <h2 class="mt-16">Arquitetura de Crédito e Financiamento Estruturado</h2>
+        <div class="divider-gold"></div>
+        <p class="mt-16">
+          Desenhamos a estrutura de capital exata para destravar o seu projeto,
+          atuando como estruturadores junto a grandes fundos e administradoras Tier 1.
+        </p>
+      </div>
+
+      <div class="card-grid card-grid-2 fade-in">
+
+        <div class="card">
+          <span class="label">Home Equity & Bridge Loans</span>
+          <h3 class="mt-12 text-cream">CGI — Crédito com Garantia de Imóvel</h3>
+          <p class="mt-8">Estruturação de crédito com garantia de imóvel para alavancagem rápida de projetos, ideal para aquisição de terrenos e fases pré-incorporação imobiliária.</p>
+        </div>
+
+        <div class="card">
+          <span class="label">Consórcio Estruturado</span>
+          <h3 class="mt-12 text-cream">Modelagem via Cotas Alavancadas</h3>
+          <p class="mt-8">Modelagem financeira inteligente utilizando cotas de consórcios alavancadas para aquisição e desenvolvimento de ativos Real Estate e maquinário pesado.</p>
+        </div>
+
+        <div class="card">
+          <span class="label">Mercado de Capitais</span>
+          <h3 class="mt-12 text-cream">Project Finance — CRI / CRA / FIDC</h3>
+          <p class="mt-8">Empacotamento da dívida ou recebíveis do seu negócio em títulos do mercado de capitais para captação de alto volume junto a fundos institucionais.</p>
+        </div>
+
+        <div class="card">
+          <span class="label">Corporate Credit</span>
+          <h3 class="mt-12 text-cream">Crédito Corporativo B2B</h3>
+          <p class="mt-8">Intermediação e estruturação de linhas de crédito corporativo para expansão comercial e otimização de fluxo de caixa de empresas em crescimento.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 4 — GLOBAL REACH
+  ══════════════════════════════════════ -->
+  <section class="section global-bg" id="global" style="background-color: var(--navy-deep);">
+    <div class="container">
+
+      <div class="text-center fade-in" style="margin-bottom: 56px;">
+        <span class="label">Cross-Border</span>
+        <h2 class="mt-16">Liquidez Global. Liquidação OTC.</h2>
+        <div style="display: flex; justify-content: center; margin-top: 16px;">
+          <div class="divider-gold"></div>
+        </div>
+        <p class="mt-16" style="max-width: 560px; margin-left: auto; margin-right: auto;">
+          O capital não tem fronteiras. A V3 Partners conecta a economia real latino-americana
+          à liquidez dos principais polos financeiros mundiais, com trânsito ágil via
+          infraestrutura OTC.
+        </p>
+      </div>
+
+      <div class="card-grid card-grid-2 fade-in">
+
+        <div class="card">
+          <span class="label">Estados Unidos</span>
+          <h3 class="mt-12 text-cream">USA Wealth Accelerator</h3>
+          <p class="mt-8">Assessoria estratégica e originação de teses focadas na construção de Real Estate de alto padrão e alocação segura de patrimônio institucional nos Estados Unidos.</p>
+        </div>
+
+        <div class="card">
+          <span class="label">Ásia & Global</span>
+          <h3 class="mt-12 text-cream">Conexão com Fundos Globais</h3>
+          <p class="mt-8">Estruturação de teses de investimento em ativos reais voltadas para atração de capital de fundos imobiliários japoneses e investidores institucionais internacionais.</p>
+        </div>
+
+        <div class="card">
+          <span class="label">América Latina</span>
+          <h3 class="mt-12 text-cream">Trade Finance & Expansão LatAm</h3>
+          <p class="mt-8">Assessoria em comércio exterior, abertura de rotas comerciais e estruturação corporativa internacional para expansão e otimização logística global.</p>
+        </div>
+
+        <div class="card">
+          <span class="label">Commodities Globais</span>
+          <h3 class="mt-12 text-cream">Trading Estratégico</h3>
+          <p class="mt-8">Compliance, bancarização e intermediação direta com clientes internacionais em operações de grande volume de Ouro e Carbonato de Lítio.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 5 — DIRETORIA
+  ══════════════════════════════════════ -->
+  <section class="section" id="diretoria" style="background: var(--navy-card);">
+    <div class="container">
+
+      <div class="text-center fade-in" style="margin-bottom: 56px;">
+        <span class="label">Liderança</span>
+        <h2 class="mt-16">Managing Partners</h2>
+        <div style="display: flex; justify-content: center; margin-top: 16px;">
+          <div class="divider-gold"></div>
+        </div>
+        <p class="mt-16" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+          A Trindade Fiduciária que garante a entrega em cada operação.
+        </p>
+      </div>
+
+      <div class="card-grid card-grid-3 fade-in">
+
+        <!-- João -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="photo-placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span style="font-size: 11px; color: var(--muted);">Foto institucional<br/>a inserir</span>
+          </div>
+          <div>
+            <span class="label">Head de M&A e Estruturação</span>
+            <h3 class="mt-8 text-cream">João Lemos Netto</h3>
+            <p class="mt-8">Lidera a originação de ativos e a estruturação de teses de investimento. Expertise em M&A High-Ticket, operações cross-border e securitização de ativos reais pesados — Commodities e Real Estate. Sua trajetória em operações de alto risco fundamenta sua liderança fiduciária.</p>
+          </div>
+        </div>
+
+        <!-- Robson -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="photo-placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span style="font-size: 11px; color: var(--muted);">Foto institucional<br/>a inserir</span>
+          </div>
+          <div>
+            <span class="label">COO e Compliance</span>
+            <h3 class="mt-8 text-cream">Robson Lino dos Santos</h3>
+            <p class="mt-8">Responsável pela integridade operacional, compliance regulatório e análise de risco fiduciário. Com sólida trajetória na gestão de grandes carteiras PJ e Agro, garante que todas as estruturas operem com blindagem jurídica irretocável perante CVM e COAF.</p>
+          </div>
+        </div>
+
+        <!-- Hamilton -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="photo-placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span style="font-size: 11px; color: var(--muted);">Foto institucional<br/>a inserir</span>
+          </div>
+          <div>
+            <span class="label">CFO e Relações Institucionais</span>
+            <h3 class="mt-8 text-cream">Hamilton Santos</h3>
+            <p class="mt-8">Lidera a gestão de liquidez e as relações com investidores institucionais. Especialista em estruturação de crédito e operações cross-border, conecta o lastro originado à infraestrutura OTC, garantindo agilidade e eficiência transacional para fundos globais.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 6 — GOVERNANÇA
+  ══════════════════════════════════════ -->
+  <section class="section bg-deep" id="governanca">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;">
+
+        <div class="fade-in">
+          <span class="label">Cultura & Governança</span>
+          <h2 class="mt-16">O Padrão Ouro em Governança</h2>
+          <div class="divider-gold"></div>
+          <p class="mt-16">
+            Operamos sob a premissa de que o mercado de capitais não tolera ineficiência.
+            Nossa cultura interna é o reflexo direto da nossa atuação externa:
+            blindada, técnica, pragmática e orientada exclusivamente a resultados.
+          </p>
+        </div>
+
+        <div class="fade-in">
+          <div class="gov-item">
+            <div class="gov-dot"></div>
+            <div>
+              <p style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px;">Meritocracia Implacável</p>
+              <p>Recompensamos a performance técnica, a estruturação de negócios sólidos e a execução impecável. Não há atalhos.</p>
+            </div>
+          </div>
+          <div class="gov-item">
+            <div class="gov-dot"></div>
+            <div>
+              <p style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px;">Transparência Fiduciária</p>
+              <p>Comunicação direta como pilar de mitigação de risco. Decisões sempre baseadas em dados reais, nunca em suposições.</p>
+            </div>
+          </div>
+          <div class="gov-item">
+            <div class="gov-dot"></div>
+            <div>
+              <p style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px;">Inteligência Transacional</p>
+              <p>Arquiteturas jurídicas e financeiras modernas para reduzir custo de transação e acelerar a liquidez dos ativos.</p>
+            </div>
+          </div>
+          <div class="gov-item" style="border-bottom: none;">
+            <div class="gov-dot"></div>
+            <div>
+              <p style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px;">Neutralidade Institucional</p>
+              <p>Atuação estritamente técnica. Foco absoluto no dever fiduciário e na rentabilidade do capital dos nossos clientes.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 7 — PLATAFORMA OTC
+  ══════════════════════════════════════ -->
+  <section class="section" style="background: var(--navy-base);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+
+        <div class="fade-in" style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="card" style="border-color: rgba(201,168,76,0.2);">
+            <span class="label">Liquidação</span>
+            <p style="font-size: 28px; font-weight: 800; color: var(--cream); margin-top: 8px;">D+0 OTC</p>
+            <p class="mt-4">Liquidação cross-border em tempo real</p>
+          </div>
+          <div class="card">
+            <span class="label">Operação</span>
+            <p style="font-size: 28px; font-weight: 800; color: var(--cream); margin-top: 8px;">24/7</p>
+            <p class="mt-4">Infraestrutura operando continuamente, sem janelas de mercado</p>
+          </div>
+          <div class="card">
+            <span class="label">Go-live</span>
+            <p style="font-size: 28px; font-weight: 800; color: var(--cream); margin-top: 8px;">D+40 a D+55</p>
+            <p class="mt-4">Da estruturação à operação ativa</p>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <span class="label">Infraestrutura</span>
+          <h2 class="mt-16">Liquidez Global.<br/>Liquidação OTC.</h2>
+          <div class="divider-gold"></div>
+          <p class="mt-16">
+            Nossa infraestrutura de distribuição digital transforma ativos ilíquidos em
+            instrumentos de mercado negociáveis, reduzindo o atrito transacional e conectando
+            sua operação à liquidez global em D+0.
+          </p>
+          <p class="mt-16">
+            KYC automatizado, compliance integrado e capacidade de liquidação em múltiplas
+            jurisdições garantem a segurança e a agilidade que operações de alto valor exigem.
+          </p>
+          <a href="partners.html" class="btn btn-primary" style="margin-top: 32px;">Acessar Plataforma OTC</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 8 — CTA PARTNERS
+  ══════════════════════════════════════ -->
+  <section class="section-sm" style="background: var(--navy-card); border-top: 1px solid rgba(201,168,76,0.1);">
+    <div class="container text-center fade-in">
+      <span class="label">Rede V3</span>
+      <h2 class="mt-16">Faça parte da rede de Partners V3.</h2>
+      <p class="mt-8" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+        Acesse oportunidades exclusivas, relatórios de inteligência de mercado e ferramentas
+        proprietárias. Comissionamento de 30% a 50% por deal originado.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
+        <a href="partners.html" class="btn btn-primary">Ver planos Partners</a>
+        <a href="relatorios.html" class="btn btn-secondary">Relatórios públicos</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <img src="assets/img/logo.jpeg" alt="V3 Partners" style="height: 32px; object-fit: contain;" />
+          <p class="mt-16" style="font-size: 13px; max-width: 280px;">
+            Boutique institucional multiproduto de securitização e estruturação financeira.
+          </p>
+          <p class="mt-16" style="font-size: 12px; color: var(--muted);">
+            CNPJ 14.219.287/0001-50<br />
+            Rua Visconde de Pirajá, 414, Sala 718<br />
+            Ipanema — Rio de Janeiro, RJ
+          </p>
+        </div>
+
+        <div>
+          <p class="label" style="margin-bottom: 16px;">Verticais</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+            <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Real Estate Estruturado</a></li>
+            <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Crédito & Recebíveis</a></li>
+            <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Mineração & Commodities</a></li>
+            <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">M&A Cross-Border</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="label" style="margin-bottom: 16px;">Plataforma</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+            <li><a href="relatorios.html" style="color: var(--muted); text-decoration: none; font-size: 13px;">Relatórios</a></li>
+            <li><a href="partners.html" style="color: var(--muted); text-decoration: none; font-size: 13px;">Planos Partners</a></li>
+            <li><a href="members/dashboard.html" style="color: var(--muted); text-decoration: none; font-size: 13px;">Área do Partner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="label" style="margin-bottom: 16px;">Contato</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+            <li><a href="mailto:deals@v3partners.com.br" style="color: var(--muted); text-decoration: none; font-size: 13px;">deals@v3partners.com.br</a></li>
+            <li style="font-size: 13px; color: var(--muted);">+55 21 98993-7178</li>
+            <li><a href="https://instagram.com/eujoaolemosnetto" target="_blank" rel="noopener" style="color: var(--muted); text-decoration: none; font-size: 13px;">@eujoaolemosnetto</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Disclaimer regulatório -->
+      <div style="padding: 24px 0; border-top: 1px solid rgba(240,236,228,0.06); border-bottom: 1px solid rgba(240,236,228,0.06); margin-top: 8px;">
+        <p style="font-size: 11px; color: var(--muted); line-height: 1.7; opacity: 0.7;">
+          <strong style="color: var(--muted);">Aviso Legal:</strong> A V3 Partners Soluções Ltda atua estritamente nos limites da legislação vigente aplicável a companhias securitizadoras e correspondentes não regulados. Fica expressamente vedado à Companhia o exercício de atividades privativas de instituições financeiras que dependam de autorização prévia do Banco Central do Brasil (BACEN) ou captação pública fora das normativas da Comissão de Valores Mobiliários (CVM). As informações disponibilizadas neste site têm caráter exclusivamente institucional e informativo, não constituindo oferta pública de valores mobiliários ou recomendação de investimento.
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 V3 Partners Soluções Ltda. Todos os direitos reservados.</p>
+        <div style="display: flex; gap: 24px;">
+          <a href="politica-de-privacidade.html" style="color: var(--muted); font-size: 12px; text-decoration: none;">Privacidade</a>
+          <a href="termos-de-uso.html" style="color: var(--muted); font-size: 12px; text-decoration: none;">Termos de Uso</a>
+          <a href="politica-de-cookies.html" style="color: var(--muted); font-size: 12px; text-decoration: none;">Cookies</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cookies.js"></script>
+</body>
+</html>
