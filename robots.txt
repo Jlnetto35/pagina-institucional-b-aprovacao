@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Bloquear área restrita de indexação
+Disallow: /members/
+
+# Sitemap
+Sitemap: https://www.v3partners.com.br/sitemap.xml
