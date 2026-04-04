@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Rede V3 Partners — Torne-se o Elo | V3 Partners</title>
+  <meta name="description" content="Acesse deals de securitização de R$7M+, relatórios de inteligência diários e comissionamento de 30% a 50% por deal originado. Faça parte da rede V3 Partners." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.v3partners.com.br/partners.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rede V3 Partners — Você também pode ser o elo" />
+  <meta property="og:description" content="Acesse o pipeline de R$4,4B da V3 Partners. Comissão de 30% a 50% por deal originado. Relatórios diários. Estruturação completa pela V3." />
+  <meta property="og:url" content="https://www.v3partners.com.br/partners.html" />
+  <meta property="og:image" content="https://www.v3partners.com.br/assets/img/og-image.jpeg" />
+
+  <!-- Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';" />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/v3-design-system.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* ── Pricing Cards ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .pricing-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 16px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      background: var(--navy-mid);
+      border-color: rgba(201,168,76,0.45);
+      box-shadow: 0 0 48px rgba(201,168,76,0.10);
+    }
+
+    .pricing-badge-top {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 5px 20px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    .pricing-tier    { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 12px; }
+    .pricing-name    { font-size: 28px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; }
+    .pricing-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 32px; }
+
+    .pricing-amount {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .pricing-currency { font-size: 20px; font-weight: 700; color: var(--cream); line-height: 1.5; }
+    .pricing-value    { font-size: 52px; font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em; }
+    .pricing-period   { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .pricing-value-note { font-size: 11px; color: var(--gold); font-weight: 600; margin-bottom: 32px; }
+
+    .pricing-divider { height: 1px; background: rgba(201,168,76,0.12); margin-bottom: 28px; }
+
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+
+    .pricing-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .pricing-feature-check {
+      width: 18px;
+      height: 18px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing-feature-check svg { width: 10px; height: 10px; }
+
+    .pricing-feature strong { color: var(--cream); font-weight: 600; }
+
+    /* ── Stack de valor ── */
+    .stack-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(240,236,228,0.06);
+      gap: 16px;
+    }
+    .stack-row:last-child { border-bottom: none; }
+    .stack-item-name  { font-size: 13px; color: var(--cream); font-weight: 500; }
+    .stack-item-desc  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .stack-item-value { font-size: 12px; color: var(--gold); font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+
+    /* ── Proof card ── */
+    .proof-card {
+      background: var(--navy-deep);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-left: 4px solid var(--gold);
+      border-radius: 12px;
+      padding: 32px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proof-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at 100% 0%, rgba(201,168,76,0.06), transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── FAQ ── */
+    .faq-item {
+      border-bottom: 1px solid rgba(240,236,228,0.06);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 0;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-question-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, border-color 0.2s;
+      color: var(--gold);
+    }
+
+    .faq-question[aria-expanded="true"] .faq-icon {
+      background: rgba(201,168,76,0.12);
+      border-color: rgba(201,168,76,0.5);
+    }
+
+    .faq-answer {
+      display: none;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      padding-bottom: 22px;
+      max-width: 720px;
+    }
+
+    .faq-answer.open { display: block; }
+
+    /* ── Guarantee block ── */
+    .guarantee-block {
+      background: var(--navy-deep);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 600px) {
+      .guarantee-block { grid-template-columns: 1fr; padding: 32px 24px; }
+    }
+
+    .guarantee-seal {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.08);
+      border: 2px solid rgba(201,168,76,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Vertical tag ── */
+    .v-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 3px;
+      padding: 3px 8px;
+      margin: 2px;
+    }
+
+    /* ── Sticky CTA bar (mobile) ── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 90;
+      background: var(--navy-card);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 14px 20px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 1023px) { .sticky-cta { display: flex; } }
+
+    .sticky-cta-price { font-size: 12px; color: var(--muted); }
+    .sticky-cta-price strong { font-size: 18px; font-weight: 800; color: var(--cream); }
+  </style>
+</head>
+<body>
+
+  <!-- Skip link acessibilidade -->
+  <a href="#planos" class="v3-skip-link">Ir para os planos</a>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/logo.png" alt="V3 Partners — Boutique de Securitização" />
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html#verticais">Verticais</a></li>
+        <li><a href="index.html#diretoria">Diretoria</a></li>
+        <li><a href="relatorios.html">Relatórios</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+        <li style="display:none;" class="mobile-only-nav">
+          <a href="https://v3-partner.vercel.app/dashboard" style="color:var(--gold);">Área do Partner</a>
+        </li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="https://v3-partner.vercel.app/dashboard" class="btn btn-secondary">Área do Partner</a>
+        <a href="#planos" class="btn btn-primary">Ver Planos</a>
+      </div>
+      <button class="navbar-menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 1 — HERO
+  ══════════════════════════════════════ -->
+  <section style="background: var(--navy-deep); padding-top: 120px; padding-bottom: 80px; position: relative; overflow: hidden;">
+
+    <!-- Grid de fundo -->
+    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(201,168,76,0.08) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;"></div>
+    <!-- Glow central -->
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,0.07),transparent 70%);pointer-events:none;"></div>
+
+    <div class="container" style="position:relative;">
+      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+
+        <div class="fade-in">
+          <span class="badge">Rede V3 Partners — Acesso Exclusivo</span>
+        </div>
+
+        <div class="fade-in mt-24">
+          <h1 style="font-size: clamp(30px, 5.5vw, 56px); font-weight: 800; color: var(--cream); line-height: 1.1; letter-spacing: -0.02em;">
+            Você Também Pode<br/>
+            <span style="color: var(--gold);">Ser o Elo.</span>
+          </h1>
+        </div>
+
+        <div class="fade-in mt-24">
+          <p style="font-size: clamp(16px, 2vw, 20px); color: var(--muted); max-width: 580px; margin: 0 auto; line-height: 1.8;">
+            Acesse o pipeline de <strong style="color:var(--cream);">R$4,4 bilhões</strong> da V3 Partners,
+            receba relatórios de inteligência todos os dias e ganhe
+            <strong style="color:var(--cream);">30% a 50% de comissão</strong> por cada deal que você originar.
+            A V3 estrutura. Você conecta.
+          </p>
+        </div>
+
+        <div class="fade-in" style="margin-top: 36px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="#planos" class="btn btn-primary btn-lg">Quero ser Partner</a>
+          <a href="#como-funciona" class="btn btn-secondary btn-lg">Como funciona</a>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="fade-in" style="margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(201,168,76,0.12); display: flex; justify-content: center; gap: 0; flex-wrap: wrap;">
+
+          <div style="flex: 1; min-width: 120px; max-width: 180px; padding: 0 24px; text-align: center; border-right: 1px solid rgba(201,168,76,0.15);">
+            <p style="font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$4,4B</p>
+            <p style="font-size: 11px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em;">Pipeline mapeado</p>
+          </div>
+
+          <div style="flex: 1; min-width: 120px; max-width: 180px; padding: 0 24px; text-align: center; border-right: 1px solid rgba(201,168,76,0.15);">
+            <p style="font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">50%</p>
+            <p style="font-size: 11px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em;">Comissão máxima</p>
+          </div>
+
+          <div style="flex: 1; min-width: 120px; max-width: 180px; padding: 0 24px; text-align: center; border-right: 1px solid rgba(201,168,76,0.15);">
+            <p style="font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">24/7</p>
+            <p style="font-size: 11px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em;">Plataforma OTC</p>
+          </div>
+
+          <div style="flex: 1; min-width: 120px; max-width: 180px; padding: 0 24px; text-align: center;">
+            <p style="font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">4</p>
+            <p style="font-size: 11px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em;">Verticais de ativos</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 2 — PARA QUEM É
+  ══════════════════════════════════════ -->
+  <section class="section" id="como-funciona" style="background: var(--navy-base);">
+    <div class="container">
+
+      <div class="text-center fade-in" style="margin-bottom: 56px;">
+        <span class="label">Para Quem É</span>
+        <h2 class="mt-16" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+          Se você tem acesso a ativos, este é o seu próximo movimento.
+        </h2>
+        <p class="mt-16" style="max-width: 520px; margin: 16px auto 0; font-size: 15px;">
+          A V3 Partners não precisa que você seja financista. Precisa que você seja um conector com acesso a ativos reais.
+        </p>
+      </div>
+
+      <div class="card-grid card-grid-3 fade-in">
+
+        <div class="card">
+          <div class="vertical-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 style="margin-bottom: 10px;">Corretor & Consultor Imobiliário</h3>
+          <p>Você conhece imóveis com potencial de Sale & Leaseback ou Build-to-Suit. A V3 faz a estruturação. Você recebe a comissão.</p>
+          <div style="margin-top: 16px;">
+            <span class="v-tag">Real Estate</span>
+            <span class="v-tag">SLB</span>
+            <span class="v-tag">BTS</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="vertical-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3 style="margin-bottom: 10px;">Advogado & Assessor Financeiro</h3>
+          <p>Sua carteira de clientes tem recebíveis judiciais, precatórios ou teses de crédito. A V3 empacota em produto de mercado de capitais.</p>
+          <div style="margin-top: 16px;">
+            <span class="v-tag">Crédito</span>
+            <span class="v-tag">Recebíveis</span>
+            <span class="v-tag">Precatórios</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="vertical-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 style="margin-bottom: 10px;">Empresário & Desenvolvedor</h3>
+          <p>Você conhece mineradoras, fazendas, indústrias ou startups que precisam de capital. A V3 estrutura o deal e conecta ao capital global.</p>
+          <div style="margin-top: 16px;">
+            <span class="v-tag">Mineração</span>
+            <span class="v-tag">M&A</span>
+            <span class="v-tag">Cross-Border</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Anti-avatar -->
+      <div class="fade-in" style="margin-top: 32px; background: rgba(248,113,113,0.04); border: 1px solid rgba(248,113,113,0.15); border-left: 4px solid rgba(248,113,113,0.4); border-radius: 12px; padding: 28px 32px;">
+        <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(248,113,113,0.8); margin-bottom: 10px;">Esta oferta NÃO é para você se…</p>
+        <p style="font-size: 14px; color: var(--muted); line-height: 1.7;">
+          Você busca renda passiva sem nenhuma atividade de originação ativa — ou não tem acesso a empresas, imóveis, ativos minerais ou fluxos de crédito para conectar à rede. A V3 Partners é uma parceria de execução, não um produto de investimento passivo.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 3 — PROVA SOCIAL
+  ══════════════════════════════════════ -->
+  <section class="section bg-deep">
+    <div class="container">
+
+      <div class="text-center fade-in" style="margin-bottom: 48px;">
+        <span class="label">Prova de Execução</span>
+        <h2 class="mt-16">Um deal real. Do zero à estruturação.</h2>
+        <p class="mt-16" style="max-width: 480px; margin: 16px auto 0;">
+          O que a V3 faz por cada ativo que você originar.
+        </p>
+      </div>
+
+      <div class="proof-card fade-in">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 32px;">
+
+          <div>
+            <span class="label" style="font-size: 9px; letter-spacing: 0.2em;">Case Encerrado · V3M&A: 1329999015</span>
+            <h3 class="mt-16" style="font-size: clamp(20px,3vw,28px); color: var(--cream);">Jazida de Esmeraldas — Nova Era, Minas Gerais</h3>
+            <p class="mt-12" style="font-size: 15px; line-height: 1.8;">
+              Um ativo de mineração em Minas Gerais. À primeira vista: complexo, ilíquido, sem acesso ao mercado financeiro. Após entrar no pipeline V3:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 28px;">
+              <div style="background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 16px 20px;">
+                <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 6px;">Valor do Ativo</p>
+                <p style="font-size: 22px; font-weight: 800; color: var(--cream);">R$7.000.000</p>
+              </div>
+              <div style="background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 16px 20px;">
+                <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 6px;">Idiomas</p>
+                <p style="font-size: 22px; font-weight: 800; color: var(--cream);">PT-BR + EN</p>
+              </div>
+              <div style="background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 16px 20px;">
+                <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 6px;">Materiais Gerados</p>
+                <p style="font-size: 22px; font-weight: 800; color: var(--cream);">10 arquivos</p>
+              </div>
+              <div style="background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.15); border-radius: 8px; padding: 16px 20px;">
+                <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 6px;">Comissão 30% (Partner)</p>
+                <p style="font-size: 22px; font-weight: 800; color: var(--cream);">R$210.000</p>
+              </div>
+            </div>
+
+            <p class="mt-24" style="font-size: 13px; color: var(--muted); line-height: 1.7; font-style: italic; border-left: 3px solid rgba(201,168,76,0.25); padding-left: 16px;">
+              A V3 produziu: CIM de 6 páginas (PT-BR e EN), Teaser Cego, posts LinkedIn PT-BR e EN, stories e relatório de squad completo.
+              O Partner que originou este ativo não precisou escrever uma linha de texto ou entender de estruturação financeira.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 4 — STACK DE VALOR
+  ══════════════════════════════════════ -->
+  <section class="section" style="background: var(--navy-base);">
+    <div class="container">
+
+      <div class="text-center fade-in" style="margin-bottom: 56px;">
+        <span class="label">O Que Você Recebe</span>
+        <h2 class="mt-16">Tudo que você precisa para originar.</h2>
+        <p class="mt-16" style="max-width: 480px; margin: 16px auto 0;">
+          Cada componente da rede V3 foi desenhado para eliminar uma barreira entre você e o deal.
+        </p>
+      </div>
+
+      <div class="card fade-in" style="max-width: 720px; margin: 0 auto;">
+
+        <div class="stack-row">
+          <div>
+            <p class="stack-item-name">V3 Partner Access</p>
+            <p class="stack-item-desc">Acesso à plataforma OTC, comissionamento ativo, suporte direto com os sócios</p>
+          </div>
+          <span class="stack-item-value">R$2.000/mês</span>
+        </div>
+
+        <div class="stack-row">
+          <div>
+            <p class="stack-item-name">V3 Intel Feed</p>
+            <p class="stack-item-desc">Relatório de inteligência de mercado todo dia às 8h17 — macro, deals, verticais</p>
+          </div>
+          <span class="stack-item-value">R$497/mês</span>
+        </div>
+
+        <div class="stack-row">
+          <div>
+            <p class="stack-item-name">V3 Deal Kit</p>
+            <p class="stack-item-desc">Templates prontos: CIM, Teaser Cego, NDA, Carta de Mandato — PT-BR e EN</p>
+          </div>
+          <span class="stack-item-value">R$997 único</span>
+        </div>
+
+        <div class="stack-row">
+          <div>
+            <p class="stack-item-name">V3 Deal Qualifier</p>
+            <p class="stack-item-desc">Regra dos 5 SIMs adaptada para as 4 verticais — qualifique um deal em 5 minutos</p>
+          </div>
+          <span class="stack-item-value">R$397 único</span>
+        </div>
+
+        <div class="stack-row">
+          <div>
+            <p class="stack-item-name">V3 Academy</p>
+            <p class="stack-item-desc">Onboarding completo: securitização, estruturação e como funciona cada vertical em 90 minutos</p>
+          </div>
+          <span class="stack-item-value">R$297 único</span>
+        </div>
+
+        <div class="stack-row">
+          <div>
+            <p class="stack-item-name">V3 Credential</p>
+            <p class="stack-item-desc">Co-branding V3 em todos os materiais do seu deal — você chega ao cliente como parte da boutique</p>
+          </div>
+          <span class="stack-item-value">Sem preço</span>
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(201,168,76,0.2); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted);">Valor total percebido</p>
+            <p style="font-size: 28px; font-weight: 800; color: var(--cream); text-decoration: line-through; opacity: 0.5;">R$4.188/mês</p>
+          </div>
+          <div style="text-align: right;">
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold);">Você paga apenas</p>
+            <p style="font-size: 36px; font-weight: 800; color: var(--cream);">R$197<span style="font-size: 16px; font-weight: 400; color: var(--muted);">/mês</span></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 5 — PLANOS (PRICING)
+  ══════════════════════════════════════ -->
+  <section class="section bg-deep" id="planos">
+    <div class="container">
+
+      <div class="text-center fade-in" style="margin-bottom: 56px;">
+        <span class="label">Escolha seu Plano</span>
+        <h2 class="mt-16">Comece onde faz sentido para você.</h2>
+        <p class="mt-16" style="max-width: 440px; margin: 16px auto 0;">
+          Sem fidelidade obrigatória. Cancele quando quiser. Upgrade a qualquer momento.
+        </p>
+      </div>
+
+      <div class="pricing-grid fade-in" style="max-width: 860px; margin: 0 auto;">
+
+        <!-- Partner -->
+        <div class="pricing-card">
+          <p class="pricing-tier">Plano</p>
+          <p class="pricing-name">Partner</p>
+          <p class="pricing-tagline">Para quem está começando a originar deals na rede V3.</p>
+
+          <div class="pricing-amount">
+            <span class="pricing-currency">R$</span>
+            <span class="pricing-value">197</span>
+          </div>
+          <p class="pricing-period">por mês · cobrado mensalmente</p>
+          <p class="pricing-value-note">Equivalente a R$6,57/dia — menos que um café duplo em Ipanema</p>
+
+          <div class="pricing-divider"></div>
+
+          <ul class="pricing-features">
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Acesso à <strong>Plataforma OTC 24/7</strong></span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>30% de comissão</strong> por deal originado</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>V3 Intel Feed</strong> — relatório diário 8h17</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>V3 Deal Kit</strong> — templates CIM, NDA, Teaser</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>V3 Deal Qualifier</strong> — Regra dos 5 SIMs</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>V3 Academy</strong> — onboarding completo 90min</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>V3 Credential</strong> — co-branding nos materiais</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Acesso ao pipeline ativo das 4 verticais</span>
+            </li>
+          </ul>
+
+          <a href="mailto:deal@v3partners.com.br?subject=Quero%20ser%20V3%20Partner%20-%20Plano%20R%24197" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+            Começar como Partner
+          </a>
+        </div>
+
+        <!-- Partner PRO -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge-top">Mais escolhido</div>
+          <p class="pricing-tier">Plano</p>
+          <p class="pricing-name">Partner PRO</p>
+          <p class="pricing-tagline">Para quem quer prioridade, maior comissão e acesso direto à liderança V3.</p>
+
+          <div class="pricing-amount">
+            <span class="pricing-currency">R$</span>
+            <span class="pricing-value">397</span>
+          </div>
+          <p class="pricing-period">por mês · cobrado mensalmente</p>
+          <p class="pricing-value-note" style="color: var(--gold-light);">Menos de 2% da comissão de um único deal de R$7M</p>
+
+          <div class="pricing-divider"></div>
+
+          <ul class="pricing-features">
+            <li class="pricing-feature">
+              <div class="pricing-feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Tudo do plano Partner, <strong>mais:</strong></span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check" style="background:rgba(201,168,76,0.18);border-color:rgba(201,168,76,0.5);"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong style="color:var(--gold);">50% de comissão</strong> por deal originado</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check" style="background:rgba(201,168,76,0.18);border-color:rgba(201,168,76,0.5);"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>Priority Deal Routing</strong> — seus deals entram na frente da fila de estruturação</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check" style="background:rgba(201,168,76,0.18);border-color:rgba(201,168,76,0.5);"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>V3 PRO Calls</strong> — 2× por mês ao vivo com os sócios</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check" style="background:rgba(201,168,76,0.18);border-color:rgba(201,168,76,0.5);"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>Early Access</strong> — novos deals antes de serem divulgados à rede</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check" style="background:rgba(201,168,76,0.18);border-color:rgba(201,168,76,0.5);"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Badge <strong>V3 PRO</strong> — credencial verificada nos materiais</span>
+            </li>
+            <li class="pricing-feature">
+              <div class="pricing-feature-check" style="background:rgba(201,168,76,0.18);border-color:rgba(201,168,76,0.5);"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Indicação elegível para <strong>Talent Pool V3</strong></span>
+            </li>
+          </ul>
+
+          <a href="mailto:deal@v3partners.com.br?subject=Quero%20ser%20V3%20Partner%20PRO%20-%20Plano%20R%24397" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            Entrar como Partner PRO
+          </a>
+
+          <p style="font-size: 11px; color: var(--muted); text-align: center; margin-top: 14px; opacity: 0.7;">
+            Sem contrato. Cancele quando quiser.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Referral note -->
+      <div class="fade-in" style="max-width: 860px; margin: 24px auto 0; background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.15); border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" flex-shrink="0"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1;">
+          <strong style="color: var(--cream);">Programa de Referral:</strong> Indique um novo Partner e ganhe 1 mês grátis. Partner PRO que indica ganha 2 meses. Os melhores indicadores são destacados no Relatório Semanal V3.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 6 — GARANTIA
+  ══════════════════════════════════════ -->
+  <section class="section" style="background: var(--navy-base);">
+    <div class="container">
+      <div class="guarantee-block fade-in" style="max-width: 860px; margin: 0 auto;">
+
+        <div class="guarantee-seal">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+
+        <div>
+          <span class="label" style="font-size: 9px;">Garantia V3</span>
+          <h3 class="mt-12" style="font-size: clamp(20px,3vw,26px);">Garantia do Primeiro Lead — 60 dias</h3>
+          <p class="mt-12" style="font-size: 15px; line-height: 1.8; max-width: 580px;">
+            Se nos primeiros 60 dias você completar o <strong style="color:var(--cream);">V3 Academy</strong>, usar o
+            <strong style="color:var(--cream);">V3 Deal Qualifier</strong> em pelo menos um ativo real e ainda assim não tiver nenhum lead qualificado para estruturação — devolvemos o primeiro mês integral.
+            Sem burocracia. Sem perguntas.
+          </p>
+          <p class="mt-12" style="font-size: 12px; color: var(--muted); font-style: italic;">
+            Porque acreditamos que quem tem acesso a ativos reais e segue o processo vai originar. Se não acontecer, o problema é nosso.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 7 — FAQ
+  ══════════════════════════════════════ -->
+  <section class="section bg-deep">
+    <div class="container">
+
+      <div class="text-center fade-in" style="margin-bottom: 56px;">
+        <span class="label">Dúvidas Frequentes</span>
+        <h2 class="mt-16">Respostas diretas.</h2>
+      </div>
+
+      <div style="max-width: 720px; margin: 0 auto;" class="fade-in">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Preciso ter formação em finanças ou direito para ser Partner?</span>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            Não. O Partner é o conector — a pessoa que tem acesso a ativos e consegue apresentá-los à V3. A estruturação financeira, jurídica e documental é inteiramente feita pelos sócios e pela equipe V3. O V3 Academy vai te dar todo o vocabulário necessário para ter conversas qualificadas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Como funciona o pagamento da comissão?</span>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            A comissão é calculada sobre o valor total do deal estruturado. Partner recebe 30% e Partner PRO recebe 50%. O pagamento é formalizado via acordo de comissionamento no momento da assinatura do mandato com o cliente. Os termos exatos são definidos caso a caso com os sócios.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Qual o ticket mínimo de deal para estruturação?</span>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            Para Real Estate (CGI/Home Equity) e Crédito: a partir de R$500K. Para Mineração, Commodities e M&A Cross-Border: a partir de R$2M. Crédito consignado e crédito pessoal sem garantia real não são ativos elegíveis para estruturação na V3.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Posso cancelar quando quiser?</span>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            Sim. Não há fidelidade mínima, contrato de prazo ou taxa de cancelamento. Você pode encerrar a assinatura a qualquer momento através da Área do Partner. Os deals em andamento no momento do cancelamento continuam com o acordo de comissionamento vigente.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Os relatórios de inteligência são realmente diários?</span>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            Sim. Temos um agente de inteligência operando com entrega todos os dias às 8h17 BRT. O relatório cobre macroeconomia, câmbio, deals nas 4 verticais, oportunidades de originação e radar de ativos. Às segundas-feiras, o relatório inclui uma análise semanal executiva completa.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">O que é o Talent Pool e como entro?</span>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            O Talent Pool é um banco de talentos da V3 Partners para as próximas contratações à medida que a empresa escala. Partners PRO com alta performance de originação são automaticamente elegíveis para indicação ao pool. Os selecionados podem receber uma proposta de colaboração futura com participação via stock options. Mais detalhes em breve.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Posso ser Partner em outra cidade ou fora do Brasil?</span>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            Sim. A V3 atua em âmbito nacional e tem infraestrutura cross-border com liquidação OTC. Partners em outras cidades do Brasil e no exterior são bem-vindos. Para ativos fora do Brasil, entre em contato direto com Hamilton Santos antes de originar.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 8 — CTA FINAL
+  ══════════════════════════════════════ -->
+  <section class="section-sm" style="background: var(--navy-card); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1);">
+    <div class="container text-center fade-in">
+
+      <span class="label">Próximo Passo</span>
+      <h2 class="mt-16" style="max-width: 560px; margin-left: auto; margin-right: auto;">
+        Você tem o ativo.<br/>A V3 tem o mercado.
+      </h2>
+      <p class="mt-16" style="max-width: 440px; margin: 16px auto 0; font-size: 15px;">
+        Envie um e-mail com o seu interesse e um dos sócios entrará em contato em até 24 horas úteis.
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 36px; flex-wrap: wrap;">
+        <a href="mailto:deal@v3partners.com.br?subject=Quero%20ser%20V3%20Partner%20PRO" class="btn btn-primary btn-lg">
+          Entrar como Partner PRO — R$397/mês
+        </a>
+        <a href="mailto:deal@v3partners.com.br?subject=Quero%20ser%20V3%20Partner" class="btn btn-secondary btn-lg">
+          Começar como Partner — R$197/mês
+        </a>
+      </div>
+
+      <p style="font-size: 12px; color: var(--muted); margin-top: 20px; opacity: 0.7;">
+        Ou fale diretamente: <a href="mailto:deal@v3partners.com.br" style="color: var(--gold); text-decoration: none;">deal@v3partners.com.br</a>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <img src="assets/img/logo.png" alt="V3 Partners" style="height: 32px; object-fit: contain;" />
+          <p class="mt-16" style="font-size: 13px; max-width: 280px;">
+            O elo entre a economia real e o mercado de capitais global.
+          </p>
+          <p class="mt-16" style="font-size: 12px; color: var(--muted);">
+            CNPJ 14.219.287/0001-50<br />
+            Rua Visconde de Pirajá, 414, Sala 718<br />
+            Ipanema — Rio de Janeiro, RJ
+          </p>
+        </div>
+
+        <div>
+          <p class="label" style="margin-bottom: 16px;">Verticais</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+            <li><a href="index.html#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Real Estate Estruturado</a></li>
+            <li><a href="index.html#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Crédito & Recebíveis</a></li>
+            <li><a href="index.html#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Mineração & Commodities</a></li>
+            <li><a href="index.html#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">M&A Cross-Border</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="label" style="margin-bottom: 16px;">Rede Partners</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+            <li><a href="#planos" style="color: var(--muted); text-decoration: none; font-size: 13px;">Ver planos</a></li>
+            <li><a href="relatorios.html" style="color: var(--muted); text-decoration: none; font-size: 13px;">Relatórios públicos</a></li>
+            <li><a href="https://v3-partner.vercel.app/dashboard" style="color: var(--muted); text-decoration: none; font-size: 13px;">Área do Partner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="label" style="margin-bottom: 16px;">Contato</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+            <li><a href="mailto:deal@v3partners.com.br" style="color: var(--muted); text-decoration: none; font-size: 13px;">deal@v3partners.com.br</a></li>
+            <li style="font-size: 13px; color: var(--muted);">Rio de Janeiro — RJ</li>
+            <li><a href="https://instagram.com/V3Partners" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; font-size: 13px;">@V3Partners</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="padding: 24px 0; border-top: 1px solid rgba(240,236,228,0.06); border-bottom: 1px solid rgba(240,236,228,0.06); margin-top: 8px;">
+        <p style="font-size: 11px; color: var(--muted); line-height: 1.7; opacity: 0.7;">
+          <strong style="color: var(--muted);">Aviso Legal:</strong> A V3 Partners Soluções Ltda atua estritamente nos limites da legislação vigente aplicável a companhias securitizadoras e correspondentes não regulados. As informações desta página t��m caráter exclusivamente institucional e informativo, não constituindo oferta pública de valores mobiliários ou recomendação de investimento. Os valores de comissão indicados são referenciais e sujeitos a acordo específico por operação.
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 V3 Partners Soluções Ltda. Todos os direitos reservados.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <a href="politica-de-privacidade.html" style="font-size: 11px; color: var(--muted); text-decoration: none;">Privacidade</a>
+          <a href="termos-de-uso.html" style="font-size: 11px; color: var(--muted); text-decoration: none;">Termos de Uso</a>
+          <a href="politica-de-cookies.html" style="font-size: 11px; color: var(--muted); text-decoration: none;">Cookies</a>
+          <a href="index.html" style="font-size: 11px; color: var(--muted); text-decoration: none;">Site Institucional</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════
+       STICKY CTA — MOBILE
+  ══════════════════════════════════════ -->
+  <div class="sticky-cta" id="stickyCta" style="display:none;">
+    <div class="sticky-cta-price">
+      Partner PRO<br/>
+      <strong>R$397</strong><span style="font-size:11px;font-weight:400;color:var(--muted);">/mês</span>
+    </div>
+    <a href="mailto:deal@v3partners.com.br?subject=Quero%20ser%20V3%20Partner%20PRO" class="btn btn-primary btn-sm" style="flex-shrink:0;">
+      Entrar agora
+    </a>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════ -->
+  <script src="assets/js/cookies.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    /* ── FAQ accordion ── */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        // Fecha todos
+        document.querySelectorAll('.faq-question').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+        });
+        // Abre este se estava fechado
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.classList.add('open');
+        }
+      });
+    });
+
+    /* ── Sticky CTA — aparece após 600px de scroll (mobile) ── */
+    const stickyCta = document.getElementById('stickyCta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        stickyCta.style.display = 'flex';
+      } else {
+        stickyCta.style.display = 'none';
+      }
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

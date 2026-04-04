@@ -1,0 +1,5 @@
+# Bloqueia acesso direto à pasta members até o sistema de auth estar ativo
+# Quando Memberstack/Outseta for configurado, remover este arquivo
+
+Options -Indexes
+deny from all

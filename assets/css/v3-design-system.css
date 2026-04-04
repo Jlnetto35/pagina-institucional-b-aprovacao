@@ -1,0 +1,1277 @@
+/* ============================================================
+   V3 PARTNERS — Design System v1.0
+   Agente: brad-frost + dan-mall | Metodologia: Atomic Design
+   Brandbook V2.0 aprovado | WCAG 2.1 AA
+
+   USO: Importar este arquivo em qualquer aplicação V3.
+   <link rel="stylesheet" href="/assets/css/v3-design-system.css">
+
+   ÍNDICE:
+   1. Tokens — Cores
+   2. Tokens — Tipografia
+   3. Tokens — Espaçamento
+   4. Tokens — Bordas & Sombras
+   5. Tokens — Animação
+   6. Tokens — Breakpoints
+   7. Reset
+   8. Base
+   9. ATOMS — Tipografia
+   10. ATOMS — Botões
+   11. ATOMS — Badge / Label / Tag
+   12. ATOMS — Inputs & Formulário
+   13. ATOMS — Divisores
+   14. ATOMS — Ícones
+   15. MOLECULES — Cards
+   16. MOLECULES — Stat Block
+   17. MOLECULES — Alert / Toast
+   18. MOLECULES — Table
+   19. ORGANISMS — Navbar
+   20. ORGANISMS — Hero
+   21. ORGANISMS — Footer
+   22. ORGANISMS — Sidebar (dashboard)
+   23. ORGANISMS — Modal
+   24. TEMPLATES — Layout
+   25. Utilitários
+   26. Acessibilidade
+   27. Responsividade
+   28. Print (relatórios)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ══════════════════════════════════════
+   1. TOKENS — CORES
+   Hierarquia: Global → Semântico → Componente
+══════════════════════════════════════ */
+
+:root {
+
+  /* Global — Paleta Brandbook V2.0 */
+  --color-navy-900:   #09081A;   /* Navy Profundo — capas, fundos principais */
+  --color-navy-700:   #111F35;   /* Navy Base — páginas internas */
+  --color-navy-600:   #162744;   /* Navy Card — cards e seções */
+  --color-navy-500:   #243A66;   /* Navy Médio — hover, destaques */
+  --color-gold-500:   #C9A84C;   /* Ouro V3 — logo, labels, assinaturas */
+  --color-gold-300:   #E8C97A;   /* Ouro Claro — destaque secundário */
+  --color-cream:      #F0ECE4;   /* Cream — títulos, texto primário */
+  --color-muted:      #7A8FA8;   /* Muted — corpo, descrições */
+
+  /* Feedback — apenas para apps internos (não usar no site institucional) */
+  --color-success:    #4ade80;   /* Verde — status ativo, sucesso */
+  --color-warning:    #E8C97A;   /* Ouro — alerta, rascunho */
+  --color-error:      #f87171;   /* Vermelho suave — erro */
+  --color-info:       #60a5fa;   /* Azul suave — info */
+
+  /* Semântico — superfícies */
+  --surface-canvas:   var(--color-navy-700);   /* Fundo da página */
+  --surface-base:     var(--color-navy-600);   /* Cards, seções */
+  --surface-raised:   var(--color-navy-500);   /* Hover, modais, overlays */
+  --surface-deep:     var(--color-navy-900);   /* Seções de destaque, hero */
+
+  /* Semântico — texto */
+  --text-primary:     var(--color-cream);
+  --text-secondary:   var(--color-muted);
+  --text-accent:      var(--color-gold-500);
+  --text-accent-soft: var(--color-gold-300);
+
+  /* Semântico — bordas */
+  --border-default:   rgba(201, 168, 76, 0.12);
+  --border-subtle:    rgba(240, 236, 228, 0.06);
+  --border-accent:    rgba(201, 168, 76, 0.3);
+  --border-strong:    rgba(201, 168, 76, 0.5);
+
+  /* Aliases de compatibilidade (mantém suporte ao style.css existente) */
+  --navy-deep:        var(--color-navy-900);
+  --navy-base:        var(--color-navy-700);
+  --navy-card:        var(--color-navy-600);
+  --navy-mid:         var(--color-navy-500);
+  --gold:             var(--color-gold-500);
+  --gold-light:       var(--color-gold-300);
+  --cream:            var(--color-cream);
+  --muted:            var(--color-muted);
+}
+
+/* ══════════════════════════════════════
+   2. TOKENS — TIPOGRAFIA
+   Fonte única: DM Sans | Nunca substituir
+══════════════════════════════════════ */
+
+:root {
+  --font-family:      'DM Sans', sans-serif;
+
+  /* Escala mobile (base) */
+  --font-size-xs:     11px;
+  --font-size-sm:     13px;
+  --font-size-base:   15px;
+  --font-size-md:     17px;
+  --font-size-lg:     20px;
+  --font-size-xl:     26px;
+  --font-size-2xl:    32px;
+  --font-size-3xl:    40px;
+  --font-size-display: 48px;
+
+  /* Pesos */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+  --font-weight-black:    800;
+
+  /* Altura de linha */
+  --line-height-tight:    1.1;
+  --line-height-snug:     1.3;
+  --line-height-normal:   1.65;
+  --line-height-relaxed:  1.75;
+  --line-height-loose:    1.9;
+
+  /* Letter spacing */
+  --letter-spacing-tighter: -0.03em;
+  --letter-spacing-tight:   -0.02em;
+  --letter-spacing-normal:  0;
+  --letter-spacing-wide:    0.08em;
+  --letter-spacing-wider:   0.14em;
+  --letter-spacing-widest:  0.16em;
+}
+
+/* ══════════════════════════════════════
+   3. TOKENS — ESPAÇAMENTO
+   Base: 4px | Escala: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 104
+══════════════════════════════════════ */
+
+:root {
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-26:  104px;
+}
+
+/* ══════════════════════════════════════
+   4. TOKENS — BORDAS & SOMBRAS
+══════════════════════════════════════ */
+
+:root {
+  /* Bordas */
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-full: 9999px;
+
+  --border-width-thin:   1px;
+  --border-width-normal: 2px;
+  --border-width-thick:  3px;
+  --border-width-accent: 4px;
+
+  /* Sombras */
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.2);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.25);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.3);
+  --shadow-gold-sm: 0 0 16px rgba(201,168,76,0.08);
+  --shadow-gold-md: 0 0 32px rgba(201,168,76,0.12);
+  --shadow-gold-lg: 0 0 48px rgba(201,168,76,0.18);
+}
+
+/* ══════════════════════════════════════
+   5. TOKENS — ANIMAÇÃO
+══════════════════════════════════════ */
+
+:root {
+  --duration-fast:    150ms;
+  --duration-normal:  200ms;
+  --duration-slow:    350ms;
+  --duration-slower:  550ms;
+  --ease-default:     ease;
+  --ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce:      cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ══════════════════════════════════════
+   6. TOKENS — BREAKPOINTS
+   (Usar em @media queries)
+   sm: 480px | md: 600px | lg: 1024px | xl: 1280px
+══════════════════════════════════════ */
+
+/* Referência (não usável como variável CSS em @media):
+   --bp-sm:   480px;
+   --bp-md:   600px;
+   --bp-lg:  1024px;
+   --bp-xl:  1280px;
+*/
+
+/* ══════════════════════════════════════
+   7. RESET
+══════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ══════════════════════════════════════
+   8. BASE
+══════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-secondary);
+  background-color: var(--surface-canvas);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+/* ══════════════════════════════════════
+   9. ATOMS — TIPOGRAFIA
+══════════════════════════════════════ */
+
+/* Display — hero headlines */
+.v3-display {
+  font-family: var(--font-family);
+  font-size: clamp(32px, 6vw, var(--font-size-display));
+  font-weight: var(--font-weight-black);
+  color: var(--text-primary);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* H1 */
+h1, .v3-h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* H2 — seção */
+h2, .v3-h2 {
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: var(--line-height-snug);
+  letter-spacing: -0.015em;
+}
+
+/* H3 — card */
+h3, .v3-h3 {
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: var(--line-height-snug);
+}
+
+/* H4 — sub-item */
+h4, .v3-h4 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: var(--line-height-normal);
+}
+
+/* Corpo */
+p, .v3-body {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Label / Eyebrow — uppercase acima de títulos */
+.v3-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--text-accent);
+}
+
+/* Caption — texto auxiliar */
+.v3-caption {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Compatibilidade com style.css */
+.label { font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing-wider); color: var(--text-accent); }
+.text-cream  { color: var(--text-primary); }
+.text-gold   { color: var(--text-accent); }
+.text-muted  { color: var(--text-secondary); }
+.text-center { text-align: center; }
+
+/* ══════════════════════════════════════
+   10. ATOMS — BOTÕES
+   Variantes: primary, secondary, ghost, danger
+   Tamanhos: sm, md (default), lg
+══════════════════════════════════════ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-default);
+  padding: 13px 24px;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Foco acessível — WCAG 2.1 AA */
+.btn:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 3px;
+}
+
+/* Primary */
+.btn-primary {
+  background: var(--color-gold-500);
+  color: var(--color-navy-900);
+}
+.btn-primary:hover  { background: var(--color-gold-300); }
+.btn-primary:active { background: var(--color-gold-500); transform: scale(0.98); }
+
+/* Secondary */
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: var(--border-width-thin) solid rgba(240, 236, 228, 0.2);
+}
+.btn-secondary:hover  { border-color: var(--color-gold-500); color: var(--color-gold-500); }
+.btn-secondary:active { transform: scale(0.98); }
+
+/* Ghost */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 13px 0;
+}
+.btn-ghost:hover { color: var(--text-primary); }
+
+/* Danger */
+.btn-danger {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--color-error);
+  border: var(--border-width-thin) solid rgba(248, 113, 113, 0.25);
+}
+.btn-danger:hover { background: rgba(248, 113, 113, 0.2); }
+
+/* Tamanhos */
+.btn-sm { padding: 8px 16px; font-size: var(--font-size-xs); border-radius: var(--radius-sm); }
+.btn-lg { padding: 16px 32px; font-size: var(--font-size-md); }
+.btn-full { width: 100%; }
+
+/* Desabilitado */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════
+   11. ATOMS — BADGE / LABEL / TAG
+══════════════════════════════════════ */
+
+/* Badge — status pills */
+.v3-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-widest);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.v3-badge-active  { background: rgba(74,222,128,0.1);  border: 1px solid rgba(74,222,128,0.3);  color: var(--color-success); }
+.v3-badge-pending { background: rgba(201,168,76,0.1);  border: 1px solid rgba(201,168,76,0.3);  color: var(--color-gold-500); }
+.v3-badge-error   { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3); color: var(--color-error); }
+.v3-badge-info    { background: rgba(96,165,250,0.1);  border: 1px solid rgba(96,165,250,0.3);  color: var(--color-info); }
+
+/* Hero badge (maior, com borda) */
+.badge {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-widest);
+  color: var(--color-gold-500);
+  background: rgba(201, 168, 76, 0.1);
+  border: var(--border-width-thin) solid rgba(201, 168, 76, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+}
+
+/* ══════════════════════════════════════
+   12. ATOMS — INPUTS & FORMULÁRIO
+   (Área de membros, contato, partners)
+══════════════════════════════════════ */
+
+.v3-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.v3-field-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--text-accent);
+}
+
+.v3-input,
+.v3-select,
+.v3-textarea {
+  width: 100%;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+  background: var(--surface-base);
+  border: var(--border-width-thin) solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 12px 16px;
+  transition: border-color var(--duration-normal);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.v3-input::placeholder,
+.v3-textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.v3-input:focus,
+.v3-select:focus,
+.v3-textarea:focus {
+  outline: none;
+  border-color: var(--color-gold-500);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+}
+
+.v3-input.error,
+.v3-select.error,
+.v3-textarea.error {
+  border-color: var(--color-error);
+}
+
+.v3-textarea { resize: vertical; min-height: 120px; }
+
+.v3-field-hint {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.v3-field-error {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  line-height: 1.5;
+}
+
+/* Checkbox / Radio */
+.v3-checkbox,
+.v3-radio {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.v3-checkbox input[type="checkbox"],
+.v3-radio input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--color-gold-500);
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.v3-checkbox-label,
+.v3-radio-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   13. ATOMS — DIVISORES
+══════════════════════════════════════ */
+
+.v3-divider {
+  width: 100%;
+  height: var(--border-width-thin);
+  background: var(--border-subtle);
+  border: none;
+  margin: var(--space-6) 0;
+}
+
+.v3-divider-gold {
+  width: 40px;
+  height: 2px;
+  background: var(--color-gold-500);
+  border: none;
+  margin: var(--space-4) 0;
+}
+
+.v3-divider-vertical {
+  width: var(--border-width-thin);
+  height: 48px;
+  background: rgba(201, 168, 76, 0.2);
+  flex-shrink: 0;
+}
+
+/* Compatibilidade */
+.divider-gold { width: 40px; height: 2px; background: var(--color-gold-500); margin: var(--space-4) 0; }
+.stat-divider { width: 1px; height: 40px; background: rgba(201, 168, 76, 0.2); flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   14. ATOMS — ÍCONES (wrapper)
+══════════════════════════════════════ */
+
+.v3-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Container de ícone com borda (usado nas verticais) */
+.v3-icon-box {
+  width: 44px;
+  height: 44px;
+  border: var(--border-width-thin) solid var(--border-accent);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Compatibilidade */
+.vertical-icon { width: 44px; height: 44px; border: 1px solid rgba(201, 168, 76, 0.3); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4); }
+
+/* ══════════════════════════════════════
+   15. MOLECULES — CARDS
+   Variantes: default, highlight, frente
+══════════════════════════════════════ */
+
+/* Card base */
+.card {
+  background: var(--surface-base);
+  border: var(--border-width-thin) solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  transition: border-color var(--duration-slow), box-shadow var(--duration-slow);
+}
+
+.card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-gold-sm);
+}
+
+/* Card destaque — fundo mais profundo */
+.card-highlight {
+  background: var(--color-navy-500);
+  border: var(--border-width-thin) solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  transition: border-color var(--duration-slow);
+}
+
+.card-highlight:hover {
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+/* Card accent — borda esquerda dourada (portais, frentes) */
+.v3-card-accent {
+  background: var(--surface-base);
+  border: var(--border-width-thin) solid var(--border-default);
+  border-left: var(--border-width-accent) solid var(--color-gold-500);
+  padding: 24px 28px;
+  transition: background var(--duration-normal), border-color var(--duration-normal);
+}
+
+.v3-card-accent:hover {
+  background: var(--color-navy-500);
+  border-color: var(--border-accent);
+}
+
+/* Grids de cards */
+.card-grid   { display: grid; gap: 16px; }
+.card-grid-2 { grid-template-columns: 1fr; }
+.card-grid-3 { grid-template-columns: 1fr; }
+.card-grid-4 { grid-template-columns: 1fr; }
+
+/* ══════════════════════════════════════
+   16. MOLECULES — STAT BLOCK
+   (Usado no hero, dashboard, relatórios)
+══════════════════════════════════════ */
+
+.v3-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: center;
+  padding: 0 var(--space-8);
+}
+
+.v3-stat-value {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: var(--font-weight-black);
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.v3-stat-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: 1.4;
+}
+
+/* ══════════════════════════════════════
+   17. MOLECULES — ALERT / TOAST
+   (Notificações em apps internos)
+══════════════════════════════════════ */
+
+.v3-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  border-left: var(--border-width-accent) solid;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.v3-alert-success { background: rgba(74,222,128,0.08);  border-color: var(--color-success); color: #a7f3c0; }
+.v3-alert-warning { background: rgba(232,201,122,0.08); border-color: var(--color-warning); color: var(--color-gold-300); }
+.v3-alert-error   { background: rgba(248,113,113,0.08); border-color: var(--color-error);   color: #fca5a5; }
+.v3-alert-info    { background: rgba(96,165,250,0.08);  border-color: var(--color-info);    color: #93c5fd; }
+
+/* Toast — fixed bottom-right */
+.v3-toast-container {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 360px;
+}
+
+.v3-toast {
+  background: var(--surface-base);
+  border: var(--border-width-thin) solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  animation: v3-toast-in var(--duration-slow) var(--ease-bounce);
+}
+
+@keyframes v3-toast-in {
+  from { opacity: 0; transform: translateX(100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ══════════════════════════════════════
+   18. MOLECULES — TABLE
+   (Relatórios, dashboard de deals)
+══════════════════════════════════════ */
+
+.v3-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-xl);
+  border: var(--border-width-thin) solid var(--border-default);
+}
+
+.v3-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.v3-table thead tr {
+  background: var(--surface-deep);
+  border-bottom: var(--border-width-thin) solid var(--border-accent);
+}
+
+.v3-table th {
+  text-align: left;
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--text-accent);
+  white-space: nowrap;
+}
+
+.v3-table tbody tr {
+  border-bottom: var(--border-width-thin) solid var(--border-subtle);
+  transition: background var(--duration-fast);
+}
+
+.v3-table tbody tr:last-child { border-bottom: none; }
+
+.v3-table tbody tr:hover { background: rgba(201, 168, 76, 0.04); }
+
+.v3-table td {
+  padding: var(--space-4) var(--space-5);
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+.v3-table td strong { color: var(--text-primary); font-weight: var(--font-weight-semibold); }
+
+/* ══════════════════════════════════════
+   19. ORGANISMS — NAVBAR
+══════════════════════════════════════ */
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(9, 8, 26, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: var(--border-width-thin) solid var(--border-default);
+  padding: 14px 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo img { height: 32px; width: auto; object-fit: contain; display: block; }
+.navbar-links    { display: none; list-style: none; }
+.navbar-cta      { display: none; }
+
+.navbar-menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.navbar-menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all var(--duration-normal);
+}
+
+.navbar-links.open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 60px; left: 0; right: 0;
+  background: var(--surface-deep);
+  border-bottom: var(--border-width-thin) solid var(--border-default);
+  padding: 24px 20px;
+  gap: 20px;
+}
+
+.navbar-links a {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--duration-normal);
+  padding: 4px 0;
+}
+
+.navbar-links a:hover           { color: var(--text-primary); }
+.navbar-links a:focus-visible   { outline: 2px solid var(--color-gold-500); outline-offset: 4px; border-radius: 2px; }
+
+/* ══════════════════════════════════════
+   20. ORGANISMS — HERO
+══════════════════════════════════════ */
+
+.hero {
+  min-height: 100svh;
+  background: var(--surface-deep);
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.global-bg {
+  background-image: radial-gradient(rgba(201, 168, 76, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Foto de diretores */
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: var(--color-navy-500);
+  border: var(--border-width-thin) solid rgba(201, 168, 76, 0.15);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════
+   21. ORGANISMS — FOOTER
+══════════════════════════════════════ */
+
+.footer {
+  background: var(--surface-deep);
+  border-top: var(--border-width-thin) solid rgba(201, 168, 76, 0.1);
+  padding: 48px 0 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: var(--border-width-thin) solid var(--border-subtle);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+}
+
+.footer-bottom p { font-size: 12px; color: var(--text-secondary); }
+
+/* Governança bullet list */
+.gov-item {
+  display: flex;
+  gap: var(--space-4);
+  padding: 20px 0;
+  border-bottom: var(--border-width-thin) solid var(--border-subtle);
+}
+
+.gov-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold-500);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ══════════════════════════════════════
+   22. ORGANISMS — SIDEBAR (dashboard)
+   (Área de members, portais internos)
+══════════════════════════════════════ */
+
+.v3-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--surface-deep);
+  border-right: var(--border-width-thin) solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  padding: var(--space-6) 0;
+  overflow-y: auto;
+}
+
+.v3-sidebar-logo {
+  padding: 0 var(--space-6) var(--space-6);
+  border-bottom: var(--border-width-thin) solid var(--border-default);
+}
+
+.v3-sidebar-nav {
+  flex: 1;
+  padding: var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.v3-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px var(--space-6);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--duration-fast);
+  border-radius: 0;
+}
+
+.v3-sidebar-link:hover {
+  color: var(--text-primary);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.v3-sidebar-link.active {
+  color: var(--text-accent);
+  background: rgba(201, 168, 76, 0.08);
+  border-right: 3px solid var(--color-gold-500);
+}
+
+.v3-sidebar-section {
+  padding: var(--space-4) var(--space-6) var(--space-2);
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-widest);
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+/* Layout com sidebar */
+.v3-app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.v3-app-content {
+  flex: 1;
+  margin-left: 240px;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════
+   23. ORGANISMS — MODAL
+   (Área de membros, confirmações)
+══════════════════════════════════════ */
+
+.v3-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 8, 26, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  animation: v3-fade-in var(--duration-slow) var(--ease-default);
+}
+
+.v3-modal {
+  background: var(--surface-base);
+  border: var(--border-width-thin) solid var(--border-accent);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-gold-lg);
+  animation: v3-modal-in var(--duration-slow) var(--ease-bounce);
+}
+
+.v3-modal-header {
+  padding: var(--space-6) var(--space-8);
+  border-bottom: var(--border-width-thin) solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.v3-modal-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.v3-modal-body    { padding: var(--space-8); }
+.v3-modal-footer  { padding: var(--space-5) var(--space-8); border-top: var(--border-width-thin) solid var(--border-subtle); display: flex; gap: var(--space-3); justify-content: flex-end; }
+
+.v3-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--space-1);
+  font-size: 20px;
+  line-height: 1;
+  transition: color var(--duration-fast);
+}
+
+.v3-modal-close:hover { color: var(--text-primary); }
+
+@keyframes v3-modal-in {
+  from { opacity: 0; transform: scale(0.95) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ══════════════════════════════════════
+   24. TEMPLATES — LAYOUT
+══════════════════════════════════════ */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section    { padding: 64px 0; }
+.section-sm { padding: 48px 0; }
+
+/* Seção com acento visual esquerdo */
+.v3-section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-3);
+}
+
+.v3-eyebrow-line {
+  width: 24px;
+  height: 1px;
+  background: var(--color-gold-500);
+}
+
+/* ══════════════════════════════════════
+   25. UTILITÁRIOS
+══════════════════════════════════════ */
+
+/* Backgrounds */
+.bg-deep  { background-color: var(--surface-deep); }
+.bg-base  { background-color: var(--surface-canvas); }
+.bg-card  { background-color: var(--surface-base); }
+
+/* Margins */
+.mt-4  { margin-top: var(--space-1); }
+.mt-8  { margin-top: var(--space-2); }
+.mt-12 { margin-top: var(--space-3); }
+.mt-16 { margin-top: var(--space-4); }
+.mt-24 { margin-top: var(--space-6); }
+.mt-32 { margin-top: var(--space-8); }
+.mt-48 { margin-top: var(--space-12); }
+.mb-8  { margin-bottom: var(--space-2); }
+.mb-16 { margin-bottom: var(--space-4); }
+.mb-24 { margin-bottom: var(--space-6); }
+
+/* Flex */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+
+/* Verticais */
+.vertical-number { font-size: 28px; font-weight: var(--font-weight-black); color: rgba(201, 168, 76, 0.35); line-height: 1; letter-spacing: var(--letter-spacing-tight); margin-bottom: var(--space-2); }
+
+/* Fade-in scroll */
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity var(--duration-slower) var(--ease-default), transform var(--duration-slower) var(--ease-default); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes v3-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ══════════════════════════════════════
+   26. ACESSIBILIDADE — WCAG 2.1 AA
+══════════════════════════════════════ */
+
+/* Skip link */
+.v3-skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 9999;
+  background: var(--color-gold-500);
+  color: var(--color-navy-900);
+  padding: var(--space-3) var(--space-6);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: top var(--duration-fast);
+}
+
+.v3-skip-link:focus { top: var(--space-4); }
+
+/* Focus global */
+:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Reduzir movimento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .fade-in { opacity: 1; transform: none; }
+}
+
+/* ══════════════════════════════════════
+   27. RESPONSIVIDADE
+══════════════════════════════════════ */
+
+/* Tablet — 600px+ */
+@media (min-width: 600px) {
+  .container { padding: 0 32px; }
+
+  h2, .v3-h2 { font-size: 32px; }
+
+  .card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .footer-grid   { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+
+/* Desktop — 1024px+ */
+@media (min-width: 1024px) {
+  .container  { padding: 0 40px; }
+  .section    { padding: var(--space-26) 0; }
+  .section-sm { padding: var(--space-16) 0; }
+
+  h2, .v3-h2 { font-size: 40px; }
+  h3, .v3-h3 { font-size: 20px; }
+  p, .v3-body { font-size: var(--font-size-base); }
+
+  /* Navbar desktop */
+  .navbar           { padding: 18px 0; }
+  .navbar-logo img  { height: 38px; }
+  .navbar-menu-btn  { display: none; }
+  .navbar-links     { display: flex; flex-direction: row; position: static; background: none; border: none; padding: 0; gap: 36px; }
+  .navbar-links a   { font-size: var(--font-size-sm); }
+  .navbar-cta       { display: flex; gap: 12px; }
+
+  /* Grids desktop */
+  .card-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .card-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card-grid-4 { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+  .card, .card-highlight { padding: 36px; }
+
+  .hero { padding-top: 120px; padding-bottom: 100px; }
+
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+
+  .vertical-number { font-size: 36px; }
+}
+
+/* Large — 1280px+ */
+@media (min-width: 1280px) {
+  .container { max-width: 1280px; }
+}
+
+/* Mobile sidebar — ocultar em telas pequenas */
+@media (max-width: 1023px) {
+  .v3-sidebar     { display: none; }
+  .v3-app-content { margin-left: 0; }
+}
+
+/* ══════════════════════════════════════
+   28. PRINT — RELATÓRIOS V3
+   Aplicar em relatórios de inteligência e CIMs
+══════════════════════════════════════ */
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    background: #09081A !important;
+    color: #F0ECE4 !important;
+  }
+
+  .navbar, .footer, .v3-sidebar,
+  .btn, .fade-in, .v3-toast-container {
+    display: none !important;
+  }
+
+  .hero { min-height: auto; padding: 48px 0; }
+
+  .section    { padding: 32px 0; }
+  .section-sm { padding: 24px 0; }
+
+  .card, .card-highlight {
+    break-inside: avoid;
+    border: 1px solid rgba(201, 168, 76, 0.3) !important;
+  }
+
+  h1, h2, h3 { break-after: avoid; }
+
+  a[href]::after {
+    content: none;
+  }
+}
