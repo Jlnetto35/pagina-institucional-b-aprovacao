@@ -50,6 +50,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+/* ── Dropdown nav toggle ── */
+document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const dropdown = this.closest('.nav-dropdown');
+    const isOpen = dropdown.classList.contains('open');
+    // Fecha todos
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    // Abre o clicado (ou fecha se já estava aberto)
+    if (!isOpen) {
+      dropdown.classList.add('open');
+      e.preventDefault(); // mantém no lugar, usuário escolhe item do submenu
+    }
+  });
+});
+
+// Fecha ao clicar fora
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.nav-dropdown')) {
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+  }
+});
+
+// Fecha ao clicar num link do submenu
+document.querySelectorAll('.dropdown-menu a').forEach(link => {
+  link.addEventListener('click', function () {
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+  });
+});
+
 /* ── Animação de entrada ao rolar (fade-in) ── */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

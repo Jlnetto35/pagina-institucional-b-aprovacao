@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog — V3 Partners | Inteligência de Mercado</title>
+  <meta name="description" content="Análises, dados e perspectivas sobre securitização, tokenização de ativos e investimentos internacionais. Conteúdo produzido pela equipe V3 Partners."/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <style>
+    .blog-hero {
+      background: var(--navy-deep);
+      padding: 120px 0 72px;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 56px;
+    }
+    @media(min-width:768px) {
+      .article-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(min-width:1024px) {
+      .article-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .article-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover {
+      border-color: rgba(201,168,76,0.35);
+      transform: translateY(-3px);
+    }
+    .article-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+    .article-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .article-card-tag {
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .article-card-date {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .article-card h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .article-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .article-card-footer {
+      padding: 18px 28px;
+      border-top: 1px solid rgba(240,236,228,0.06);
+    }
+    .read-more {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .read-more:hover { gap: 10px; }
+    .read-more::after { content: '→'; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/images/v3-logo-3d-alpha.png" alt="V3 Partners"/>
+      </a>
+      <ul class="navbar-links" style="display:flex;gap:32px;list-style:none;">
+        <li><a href="../index.html#estruturacao" style="font-size:13px;color:var(--muted);text-decoration:none;">Soluções</a></li>
+        <li><a href="../index.html#sobre" style="font-size:13px;color:var(--muted);text-decoration:none;">Empresa</a></li>
+        <li><a href="../index.html#contato" style="font-size:13px;color:var(--muted);text-decoration:none;">Contato</a></li>
+      </ul>
+      <a href="../index.html#contato" class="btn btn-primary" style="display:none;" id="blogNavCta">Falar com a V3</a>
+    </div>
+  </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      if(window.innerWidth>=1024) document.getElementById('blogNavCta').style.display='inline-flex';
+    });
+  </script>
+
+  <!-- Hero -->
+  <section class="blog-hero">
+    <div class="container">
+      <p class="label" style="margin-bottom:16px;">Inteligência de Mercado</p>
+      <h1 style="font-size:clamp(32px,5vw,52px);font-weight:700;color:var(--cream);line-height:1.15;max-width:640px;">
+        Análise que orienta<br/>decisões de capital
+      </h1>
+      <p style="font-size:15px;color:var(--muted);margin-top:16px;max-width:520px;line-height:1.7;">
+        Dados verificados, fontes abertas. Securitização, tokenização e internacionalização patrimonial — sem viés comercial, só inteligência.
+      </p>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section style="background:var(--navy-base);padding:80px 0 100px;">
+    <div class="container">
+
+      <div class="article-grid">
+
+        <!-- Artigo 1 -->
+        <article class="article-card fade-in">
+          <div class="article-card-body">
+            <div class="article-card-meta">
+              <span class="article-card-tag">Securitização</span>
+              <span class="article-card-date">Abr 2026</span>
+            </div>
+            <h2>O que é securitização de recebíveis — e por que o Brasil acaba de bater todos os recordes</h2>
+            <p>FIDCs chegaram a R$ 833,5 bi em patrimônio no final de 2025. Sete em cada dez ofertas de renda fixa no mercado de capitais já são títulos de securitização. Entenda o mecanismo, os instrumentos e por que o middle market está descobrindo esse mercado agora.</p>
+          </div>
+          <div class="article-card-footer">
+            <a href="securitizacao-recebiveis-brasil.html" class="read-more">Ler artigo</a>
+          </div>
+        </article>
+
+        <!-- Artigo 2 -->
+        <article class="article-card fade-in">
+          <div class="article-card-body">
+            <div class="article-card-meta">
+              <span class="article-card-tag">Tokenização</span>
+              <span class="article-card-date">Abr 2026</span>
+            </div>
+            <h2>Tokenização de ativos reais no Brasil: como funciona na prática via CVM 88</h2>
+            <p>O mercado de tokens RWA cresceu 1.134% em 12 meses e superou R$ 6 bi em volume negociado. A CVM já tem consulta pública aberta para ampliar o marco regulatório. Aqui está o guia técnico: do token ao investidor, passando pela norma.</p>
+          </div>
+          <div class="article-card-footer">
+            <a href="tokenizacao-ativos-cvm88.html" class="read-more">Ler artigo</a>
+          </div>
+        </article>
+
+        <!-- Artigo 3 -->
+        <article class="article-card fade-in">
+          <div class="article-card-body">
+            <div class="article-card-meta">
+              <span class="article-card-tag">Internacional</span>
+              <span class="article-card-date">Abr 2026</span>
+            </div>
+            <h2>Exporte seu patrimônio: LLC, IUL e Real Estate na Flórida para brasileiros</h2>
+            <p>A combinação LLC + IUL + imóvel na Flórida está se tornando o padrão de proteção patrimonial internacional para brasileiros de alta renda. Entenda cada componente, o que protege de fato, e os custos reais da estrutura.</p>
+          </div>
+          <div class="article-card-footer">
+            <a href="exporte-se-llc-iul-florida.html" class="read-more">Ler artigo</a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer simples -->
+  <footer style="background:var(--navy-deep);border-top:1px solid rgba(201,168,76,0.1);padding:40px 0;">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <img src="../assets/images/v3-logo-3d-alpha.png" alt="V3 Partners" style="height:36px;"/>
+      <p style="font-size:12px;color:var(--muted);">© 2026 V3 Partners Soluções Ltda · CNPJ 14.219.287/0001-50</p>
+      <a href="../index.html" style="font-size:12px;color:var(--gold);text-decoration:none;">← Voltar ao site</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

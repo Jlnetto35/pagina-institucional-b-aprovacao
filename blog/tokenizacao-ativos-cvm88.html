@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tokenização de Ativos Reais via CVM 88 — V3 Partners</title>
+  <meta name="description" content="O mercado de tokens RWA cresceu 1.134% em 12 meses no Brasil e já ultrapassou R$ 6 bi em volume negociado. Guia técnico completo: do token ao investidor, passando pela CVM 88."/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <style>
+    .article-hero { background: var(--navy-deep); padding: 120px 0 64px; border-bottom: 1px solid rgba(201,168,76,0.12); }
+    .article-body { background: var(--navy-base); padding: 72px 0 100px; }
+    .article-content { max-width: 760px; margin: 0 auto; }
+    .article-content h2 { font-size: 22px; font-weight: 700; color: var(--cream); margin: 48px 0 16px; line-height: 1.3; }
+    .article-content h3 { font-size: 17px; font-weight: 600; color: var(--cream); margin: 32px 0 12px; }
+    .article-content p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 20px; }
+    .article-content strong { color: var(--cream); font-weight: 600; }
+    .article-content ul { margin: 0 0 20px 0; padding-left: 0; list-style: none; }
+    .article-content ul li { font-size: 15px; color: var(--muted); line-height: 1.85; padding: 6px 0 6px 24px; position: relative; }
+    .article-content ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .data-block {
+      background: var(--navy-card);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .data-block p { margin-bottom: 0; font-size: 14px; }
+    .data-block .data-number { font-size: 36px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .data-block .data-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); }
+    .data-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin: 32px 0; }
+    @media(min-width:640px) { .data-grid { grid-template-columns: repeat(3,1fr); } }
+    .flow-step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(240,236,228,0.06);
+    }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-number { font-size: 28px; font-weight: 800; color: var(--gold); line-height: 1; min-width: 36px; }
+    .flow-text h4 { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+    .flow-text p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 0; }
+    .source-block { margin-top: 64px; padding-top: 32px; border-top: 1px solid rgba(240,236,228,0.07); }
+    .source-block h3 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 16px; }
+    .source-block ul li { font-size: 13px; }
+    .source-block ul li a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+    .source-block ul li a:hover { color: var(--cream); }
+    .disclaimer { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.12); border-radius: 8px; padding: 16px 20px; margin-top: 32px; }
+    .disclaimer p { font-size: 11px; color: var(--muted); line-height: 1.65; margin-bottom: 0; }
+    .cta-block { background: var(--navy-card); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 40px; text-align: center; margin-top: 64px; }
+    .cta-block h3 { font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 12px; }
+    .cta-block p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <a href="../index.html" class="navbar-logo">
+        <img src="../assets/images/v3-logo-3d-alpha.png" alt="V3 Partners"/>
+      </a>
+      <div style="display:flex;align-items:center;gap:32px;">
+        <a href="index.html" style="font-size:13px;color:var(--gold);text-decoration:none;">← Blog</a>
+        <a href="../index.html#contato" class="btn btn-primary" style="font-size:12px;padding:10px 20px;">Falar com a V3</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="article-hero">
+    <div class="container">
+      <div style="max-width:800px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+          <span style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:var(--gold);background:rgba(201,168,76,0.1);padding:5px 12px;border-radius:4px;">Tokenização</span>
+          <span style="font-size:12px;color:var(--muted);">Abril 2026 · 9 min de leitura</span>
+        </div>
+        <h1 style="font-size:clamp(28px,4.5vw,48px);font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:20px;">
+          Tokenização de ativos reais no Brasil: como funciona na prática via CVM 88
+        </h1>
+        <p style="font-size:16px;color:var(--muted);line-height:1.75;max-width:660px;">
+          O mercado de tokens RWA (Real World Assets) cresceu 1.134% em 12 meses no Brasil e já ultrapassou R$ 6 bilhões em volume negociado. A CVM tem consulta pública aberta para ampliar o marco regulatório. Aqui está o guia técnico: do token ao investidor, passando pela norma que viabilizou tudo isso.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="article-content">
+
+        <div class="data-grid">
+          <div class="data-block">
+            <p class="data-label">Crescimento RWA 12m</p>
+            <p class="data-number">+1.134%</p>
+            <p>Crescimento em 12 meses até jan/2026. Fonte: RWA Monitor.</p>
+          </div>
+          <div class="data-block">
+            <p class="data-label">Volume negociado</p>
+            <p class="data-number">R$ 6bi</p>
+            <p>Total negociado em tokens RWA no Brasil até início de 2026.</p>
+          </div>
+          <div class="data-block">
+            <p class="data-label">Projeção BC 2026</p>
+            <p class="data-number">R$ 7tri</p>
+            <p>Potencial de mercado com suporte do Banco Central do Brasil.</p>
+          </div>
+        </div>
+
+        <h2>O que é tokenização de ativos reais (RWA)</h2>
+        <p>
+          Tokenização é a representação digital de um ativo do mundo real em uma blockchain. Um imóvel, uma carteira de crédito, um precatório, uma cota de fundo — qualquer ativo com fluxo de caixa verificável pode ser fragmentado em tokens e distribuído digitalmente para investidores.
+        </p>
+        <p>
+          O token não é o ativo. <strong>O token representa uma fração do ativo</strong>, com todos os direitos econômicos (rendimentos, amortizações, valorização) registrados em smart contract e auditáveis em tempo real na blockchain.
+        </p>
+        <p>
+          A diferença prática para o investidor: em vez de comprar uma cota de FIDC com ticket mínimo de R$ 500 mil via mesa de operações, ele acessa o mesmo ativo por R$ 10 mil, direto no celular, com liquidação em D+0 e transparência total do lastro.
+        </p>
+
+        <h2>A CVM 88: o marco que viabilizou o mercado</h2>
+        <p>
+          A Resolução CVM 88 foi criada originalmente para regular o crowdfunding de investimento — plataformas digitais que captam recursos do público para empresas. Com a evolução do mercado, ela se tornou o principal arcabouço legal para emissões tokenizadas de valores mobiliários no Brasil.
+        </p>
+        <p>
+          <strong>O que a CVM 88 permite:</strong>
+        </p>
+        <ul>
+          <li>Oferta pública de valores mobiliários por plataformas eletrônicas credenciadas</li>
+          <li>Modelos baseados em blockchain e smart contracts para registro e liquidação</li>
+          <li>Ticket mínimo a partir de R$ 10 mil para investidores de varejo</li>
+          <li>Captação em até R$ 40 milhões por emissor por período de 12 meses</li>
+          <li>Processamento mais rápido e barato que as emissões tradicionais</li>
+        </ul>
+
+        <div class="data-block">
+          <p class="data-label">Atualização regulatória</p>
+          <p style="font-size:15px;color:var(--cream);font-weight:600;margin-bottom:8px;">CVM lançou Consulta Pública SDM 05/2025</p>
+          <p>Em setembro de 2025, a CVM abriu consulta pública propondo atualização da norma para refletir o amadurecimento do mercado — com volumes bilionários e participação crescente de securitizadoras e cooperativas. A tokenização passou de nicho experimental a prioridade da agenda regulatória de 2026.</p>
+        </div>
+
+        <h2>Como uma operação funciona na prática</h2>
+
+        <div style="background:var(--navy-card);border:1px solid rgba(201,168,76,0.1);border-radius:12px;padding:28px;margin:32px 0;">
+          <div class="flow-step">
+            <div class="flow-number">01</div>
+            <div class="flow-text">
+              <h4>Identificação e estruturação do ativo</h4>
+              <p>A boutique de estruturação (V3 Partners) mapeia os recebíveis elegíveis, faz o due diligence do fluxo de caixa e define a estrutura da operação — prazo, rendimento, subordinação, garantias.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">02</div>
+            <div class="flow-text">
+              <h4>Registro e tokenização</h4>
+              <p>A securitizadora emite o instrumento (CRI, CRA, nota comercial, CCB) e a plataforma tecnológica (Bloxs, DEXCAP ou equivalente) converte o título em tokens ERC-3643 na blockchain. Cada token representa uma fração do instrumento original.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">03</div>
+            <div class="flow-text">
+              <h4>KYC/AML e credenciamento do investidor</h4>
+              <p>O investidor passa por verificação de identidade (KYC) e checagem de compliance (AML) direto na plataforma. O smart contract só permite transferência de tokens para carteiras credenciadas.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">04</div>
+            <div class="flow-text">
+              <h4>Oferta e subscrição</h4>
+              <p>Os tokens são ofertados na plataforma credenciada pela CVM. O investidor subscreve, paga via PIX ou transferência e recebe os tokens na carteira digital. Liquidação em D+0.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">05</div>
+            <div class="flow-text">
+              <h4>Rendimentos e mercado secundário</h4>
+              <p>Os rendimentos (juros, amortizações) são distribuídos automaticamente via smart contract pro-rata aos detentores dos tokens. Mercado secundário permite liquidez antes do vencimento.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Quais ativos já são tokenizados no Brasil</h2>
+        <ul>
+          <li><strong>CCB (Cédula de Crédito Bancário)</strong> — crédito direto ao tomador</li>
+          <li><strong>CPR (Cédula de Produto Rural)</strong> — agronegócio</li>
+          <li><strong>Debêntures tokenizadas</strong> — dívida corporativa</li>
+          <li><strong>Duplicatas e recebíveis de cartão</strong> — capital de giro</li>
+          <li><strong>Notas comerciais</strong> — instrumento de curto prazo</li>
+          <li><strong>Recebíveis imobiliários</strong> — aluguéis, contratos</li>
+          <li><strong>Cotas de fundos</strong> — FIIs e FIDCs tokenizados</li>
+        </ul>
+
+        <h2>O que a V3 faz nesse ecossistema</h2>
+        <p>
+          A V3 Partners atua na camada de originação e estruturação — o trabalho intelectual e regulatório que transforma um ativo bruto em instrumento elegível para tokenização. Nossa infraestrutura de distribuição digital é provida em white label pela <strong>Bloxs S.A.</strong>, plataforma regulada com sistema de KYC, liquidação OTC/cripto 24/7 e custódia blockchain.
+        </p>
+        <p>
+          O que isso significa para o originador: go-live em D+40 a D+55 após assinatura. Sem construir infraestrutura própria, sem compliance do zero, sem custo de TI.
+        </p>
+
+        <div class="cta-block">
+          <p class="label" style="margin-bottom:12px;">Tokenização V3 + Bloxs</p>
+          <h3>Tem um ativo que faz sentido tokenizar?</h3>
+          <p>Fazemos o diagnóstico de elegibilidade — estrutura do ativo, volume, prazo, perfil de investidor — sem compromisso. Em 48h você sabe se faz sentido avançar.</p>
+          <a href="https://w.app/g7y2nq" class="btn btn-primary" target="_blank" rel="noopener">Falar com a equipe</a>
+        </div>
+
+        <div class="source-block">
+          <h3>Fontes e referências</h3>
+          <ul>
+            <li><a href="https://br.beincrypto.com/tokenizacao-de-ativos-no-brasil-cresce-1-134-em-um-ano-e-supera-r-15-bilhao/" target="_blank" rel="noopener">BeInCrypto — Tokenização no Brasil cresce 1.134% e supera R$ 1,5 bi (RWA Monitor)</a></li>
+            <li><a href="https://br.tradingview.com/news/cointelegraph:eb57b8e1abc81:0/" target="_blank" rel="noopener">TradingView/Cointelegraph — Tokens RWA crescem 2.249% em um ano, R$ 6 bi negociados</a></li>
+            <li><a href="https://br.tradingview.com/news/cointelegraph:de2f22d2abc81:0/" target="_blank" rel="noopener">TradingView/Cointelegraph — Mercado RWA projeta R$ 7 trilhões em 2026 com apoio do Banco Central</a></li>
+            <li><a href="https://www.oliveiratrust.com.br/blog/resolucao-cvm-88-como-e-hoje-e-o-que-pode-mudar-com-a-atualizacao-da-norma/" target="_blank" rel="noopener">Oliveira Trust — Resolução CVM 88: como é hoje e o que pode mudar</a></li>
+            <li><a href="https://conteudos.bloxs.com.br/tokenizacao-cvm-88-reducao-friccao-captacoes/" target="_blank" rel="noopener">Bloxs — Tokenização e CVM 88: redução de fricção nas captações</a></li>
+            <li><a href="https://timesbrasil.com.br/cripto-brasil/tokenizacao-de-ativos-deve-ganhar-escala-em-2026-e-ampliar-alternativas-ao-mercado-tradicional/" target="_blank" rel="noopener">Times Brasil — Tokenização de ativos deve ganhar escala em 2026</a></li>
+          </ul>
+        </div>
+
+        <div class="disclaimer">
+          <p><strong>Aviso legal:</strong> Este artigo tem caráter exclusivamente informativo e educacional. Não constitui oferta, solicitação ou recomendação de investimento. Investimentos em tokens e ativos digitais envolvem riscos específicos, incluindo risco de liquidez, tecnológico e regulatório. Consulte um profissional habilitado antes de tomar decisões de investimento.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--navy-deep);border-top:1px solid rgba(201,168,76,0.1);padding:40px 0;">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <img src="../assets/images/v3-logo-3d-alpha.png" alt="V3 Partners" style="height:36px;"/>
+      <p style="font-size:12px;color:var(--muted);">© 2026 V3 Partners Soluções Ltda · CNPJ 14.219.287/0001-50</p>
+      <a href="index.html" style="font-size:12px;color:var(--gold);text-decoration:none;">← Voltar ao blog</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -194,13 +194,39 @@
 
       <!-- Links — visíveis apenas desktop (1024px+) -->
       <ul class="navbar-links" id="navLinks">
-        <li><a href="#estruturacao">Estruturação</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#verticais">Verticais</a></li>
-        <li><a href="#governanca">Governança</a></li>
-        <li><a href="#diretoria">Diretoria</a></li>
+
+        <!-- Soluções -->
+        <li class="nav-dropdown">
+          <a href="#estruturacao">Soluções</a>
+          <div class="dropdown-menu">
+            <span class="dd-label">Estruturação</span>
+            <a href="#estruturacao">Crédito &amp; Portfólio</a>
+            <a href="#tokenizacao">Tokenização de Ativos</a>
+            <hr/>
+            <span class="dd-label">Internacional</span>
+            <a href="#exporte-se">Exporte-se</a>
+            <a href="#wealth">Wealth Management</a>
+          </div>
+        </li>
+
+        <!-- Empresa -->
+        <li class="nav-dropdown">
+          <a href="#sobre">Empresa</a>
+          <div class="dropdown-menu">
+            <a href="#sobre">Sobre a V3</a>
+            <a href="#verticais">Verticais de Atuação</a>
+            <a href="#diretoria">Diretoria</a>
+            <a href="#governanca">Governança</a>
+          </div>
+        </li>
+
+        <!-- Blog -->
+        <li><a href="blog/index.html">Blog</a></li>
+
+        <!-- Contato -->
         <li><a href="#contato">Contato</a></li>
-        <!-- Item mobile extra -->
+
+        <!-- Mobile extra -->
         <li style="display: none;" class="mobile-only-nav">
           <a href="https://v3-partner.vercel.app/dashboard" style="color: var(--gold);">Área do Partner</a>
         </li>
@@ -715,7 +741,414 @@
 
 
   <!-- ══════════════════════════════════════
-       DOBRA 4 — GLOBAL REACH
+       DOBRA 3.6 — TOKENIZAÇÃO
+  ══════════════════════════════════════ -->
+  <section class="section" id="tokenizacao" style="background: var(--navy-deep);">
+    <div class="container">
+
+      <div class="fade-in" style="max-width: 640px; margin-bottom: 56px;">
+        <span class="label">Tokenização de Ativos Reais</span>
+        <h2 class="mt-16">Seu Ativo.<br/>Token.<br/>Liquidez Global.</h2>
+        <p class="mt-16">
+          Securitização digital lastreada em ativo real. A V3 origina, estrutura e distribui.
+          A Bloxs tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição
+          para investidores globais — sobre o mesmo ativo que a V3 já origina.
+        </p>
+        <div style="margin-top: 24px; display: inline-flex; align-items: center; gap: 10px;
+          background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25);
+          border-radius: 6px; padding: 8px 16px;">
+          <span style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.18em; color: var(--gold);">Powered by Bloxs</span>
+          <span style="width: 1px; height: 14px; background: rgba(201,168,76,0.3);"></span>
+          <span style="font-size: 11px; color: var(--muted);">Infraestrutura regulada — CVM 88</span>
+        </div>
+      </div>
+
+      <!-- Como funciona — 4 passos -->
+      <div class="fade-in" style="margin-bottom: 56px;">
+        <p class="label" style="margin-bottom: 24px;">Como funciona</p>
+        <div style="display: grid; grid-template-columns: repeat(4,1fr); gap: 0;">
+
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
+            border-radius: 12px 0 0 12px; padding: 28px 24px;">
+            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
+              line-height: 1; margin-bottom: 14px;">01</p>
+            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">V3 Partners</p>
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Originação</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+              Partner ou V3 identifica o ativo — imóvel, recebível, commodity.
+              Qualificação pela Regra dos 5 SIMs.
+            </p>
+          </div>
+
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
+            border-left: none; padding: 28px 24px;">
+            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
+              line-height: 1; margin-bottom: 14px;">02</p>
+            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">V3 Partners</p>
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Estruturação</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+              SPE constituída, due diligence completa, laudos e estrutura jurídica.
+              Ativo preparado para tokenização.
+            </p>
+          </div>
+
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
+            border-left: none; padding: 28px 24px;">
+            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
+              line-height: 1; margin-bottom: 14px;">03</p>
+            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">Bloxs</p>
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Tokenização</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+              Bloxs emite os tokens, realiza KYC dos investidores e configura
+              os smart contracts de distribuição de proventos.
+            </p>
+          </div>
+
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
+            border-left: none; border-radius: 0 12px 12px 0; padding: 28px 24px;">
+            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
+              line-height: 1; margin-bottom: 14px;">04</p>
+            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">Investidor</p>
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Acesso Global</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+              Investidores globais compram frações do ativo. Liquidação OTC 24/7
+              em Real ou USD. Proventos automáticos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ativos elegíveis — 4 cards -->
+      <div class="fade-in" style="margin-bottom: 56px;">
+        <p class="label" style="margin-bottom: 24px;">Ativos elegíveis hoje</p>
+        <div class="card-grid card-grid-4">
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Real Estate</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
+              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Imóveis Urbanos e Rurais</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
+              Imóveis de alto padrão, galpões e fazendas. SPE + Sale Leaseback.
+              Um imóvel de R$10M dividido em cotas de R$10K cada.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Crédito &amp; Recebíveis</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
+              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Recebíveis Judiciais</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
+              Precatórios e recebíveis com força jurídica. FIDC fracionado em tokens
+              com liquidez contínua e distribuição global.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Mineração &amp; Commodities</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
+              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Ouro e Lítio</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
+              Tokenização de estoques custodiados. Acesso fracionado a commodities
+              estratégicas para investidores cross-border.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">M&amp;A Cross-Border</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
+              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Participações Societárias</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
+              Token de equity em SPE para operações M&A. Distribuição para fundos
+              asiáticos e americanos em D+0.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="fade-in" style="
+        background: var(--navy-card);
+        border: 1px solid rgba(201,168,76,0.2);
+        border-radius: 16px;
+        padding: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 32px;
+        flex-wrap: wrap;">
+        <div>
+          <p class="label" style="margin-bottom: 10px;">Tokenize seu ativo</p>
+          <h3 style="font-size: 22px; font-weight: 700; color: var(--cream);
+            margin-bottom: 10px; line-height: 1.3;">
+            Ativo real. Liquidez global.<br/>Sem abrir mão da segurança patrimonial.
+          </h3>
+          <p style="font-size: 14px; color: var(--muted); max-width: 500px; line-height: 1.7;">
+            A V3 origina, estrutura e distribui. Todo o processo regulado via Bloxs,
+            plataforma autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.
+          </p>
+        </div>
+        <a href="https://w.app/g7y2nq"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary btn-lg"
+          style="white-space: nowrap; flex-shrink: 0;">
+          MARQUE UMA DEMONSTRAÇÃO
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 4 — EXPORTE-SE
+  ══════════════════════════════════════ -->
+  <section class="section" id="exporte-se" style="background: var(--navy-base);">
+    <div class="container">
+
+      <div class="fade-in" style="max-width: 680px; margin-bottom: 56px;">
+        <span class="label">Exporte-se · Internacionalização Patrimonial</span>
+        <h2 class="mt-16">Seu patrimônio.<br/>Em dólar.<br/>Com estrutura.</h2>
+        <p class="mt-16">
+          Plataforma completa de internacionalização para empresários e investidores brasileiros.
+          LLC americana, imóveis na Flórida, dolarização patrimonial, sucessão simplificada
+          e renda passiva turnkey — tudo estruturado pela V3 com execução local nos EUA.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="fade-in" style="display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 56px;">
+        <div class="card" style="text-align: center; padding: 28px 16px;">
+          <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">15–20<span style="font-size: 16px; color: var(--gold);">%</span></p>
+          <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Retorno estimado a.a.<br/>em dólar</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 28px 16px;">
+          <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">24<span style="font-size: 16px; color: var(--gold);">m</span></p>
+          <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Prazo de execução<br/>Coconut Grove 101</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 28px 16px;">
+          <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">R$<span style="font-size: 20px; color: var(--gold);">10K</span></p>
+          <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Ticket mínimo<br/>via lâminas tokenizadas</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 28px 16px;">
+          <p style="font-size: 28px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">US$<span style="font-size: 18px; color: var(--gold);">5M</span></p>
+          <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Capital total<br/>Projeto piloto</p>
+        </div>
+      </div>
+
+      <!-- 6 Pilares -->
+      <div class="fade-in" style="margin-bottom: 56px;">
+        <p class="label" style="margin-bottom: 24px;">6 Pilares da Plataforma</p>
+        <div class="card-grid card-grid-3">
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Pilar 01</span>
+            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Estrutura Empresarial nos EUA</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">LLC americana, contas bancárias e documentação completa. Base jurídica para operar globalmente com segurança.</p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Pilar 02</span>
+            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Planejamento Tributário e Sucessório</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Holdings, trusts e otimização fiscal. ITCMD substituído por estrutura americana eficiente e previsível.</p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Pilar 03</span>
+            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Investimento Imobiliário</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Acesso a projetos curados pela V3 na Flórida: unifamiliares, multifamiliares e vacation homes.</p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Pilar 04</span>
+            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Dolarização Patrimonial</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Conversão de capital para dólar com eficiência tributária. Remessa e registros legais completos.</p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Pilar 05</span>
+            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Renda Passiva Turnkey</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Aquisição, reforma, locação e desinvestimento gerenciados. Rendimento em dólar sem operar o ativo.</p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Pilar 06</span>
+            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Suporte Especializado Local</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Rede de jurídico, contabilidade e banco nos EUA. Presença local para representar e proteger o investidor.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projeto Piloto -->
+      <div class="fade-in" style="
+        background: var(--navy-deep);
+        border: 1px solid rgba(201,168,76,0.25);
+        border-radius: 16px;
+        padding: 48px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+        margin-bottom: 32px;">
+        <div>
+          <span class="label" style="margin-bottom: 12px; display: block;">Projeto Piloto · 2026</span>
+          <h3 style="font-size: 28px; font-weight: 800; color: var(--cream); line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em;">Coconut Grove 101<br/><span style="color: var(--gold);">Miami, Flórida — EUA</span></h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px;">
+            Build-to-Suit em um dos bairros mais valorizados de Miami. Estudo de viabilidade concluído.
+            Captação Fase 1 de R$9,99M via crowdfunding tokenizado + financiamento americano.
+            Estratégia de saída estruturada em 24 meses.
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://wa.me/5511987654321" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Solicitar Lâmina de Investimento
+            </a>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: var(--muted);">Captação Fase 1</span>
+            <span style="font-size: 15px; font-weight: 700; color: var(--cream);">R$ 9.990.000</span>
+          </div>
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: var(--muted);">Retorno estimado</span>
+            <span style="font-size: 15px; font-weight: 700; color: var(--gold);">15% – 20% a.a. em dólar</span>
+          </div>
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: var(--muted);">Prazo de execução</span>
+            <span style="font-size: 15px; font-weight: 700; color: var(--cream);">24 meses</span>
+          </div>
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 12px; color: var(--muted);">Ticket mínimo</span>
+            <span style="font-size: 15px; font-weight: 700; color: var(--cream);">R$ 10.000</span>
+          </div>
+          <p style="font-size: 10px; color: rgba(122,143,168,0.6); line-height: 1.5; margin-top: 4px;">
+            Projeções baseadas em estudo de viabilidade concluído. Retornos não garantem resultados futuros.
+            Investimento sujeito a riscos de mercado, câmbio e execução.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ecossistema -->
+      <div class="fade-in" style="display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;">
+        <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 12px; padding: 24px;">
+          <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 10px;">V3 Partners</p>
+          <h4 style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Inteligência que Estrutura</h4>
+          <p style="font-size: 12px; color: var(--muted); line-height: 1.6;">Originação, estruturação e distribuição. O elo entre o capital brasileiro e o mercado americano.</p>
+        </div>
+        <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 12px; padding: 24px;">
+          <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 10px;">Nova Corporate Group</p>
+          <h4 style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Execução Local nos EUA</h4>
+          <p style="font-size: 12px; color: var(--muted); line-height: 1.6;">Liderado por Eduardo Abreu. 30+ anos de maestria em engenharia e design em Miami.</p>
+        </div>
+        <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 12px; padding: 24px;">
+          <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 10px;">DEXCAP</p>
+          <h4 style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Auditoria Blockchain</h4>
+          <p style="font-size: 12px; color: var(--muted); line-height: 1.6;">Smart contracts ERC-3643, KYC/AML e compliance. Cada transação imutável e auditável em tempo real.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 4.5 — WEALTH MANAGEMENT
+  ══════════════════════════════════════ -->
+  <section class="section" id="wealth" style="background: var(--navy-deep);">
+    <div class="container">
+
+      <div class="fade-in" style="max-width: 640px; margin-bottom: 56px;">
+        <span class="label">Wealth Management</span>
+        <h2 class="mt-16">Proteção, rentabilidade<br/>e liberdade patrimonial.</h2>
+        <p class="mt-16">
+          A V3 Partners oferece duas soluções complementares de wealth management para quem busca
+          blindar e rentabilizar patrimônio com estrutura institucional — em dólar, com segurança jurídica real.
+        </p>
+      </div>
+
+      <div class="fade-in card-grid card-grid-2" style="margin-bottom: 48px;">
+
+        <!-- IUL -->
+        <div class="card" style="border-color: rgba(201,168,76,0.25); padding: 40px;">
+          <span class="label" style="font-size: 8px; margin-bottom: 16px; display: block;">Proteção &amp; Crescimento</span>
+          <h3 style="font-size: 22px; font-weight: 800; color: var(--cream); margin-bottom: 16px; line-height: 1.2;">IUL — Indexed Universal Life</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px;">
+            Seguro de vida americano vinculado ao S&amp;P 500. Crescimento patrimonial com
+            <strong style="color: var(--cream);">0% de perda garantida</strong> —
+            o investidor participa da alta do mercado sem exposição às quedas.
+            Estrutura ideal para planejamento sucessório e preservação de longo prazo.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
+              <p style="font-size: 13px; color: var(--muted);">Crescimento vinculado ao S&amp;P 500 com floor de 0%</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
+              <p style="font-size: 13px; color: var(--muted);">Proteção familiar + acumulação + sucessão em uma estrutura</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
+              <p style="font-size: 13px; color: var(--muted);">Produto americano. Capital protegido fora do Brasil.</p>
+            </div>
+          </div>
+          <a href="https://wa.me/5511987654321" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+            MARQUE UMA DEMONSTRAÇÃO
+          </a>
+        </div>
+
+        <!-- Exporte-se -->
+        <div class="card" style="border-color: rgba(201,168,76,0.25); padding: 40px;">
+          <span class="label" style="font-size: 8px; margin-bottom: 16px; display: block;">Internacionalização &amp; Rentabilidade</span>
+          <h3 style="font-size: 22px; font-weight: 800; color: var(--cream); margin-bottom: 16px; line-height: 1.2;">Exporte-se — Patrimônio nos EUA</h3>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px;">
+            Plataforma completa para quem quer internacionalizar capital com estrutura.
+            LLC americana, imóveis na Flórida, dolarização e renda passiva —
+            com retorno estimado de <strong style="color: var(--cream);">15% a 20% a.a. em dólar</strong>.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
+              <p style="font-size: 13px; color: var(--muted);">Projeto piloto: Coconut Grove 101 — Miami, FL</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
+              <p style="font-size: 13px; color: var(--muted);">Captação tokenizada via Bloxs — CVM 88 — a partir de R$10K</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
+              <p style="font-size: 13px; color: var(--muted);">LLC + Sucessão + Dolarização patrimonial integrados</p>
+            </div>
+          </div>
+          <a href="#exporte-se" class="btn btn-secondary" style="width: 100%; justify-content: center; text-align: center;">
+            Ver Detalhes do Projeto
+          </a>
+        </div>
+
+      </div>
+
+      <div class="fade-in" style="text-align: center;">
+        <p style="font-size: 14px; color: var(--muted); margin-bottom: 24px;">
+          Não sabe qual estrutura faz mais sentido para o seu perfil?
+        </p>
+        <a href="https://wa.me/5511987654321" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          MARQUE UMA DEMONSTRAÇÃO
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 5 — GLOBAL REACH
   ══════════════════════════════════════ -->
   <section class="section global-bg" id="global" style="background-color: var(--navy-deep);">
     <div class="container">
@@ -969,12 +1402,16 @@
             <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Crédito & Recebíveis</a></li>
             <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Mineração & Commodities</a></li>
             <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">M&A Cross-Border</a></li>
+            <li><a href="#tokenizacao" style="color: var(--muted); text-decoration: none; font-size: 13px;">Tokenização de Ativos</a></li>
+            <li><a href="#exporte-se" style="color: var(--muted); text-decoration: none; font-size: 13px;">Exporte-se</a></li>
+            <li><a href="#wealth" style="color: var(--muted); text-decoration: none; font-size: 13px;">Wealth Management</a></li>
           </ul>
         </div>
 
         <div>
           <p class="label" style="margin-bottom: 16px;">Plataforma</p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+            <li><a href="blog/index.html" style="color: var(--muted); text-decoration: none; font-size: 13px;">Blog</a></li>
             <li><a href="relatorios.html" style="color: var(--muted); text-decoration: none; font-size: 13px;">Relatórios</a></li>
             <li><a href="partners.html" style="color: var(--muted); text-decoration: none; font-size: 13px;">Planos Partners</a></li>
             <li><a href="https://v3-partner.vercel.app/dashboard" style="color: var(--muted); text-decoration: none; font-size: 13px;">Área do Partner</a></li>
