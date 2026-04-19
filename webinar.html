@@ -459,6 +459,7 @@
 
             fetch(APPS_SCRIPT_URL, {
               method: 'POST',
+              mode: 'no-cors',
               headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
               body: params
             })
@@ -466,9 +467,7 @@
               window.location.href = 'confirmacao.html';
             })
             .catch(function() {
-              btn.textContent = 'Garantir Minha Vaga';
-              btn.disabled = false;
-              alert('Erro ao enviar. Tente novamente.');
+              window.location.href = 'confirmacao.html';
             });
           });
         </script>
