@@ -457,16 +457,11 @@
             var formData = new FormData(this);
             var params   = new URLSearchParams(formData).toString();
 
-            fetch(APPS_SCRIPT_URL + '?' + params, {
-              method: 'GET',
-              mode: 'no-cors'
-            })
-            .then(function() {
+            var img = new Image();
+            img.src = APPS_SCRIPT_URL + '?' + params;
+            setTimeout(function() {
               window.location.href = 'confirmacao.html';
-            })
-            .catch(function() {
-              window.location.href = 'confirmacao.html';
-            });
+            }, 1200);
           });
         </script>
       </div>
