@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webinar V3 Partners — Como Originar Operações de R$500K a R$30M</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:  #09081A;
+    --navy2: #111F35;
+    --navy3: #162744;
+    --navy4: #243A66;
+    --gold:  #C9A84C;
+    --gold2: #E8C97A;
+    --cream: #F0ECE4;
+    --muted: #7A8FA8;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+
+  /* ─── URGENCY BAR ─── */
+  .urgency-bar {
+    background: var(--navy3);
+    border-bottom: 1px solid rgba(201,168,76,0.4);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold2);
+  }
+  .urgency-bar span { color: var(--cream); font-weight: 400; }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: rgba(9,8,26,0.96);
+    border-bottom: 1px solid var(--navy3);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+  }
+  .logo-img { height: 32px; width: auto; }
+
+  /* ─── HERO WRAPPER ───
+     Form e copy ficam DENTRO do mesmo elemento.
+     Mobile: coluna (copy → form).
+     Desktop: linha (copy esq | form dir).
+  ─────────────────────── */
+  .hero-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('assets/funnel/bg-hero.png') center 30% / cover no-repeat;
+    filter: brightness(0.45);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(9,8,26,0.15) 0%, rgba(9,8,26,0.88) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* container que organiza copy + form */
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;   /* mobile: empilhado */
+    width: 100%;
+  }
+
+  /* ── COPY (esquerda no desktop) ── */
+  .hero-copy {
+    padding: 48px 20px 32px;
+  }
+
+  .badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    margin-bottom: 20px;
+  }
+  .headline {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+  .headline em { font-style: normal; color: var(--gold); }
+
+  .subheadline {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+  .subheadline strong { color: var(--cream); }
+
+  .event-meta {
+    background: rgba(17,31,53,0.75);
+    border: 1px solid var(--navy4);
+    padding: 18px 20px;
+    backdrop-filter: blur(4px);
+  }
+  .event-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--navy4);
+  }
+  .event-row:last-child { border-bottom: none; }
+  .event-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .event-value { font-size: 13px; font-weight: 700; color: var(--cream); text-align: right; }
+  .event-value.gold { color: var(--gold); }
+
+  /* ── FORM (baixo no mobile, direita no desktop) ── */
+  .hero-form {
+    padding: 0 20px 48px;
+  }
+  .form-card {
+    background: var(--navy2);
+    border: 1px solid var(--navy4);
+    padding: 28px 20px;
+  }
+  .form-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .form-title { font-size: 19px; font-weight: 700; color: var(--cream); margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--navy3); }
+
+  .vagas-bar {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--navy); border: 1px solid var(--navy3);
+    padding: 10px 14px; margin-bottom: 18px;
+  }
+  .vagas-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .vagas-text { font-size: 12px; font-weight: 600; color: var(--gold2); }
+  .vagas-text span { color: var(--muted); font-weight: 400; }
+
+  .form-group { margin-bottom: 12px; }
+  .form-group label {
+    display: block; font-size: 11px; font-weight: 600;
+    color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    background: var(--navy);
+    border: 1px solid var(--navy4);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;   /* 16px = sem zoom no iOS */
+    padding: 14px 16px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus { border-color: var(--gold); }
+  .form-group input::placeholder { color: var(--navy4); }
+
+  .btn-primary {
+    width: 100%; background: var(--gold); color: var(--navy);
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase; border: none;
+    height: 56px; cursor: pointer; transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; border-radius: 0; margin-top: 6px;
+  }
+  .btn-primary:hover, .btn-primary:active { background: var(--gold2); }
+  .form-disclaimer { font-size: 11px; color: var(--muted); text-align: center; margin-top: 12px; line-height: 1.5; }
+
+  /* ─── DIVIDER ─── */
+  .sep { height: 1px; background: var(--navy3); }
+
+  /* ─── BULLETS ─── */
+  .bullets-section { padding: 56px 20px; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .section-title { font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 28px; line-height: 1.2; }
+
+  .bullet-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--navy3); }
+  .bullet-item:last-child { border-bottom: none; }
+  .bullet-marker { width: 5px; height: 5px; background: var(--gold); flex-shrink: 0; margin-top: 9px; }
+  .bullet-text { font-size: 14px; color: var(--cream); line-height: 1.5; font-weight: 500; }
+  .bullet-text span { display: block; font-size: 12px; color: var(--muted); font-weight: 400; margin-top: 3px; }
+
+  /* ─── SPEAKERS ─── */
+  .speakers-section {
+    background: var(--navy2);
+    border-top: 1px solid var(--navy3);
+    border-bottom: 1px solid var(--navy3);
+    padding: 48px 20px;
+  }
+
+  /* cada card = linha com foto + texto */
+  .speaker-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--navy3);
+  }
+  .speaker-card:last-child { border-bottom: none; }
+
+  .speaker-photo-wrap {
+    width: 76px;       /* largura fixa */
+    flex-shrink: 0;    /* nao encolhe */
+    overflow: hidden;  /* garante que nao vaza */
+  }
+  .speaker-photo-wrap img {
+    width: 76px;
+    height: 92px;
+    object-fit: cover;
+    object-position: top center;
+    border: 2px solid var(--gold);
+    display: block;
+  }
+
+  .speaker-info { flex: 1; min-width: 0; }  /* min-width: 0 evita overflow do flex item */
+  .speaker-role-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .speaker-name { font-size: 16px; font-weight: 700; color: var(--cream); margin-bottom: 2px; }
+  .speaker-role { font-size: 12px; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
+  .speaker-bio { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+  /* ─── PROOF ─── */
+  .proof-section { padding: 56px 20px; }
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 28px;
+  }
+  .proof-item { background: var(--navy2); border: 1px solid var(--navy3); padding: 24px 10px; text-align: center; }
+  .proof-number { font-size: 28px; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .proof-desc { font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.3; }
+
+  /* ─── SECOND CTA ─── */
+  .cta2-section {
+    position: relative;
+    padding: 64px 20px;
+    overflow: hidden;
+    background: url('assets/funnel/bg-realestate.png') center center / cover no-repeat;
+  }
+  .cta2-section::before { content: ''; position: absolute; inset: 0; background: rgba(9,8,26,0.75); z-index: 0; }
+  .cta2-inner { position: relative; z-index: 1; text-align: center; }
+  .cta2-inner h2 { font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 10px; }
+  .cta2-inner p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+  .cta2-inner .btn-primary { max-width: 340px; margin: 0 auto; }
+
+  /* ─── FOOTER ─── */
+  .footer { background: var(--navy); border-top: 1px solid var(--navy3); padding: 32px 20px; text-align: center; }
+  .footer p { font-size: 11px; color: var(--muted); line-height: 1.8; }
+  .footer strong { color: var(--gold); }
+
+  /* ═══════════════════════════════════
+     TABLET — 768px+
+  ═══════════════════════════════════ */
+  @media (min-width: 768px) {
+    .headline { font-size: 40px; }
+    .hero-copy { padding: 64px 40px 32px; max-width: 640px; margin: 0 auto; }
+    .hero-form { padding: 0 40px 56px; max-width: 640px; margin: 0 auto; }
+    .bullets-section { padding: 72px 40px; max-width: 680px; margin: 0 auto; }
+    .speakers-section { padding: 64px 40px; }
+    .speakers-section > * { max-width: 680px; margin-left: auto; margin-right: auto; }
+    .proof-section { padding: 72px 40px; max-width: 680px; margin: 0 auto; }
+    .proof-number { font-size: 38px; }
+  }
+
+  /* ═══════════════════════════════════
+     DESKTOP — 1024px+
+     hero-container vira linha: copy | form
+  ═══════════════════════════════════ */
+  @media (min-width: 1024px) {
+    .hero-wrapper { min-height: 88vh; display: flex; flex-direction: column; }
+    .hero-overlay { background: linear-gradient(135deg, rgba(9,8,26,0.5) 0%, rgba(9,8,26,0.1) 55%, rgba(9,8,26,0.45) 100%); }
+
+    .hero-container {
+      flex: 1;
+      flex-direction: row;   /* lado a lado */
+      align-items: stretch;
+      min-height: 88vh;
+    }
+
+    .hero-copy {
+      flex: 1;
+      padding: 80px 60px;
+      max-width: none;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-form {
+      width: 420px;
+      flex-shrink: 0;
+      padding: 0;
+      max-width: none;
+      margin: 0;
+    }
+    .form-card {
+      height: 100%;
+      background: rgba(17,31,53,0.97);
+      border: none;
+      border-left: 1px solid var(--navy4);
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .headline { font-size: 52px; }
+
+    .bullets-section { padding: 100px 60px; max-width: 960px; }
+    .speakers-section { padding: 80px 60px; }
+    .speakers-section > * { max-width: 960px; }
+
+    /* speakers lado a lado no desktop */
+    .speakers-grid-desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .speaker-card { border-bottom: none; }
+
+    .proof-section { padding: 100px 60px; max-width: 960px; }
+    .proof-number { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- URGENCY -->
+<div class="urgency-bar">
+  Vagas limitadas — <span>inscricoes encerram segunda-feira, 20 de Abril</span>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <img src="assets/funnel/logo.png" alt="V3 Partners" class="logo-img">
+</header>
+
+<!-- HERO: copy + form dentro do mesmo wrapper -->
+<section class="hero-wrapper">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-container">
+
+    <!-- COPY -->
+    <div class="hero-copy">
+      <div class="badge">Webinar Gratuito</div>
+      <h1 class="headline">
+        Como Originar Operações de
+        <em>R$500K a R$30M</em>
+        no Mercado de Capitais
+      </h1>
+      <p class="subheadline">
+        Sem montar securitizadora. Sem equipe tecnica.<br>
+        <strong>Com o relacionamento que voce ja tem</strong> — e a estrutura da V3 do outro lado.
+      </p>
+      <div class="event-meta">
+        <div class="event-row">
+          <span class="event-label">Data</span>
+          <span class="event-value gold">Quarta, 22 de Abril de 2026</span>
+        </div>
+        <div class="event-row">
+          <span class="event-label">Horario</span>
+          <span class="event-value">20h00 — Horario de Brasilia</span>
+        </div>
+        <div class="event-row">
+          <span class="event-label">Formato</span>
+          <span class="event-value">Ao vivo, online — gratuito</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="hero-form" id="inscricao">
+      <div class="form-card">
+        <div class="form-label">Garanta sua vaga</div>
+        <div class="form-title">Inscricao Gratuita</div>
+        <div class="vagas-bar">
+          <div class="vagas-dot"></div>
+          <div class="vagas-text">Vagas abertas <span>— encerram segunda 20/04</span></div>
+        </div>
+        <form id="formInscricao">
+          <div class="form-group">
+            <label>Nome completo</label>
+            <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label>WhatsApp</label>
+            <input type="tel" name="whatsapp" placeholder="(21) 99999-9999" required autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label>Sua atuacao</label>
+            <select name="perfil" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Assessor de Investimentos (AAI)</option>
+              <option>Consultor Financeiro Independente</option>
+              <option>Corretor / Consultor Imobiliario</option>
+              <option>Advogado ou Contador com clientes PJ</option>
+              <option>Empresario ou Desenvolvedor</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary" id="btnSubmit">Garantir Minha Vaga</button>
+          <p class="form-disclaimer">Sem spam. Dados tratados com sigilo.</p>
+        </form>
+
+        <script>
+          var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwmUzhcjOT_JY0kceDsFo5BGvPMOcSIP-iHp6K-DWFQzGom2gPzNzuAafvYJhElauwL/exec';
+
+          document.getElementById('formInscricao').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var btn = document.getElementById('btnSubmit');
+            btn.textContent = 'Confirmando...';
+            btn.disabled = true;
+
+            var formData = new FormData(this);
+            var params   = new URLSearchParams(formData).toString();
+
+            fetch(APPS_SCRIPT_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: params
+            })
+            .then(function() {
+              window.location.href = 'confirmacao.html';
+            })
+            .catch(function() {
+              btn.textContent = 'Garantir Minha Vaga';
+              btn.disabled = false;
+              alert('Erro ao enviar. Tente novamente.');
+            });
+          });
+        </script>
+      </div>
+    </div>
+
+  </div><!-- /hero-container -->
+</section>
+
+<div class="sep"></div>
+
+<!-- BULLETS -->
+<section class="bullets-section">
+  <div class="section-label">Conteudo do Webinar</div>
+  <h2 class="section-title">O que voce vai descobrir em 90 minutos</h2>
+
+  <div class="bullet-item">
+    <div class="bullet-marker"></div>
+    <div class="bullet-text">As 4 verticais que sua corretora nunca vai te oferecer
+      <span>CRI, FIDC, SLB, M&A — comissionamentos de 20% a 50%</span></div>
+  </div>
+  <div class="bullet-item">
+    <div class="bullet-marker"></div>
+    <div class="bullet-text">O perfil exato do ativo que a mesa V3 aceita qualificar
+      <span>Economize meses tentando descobrir por conta propria</span></div>
+  </div>
+  <div class="bullet-item">
+    <div class="bullet-marker"></div>
+    <div class="bullet-text">Case real: do primeiro contato ao fechamento
+      <span>Passo a passo sem teoria — o que o partner fez e quanto recebeu</span></div>
+  </div>
+  <div class="bullet-item">
+    <div class="bullet-marker"></div>
+    <div class="bullet-text">A conversa que qualifica um ativo em 20 minutos
+      <span>Sem precisar entender de estruturacao tecnica</span></div>
+  </div>
+  <div class="bullet-item">
+    <div class="bullet-marker"></div>
+    <div class="bullet-text">Como funciona o licenciamento V3 nos primeiros 30 dias
+      <span>O que os partners fazem para originar a primeira operacao</span></div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- SPEAKERS -->
+<section class="speakers-section">
+  <div class="section-label">Apresentado por</div>
+  <h2 class="section-title">Os socios fundadores da V3 Partners</h2>
+
+  <!-- wrapper para grid no desktop -->
+  <div class="speakers-grid-desktop">
+
+    <div class="speaker-card">
+      <div class="speaker-photo-wrap">
+        <img src="assets/funnel/foto-joao.png" alt="Joao Lemos Netto">
+      </div>
+      <div class="speaker-info">
+        <div class="speaker-role-label">Head de Ativos</div>
+        <div class="speaker-name">Joao Lemos Netto</div>
+        <div class="speaker-role">Socio Fundador — V3 Partners</div>
+        <p class="speaker-bio">Especialista em originacao de ativos e estruturacao de negocios de alto ticket. Lidera o pipeline de R$4,4B nas 4 verticais do mercado de capitais.</p>
+      </div>
+    </div>
+
+    <div class="speaker-card">
+      <div class="speaker-photo-wrap">
+        <img src="assets/funnel/foto-hamilton.png" alt="Hamilton Santos">
+      </div>
+      <div class="speaker-info">
+        <div class="speaker-role-label">Financeiro e Cross-Border</div>
+        <div class="speaker-name">Hamilton Santos</div>
+        <div class="speaker-role">Socio Fundador — V3 Partners</div>
+        <p class="speaker-bio">Responsavel pela estrutura financeira e operacoes internacionais. Conecta ativos brasileiros com fundos asiáticos e americanos em M&A e captacao cross-border.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- PROOF -->
+<section class="proof-section">
+  <div class="section-label">V3 Partners em numeros</div>
+  <h2 class="section-title">A mesa que voce vai acessar</h2>
+  <div class="proof-grid">
+    <div class="proof-item">
+      <div class="proof-number">R$4,4B</div>
+      <div class="proof-desc">Pipeline mapeado</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-number">4</div>
+      <div class="proof-desc">Verticais ativas</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-number">50%</div>
+      <div class="proof-desc">Comissao maxima</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECOND CTA -->
+<section class="cta2-section">
+  <div class="cta2-inner">
+    <h2>Quarta, 22 de Abril — 20h00</h2>
+    <p>Vagas encerram segunda-feira. Inscricao gratuita.</p>
+    <a href="#inscricao" class="btn-primary">Garantir Minha Vaga</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>
+    <strong>V3 Partners Solucoes Ltda</strong> — CNPJ 14.219.287/0001-50<br>
+    Rua Visconde de Piraja, 414, Sala 718 — Ipanema, RJ<br>
+    deal@v3partners.com.br · v3partners.com.br
+  </p>
+</footer>
+
+</body>
+</html>

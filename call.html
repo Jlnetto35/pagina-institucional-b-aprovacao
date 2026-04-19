@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proximo Passo — V3 Partners</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:  #09081A;
+    --navy2: #111F35;
+    --navy3: #162744;
+    --navy4: #243A66;
+    --gold:  #C9A84C;
+    --gold2: #E8C97A;
+    --cream: #F0ECE4;
+    --muted: #7A8FA8;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+
+  /* ── HEADER ── */
+  .header {
+    background: rgba(9,8,26,0.96);
+    border-bottom: 1px solid var(--navy3);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+  }
+  .logo-img { height: 32px; }
+
+  /* ── PROGRESS ── */
+  .progress-bar {
+    background: var(--navy2);
+    border-bottom: 1px solid var(--navy3);
+    padding: 14px 20px;
+  }
+  .progress-inner {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  .progress-step { display: flex; align-items: center; gap: 8px; }
+  .progress-dot {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+  }
+  .done { background: var(--gold); color: var(--navy); }
+  .active { background: var(--navy); border: 2px solid var(--gold); color: var(--gold); }
+  .pending { background: var(--navy3); border: 2px solid var(--navy4); color: var(--muted); }
+  .progress-label { font-size: 11px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+  .progress-label.active-label { color: var(--cream); }
+  .progress-line { flex: 1; height: 1px; background: var(--navy4); margin: 0 8px; }
+  .progress-line.done-line { background: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    padding: 48px 20px 40px;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('assets/funnel/bg-poswebinar.png') center center / cover no-repeat;
+    filter: brightness(0.45); z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(9,8,26,0.2) 0%, rgba(9,8,26,0.88) 100%);
+    z-index: 1;
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 560px; margin: 0 auto; }
+
+  .badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; margin-bottom: 20px; }
+  .headline { font-size: 30px; font-weight: 800; line-height: 1.15; color: var(--cream); margin-bottom: 16px; }
+  .headline em { font-style: normal; color: var(--gold); }
+  .subheadline { font-size: 15px; color: var(--muted); line-height: 1.65; }
+  .subheadline strong { color: var(--cream); }
+
+  /* ── CTA CARD (mobile: logo abaixo do hero) ── */
+  .cta-section { padding: 0 20px 48px; max-width: 560px; margin: 0 auto; }
+  .cta-card {
+    background: var(--navy2);
+    border: 1px solid var(--navy4);
+    padding: 28px 20px;
+    margin-top: -8px;
+  }
+  .cta-card-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .cta-card-title { font-size: 18px; font-weight: 700; color: var(--cream); margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--navy3); }
+
+  .vagas-bar { display: flex; align-items: center; gap: 10px; background: var(--navy); border: 1px solid var(--navy3); padding: 10px 14px; margin-bottom: 20px; }
+  .vagas-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .vagas-text { font-size: 12px; font-weight: 600; color: var(--gold2); }
+  .vagas-text span { color: var(--muted); font-weight: 400; }
+
+  .checklist { list-style: none; margin-bottom: 24px; }
+  .checklist li { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--navy3); font-size: 14px; color: var(--cream); line-height: 1.5; }
+  .checklist li:last-child { border-bottom: none; }
+  .check { width: 18px; height: 18px; background: var(--gold); flex-shrink: 0; margin-top: 2px; position: relative; }
+  .check::after { content: ''; position: absolute; left: 3px; top: 5px; width: 9px; height: 5px; border-left: 2px solid var(--navy); border-bottom: 2px solid var(--navy); transform: rotate(-45deg); }
+
+  .btn-primary {
+    width: 100%; background: var(--gold); color: var(--navy);
+    font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase; border: none;
+    height: 56px; cursor: pointer; transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; border-radius: 0;
+  }
+  .btn-primary:hover, .btn-primary:active { background: var(--gold2); }
+  .btn-disclaimer { font-size: 11px; color: var(--muted); text-align: center; margin-top: 12px; line-height: 1.5; }
+
+  /* ── STEPS ── */
+  .steps-section { padding: 56px 20px; max-width: 560px; margin: 0 auto; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .section-title { font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 32px; line-height: 1.2; }
+
+  .step-item { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--navy3); }
+  .step-item:last-child { border-bottom: none; }
+  .step-num { font-size: 36px; font-weight: 800; color: var(--navy4); line-height: 1; flex-shrink: 0; width: 36px; }
+  .step-title { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+  .step-time { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-top: 8px; }
+
+  /* ── SPEAKERS MINI ── */
+  .speakers-mini { background: var(--navy2); border-top: 1px solid var(--navy3); border-bottom: 1px solid var(--navy3); padding: 48px 20px; }
+  .speakers-inner { max-width: 560px; margin: 0 auto; }
+  .speaker-mini { display: flex; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--navy3); }
+  .speaker-mini:last-child { border-bottom: none; }
+  .speaker-mini-photo { width: 64px; height: 76px; object-fit: cover; object-position: top; border: 1px solid var(--gold); flex-shrink: 0; }
+  .speaker-mini-name { font-size: 15px; font-weight: 700; color: var(--cream); }
+  .speaker-mini-role { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+
+  /* ── GARANTIA ── */
+  .garantia-section { padding: 56px 20px; max-width: 560px; margin: 0 auto; }
+  .garantia-card { background: var(--navy2); border: 1px solid var(--navy3); padding: 28px 20px; display: flex; gap: 20px; align-items: flex-start; }
+  .garantia-icon { width: 56px; height: 56px; border: 2px solid var(--gold); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); text-align: center; line-height: 1.3; }
+  .garantia-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .garantia-title { font-size: 16px; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
+  .garantia-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .garantia-desc strong { color: var(--cream); }
+
+  /* ── SECOND CTA ── */
+  .cta2-section { background: url('assets/funnel/bg-content.png') center center / cover no-repeat; position: relative; padding: 64px 20px; overflow: hidden; }
+  .cta2-section::before { content: ''; position: absolute; inset: 0; background: rgba(9,8,26,0.76); z-index: 0; }
+  .cta2-inner { position: relative; z-index: 1; max-width: 480px; margin: 0 auto; text-align: center; }
+  .cta2-inner h2 { font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 10px; }
+  .cta2-inner p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+
+  /* ── FOOTER ── */
+  .footer { background: var(--navy); border-top: 1px solid var(--navy3); padding: 32px 20px; text-align: center; }
+  .footer p { font-size: 11px; color: var(--muted); line-height: 1.8; }
+  .footer strong { color: var(--gold); }
+
+  /* ── DESKTOP ── */
+  @media (min-width: 768px) {
+    .headline { font-size: 40px; }
+    .hero { padding: 72px 40px 48px; }
+    .hero-inner { max-width: 680px; }
+    .cta-section { padding: 0 40px 64px; max-width: 680px; }
+    .cta-card { padding: 40px 36px; }
+    .steps-section, .garantia-section { padding: 80px 40px; max-width: 680px; }
+    .speakers-mini { padding: 80px 40px; }
+    .speakers-inner { max-width: 680px; }
+  }
+
+  @media (min-width: 1024px) {
+    .hero { display: grid; grid-template-columns: 1fr 400px; min-height: 80vh; padding: 0; align-items: stretch; }
+    .hero-bg { grid-column: 1 / -1; grid-row: 1; }
+    .hero-overlay { grid-column: 1 / -1; grid-row: 1; background: linear-gradient(to right, rgba(9,8,26,0.55) 40%, rgba(9,8,26,0.15) 100%); }
+    .hero-inner { grid-column: 1; grid-row: 1; padding: 80px 60px; z-index: 2; max-width: none; align-self: center; }
+    .cta-section { position: relative; grid-column: 2; grid-row: 1; padding: 0; max-width: none; margin: 0; z-index: 2; display: flex; align-items: stretch; }
+    .cta-card { background: rgba(17,31,53,0.97); border: none; border-left: 1px solid var(--navy4); width: 100%; padding: 60px 40px; display: flex; flex-direction: column; justify-content: center; backdrop-filter: blur(12px); margin-top: 0; }
+    .steps-section, .garantia-section { padding: 100px 60px; max-width: 960px; }
+    .speakers-mini { padding: 80px 60px; }
+    .speakers-inner { max-width: 960px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .speakers-inner .section-label, .speakers-inner .section-title { grid-column: 1 / -1; }
+    .speaker-mini { border-bottom: none; padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <img src="assets/funnel/logo.png" alt="V3 Partners" class="logo-img">
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <div class="progress-inner">
+    <div class="progress-step">
+      <div class="progress-dot done">1</div>
+      <span class="progress-label">Webinar</span>
+    </div>
+    <div class="progress-line done-line"></div>
+    <div class="progress-step">
+      <div class="progress-dot active">2</div>
+      <span class="progress-label active-label">Agendar call</span>
+    </div>
+    <div class="progress-line"></div>
+    <div class="progress-step">
+      <div class="progress-dot pending">3</div>
+      <span class="progress-label">Licenca ativa</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="badge">Proximo passo</div>
+    <h1 class="headline">
+      Voce viu como funciona.<br>
+      Agora vamos ver se<br>
+      <em>faz sentido para voce.</em>
+    </h1>
+    <p class="subheadline">
+      Uma conversa de 30 minutos com a equipe V3.<br>
+      <strong>Sem pressao. Sem script de vendas.</strong><br>
+      So para entender seu perfil e ver se o licenciamento faz sentido com o que voce ja tem.
+    </p>
+  </div>
+
+  <!-- CTA CARD (aparece ao lado no desktop, abaixo no mobile) -->
+  <div class="cta-section" id="agendar">
+    <div class="cta-card">
+      <div class="cta-card-label">30 minutos</div>
+      <div class="cta-card-title">O que acontece na conversa</div>
+      <div class="vagas-bar">
+        <div class="vagas-dot"></div>
+        <div class="vagas-text">Vagas abertas esta semana <span>— fecha quando encher</span></div>
+      </div>
+      <ul class="checklist">
+        <li><div class="check"></div>Voce conta seu perfil — quem sao seus clientes e que ativo voce acessa</li>
+        <li><div class="check"></div>A equipe V3 valida se o perfil se encaixa no modelo</li>
+        <li><div class="check"></div>Voce tira as duvidas do webinar sem filtro</li>
+        <li><div class="check"></div>Se fizer sentido, ativamos o acesso na mesma chamada</li>
+      </ul>
+      <a href="https://calendly.com/partners-v3partners/30min" class="btn-primary">
+        Agendar Minha Conversa com a V3
+      </a>
+      <p class="btn-disclaimer">Gratuito. Sem compromisso.<br>Se nao for o momento, combinamos depois.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps-section">
+  <div class="section-label">A conversa em 4 partes</div>
+  <h2 class="section-title">30 minutos. Direto ao ponto.</h2>
+  <div class="step-item">
+    <div class="step-num">01</div>
+    <div>
+      <div class="step-title">Seu perfil</div>
+      <div class="step-desc">Quem voce atende, que ativo voce ve com mais frequencia, sua experiencia com mercado financeiro.</div>
+      <div class="step-time">5 min — sem preparacao</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">02</div>
+    <div>
+      <div class="step-title">Alinhamento de expectativas</div>
+      <div class="step-desc">Como funciona a originacao na pratica, timeline realista para primeira operacao no seu perfil.</div>
+      <div class="step-time">10 min — a parte mais importante</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">03</div>
+    <div>
+      <div class="step-title">Suas perguntas</div>
+      <div class="step-desc">Tudo que ficou em aberto sobre comissoes, operacoes especificas e suporte da mesa.</div>
+      <div class="step-time">10 min — sem perguntas erradas</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">04</div>
+    <div>
+      <div class="step-title">Decisao</div>
+      <div class="step-desc">Se fizer sentido, ativamos o licenciamento na hora. Se nao for o momento, sem pressao.</div>
+      <div class="step-time">5 min — voce decide</div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS MINI -->
+<section class="speakers-mini">
+  <div class="speakers-inner">
+    <div class="section-label">Quem vai estar na call</div>
+    <h2 class="section-title">Os socios fundadores da V3</h2>
+    <div class="speaker-mini">
+      <img src="assets/funnel/foto-joao.png" alt="Joao" class="speaker-mini-photo">
+      <div>
+        <div class="speaker-mini-name">Joao Lemos Netto</div>
+        <div class="speaker-mini-role">Head de Ativos e Originacao — Socio Fundador</div>
+      </div>
+    </div>
+    <div class="speaker-mini">
+      <img src="assets/funnel/foto-hamilton.png" alt="Hamilton" class="speaker-mini-photo">
+      <div>
+        <div class="speaker-mini-name">Hamilton Santos</div>
+        <div class="speaker-mini-role">Financeiro e Cross-Border — Socio Fundador</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="garantia-section">
+  <div class="garantia-card">
+    <div class="garantia-icon">60<br>dias</div>
+    <div>
+      <div class="garantia-label">Garantia</div>
+      <div class="garantia-title">Garantia do Primeiro Lead</div>
+      <p class="garantia-desc">Complete o onboarding, use o Qualifier e nao gere lead qualificado em 60 dias — <strong>devolvemos integralmente o primeiro mes.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECOND CTA -->
+<section class="cta2-section">
+  <div class="cta2-inner">
+    <h2>Vagas abertas esta semana</h2>
+    <p>A agenda fecha quando os horarios encherem.</p>
+    <a href="https://calendly.com/partners-v3partners/30min" class="btn-primary" style="max-width:320px; margin: 0 auto;">
+      Agendar Agora
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>
+    <strong>V3 Partners Solucoes Ltda</strong> — CNPJ 14.219.287/0001-50<br>
+    Rua Visconde de Piraja, 414, Sala 718 — Ipanema, RJ<br>
+    deal@v3partners.com.br · v3partners.com.br
+  </p>
+</footer>
+
+</body>
+</html>
