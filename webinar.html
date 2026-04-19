@@ -416,7 +416,7 @@
           <div class="vagas-dot"></div>
           <div class="vagas-text">Vagas abertas <span>— encerram segunda 20/04</span></div>
         </div>
-        <form id="formInscricao">
+        <form id="formInscricao" method="GET" action="https://script.google.com/macros/s/AKfycbycJupArPhwn5PO0cWwg0MI647xFt8arVowaXj2rczBHPw91jj9m3Yla0bLPe7ik9da/exec">
           <div class="form-group">
             <label>Nome completo</label>
             <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
@@ -445,39 +445,11 @@
           <p class="form-disclaimer">Sem spam. Dados tratados com sigilo.</p>
         </form>
 
-        <iframe name="hidden_frame" style="display:none;"></iframe>
         <script>
-          var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycJupArPhwn5PO0cWwg0MI647xFt8arVowaXj2rczBHPw91jj9m3Yla0bLPe7ik9da/exec';
-
-          document.getElementById('formInscricao').addEventListener('submit', function(e) {
-            e.preventDefault();
+          document.getElementById('formInscricao').addEventListener('submit', function() {
             var btn = document.getElementById('btnSubmit');
             btn.textContent = 'Confirmando...';
             btn.disabled = true;
-
-            var formData = new FormData(this);
-
-            var proxy = document.createElement('form');
-            proxy.method = 'GET';
-            proxy.action = APPS_SCRIPT_URL;
-            proxy.target = 'hidden_frame';
-            proxy.style.display = 'none';
-
-            formData.forEach(function(value, key) {
-              var input = document.createElement('input');
-              input.type = 'hidden';
-              input.name = key;
-              input.value = value;
-              proxy.appendChild(input);
-            });
-
-            document.body.appendChild(proxy);
-            proxy.submit();
-            document.body.removeChild(proxy);
-
-            setTimeout(function() {
-              window.location.href = 'confirmacao.html';
-            }, 1500);
           });
         </script>
       </div>
