@@ -445,6 +445,7 @@
           <p class="form-disclaimer">Sem spam. Dados tratados com sigilo.</p>
         </form>
 
+        <iframe name="hidden_frame" style="display:none;"></iframe>
         <script>
           var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycJupArPhwn5PO0cWwg0MI647xFt8arVowaXj2rczBHPw91jj9m3Yla0bLPe7ik9da/exec';
 
@@ -455,13 +456,28 @@
             btn.disabled = true;
 
             var formData = new FormData(this);
-            var params   = new URLSearchParams(formData).toString();
 
-            var img = new Image();
-            img.src = APPS_SCRIPT_URL + '?' + params;
+            var proxy = document.createElement('form');
+            proxy.method = 'GET';
+            proxy.action = APPS_SCRIPT_URL;
+            proxy.target = 'hidden_frame';
+            proxy.style.display = 'none';
+
+            formData.forEach(function(value, key) {
+              var input = document.createElement('input');
+              input.type = 'hidden';
+              input.name = key;
+              input.value = value;
+              proxy.appendChild(input);
+            });
+
+            document.body.appendChild(proxy);
+            proxy.submit();
+            document.body.removeChild(proxy);
+
             setTimeout(function() {
               window.location.href = 'confirmacao.html';
-            }, 1200);
+            }, 1500);
           });
         </script>
       </div>
