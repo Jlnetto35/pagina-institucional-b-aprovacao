@@ -703,6 +703,186 @@
 
 
   <!-- ══════════════════════════════════════
+       DOBRA 3.6 — TOKENIZAÇÃO
+  ══════════════════════════════════════ -->
+  <section class="section" id="tokenizacao" style="background: var(--navy-deep);">
+    <div class="container">
+
+      <div class="fade-in" style="max-width: 640px; margin-bottom: 56px;">
+        <span class="label">Tokenização de Ativos Reais</span>
+        <h2 class="mt-16">Seu Ativo.<br/>Token.<br/>Liquidez Global.</h2>
+        <p class="mt-16">
+          Securitização digital lastreada em ativo real. A V3 origina, estrutura e distribui.
+          A Bloxs tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição
+          para investidores globais — sobre o mesmo ativo que a V3 já origina.
+        </p>
+        <div style="margin-top: 24px; display: inline-flex; align-items: center; gap: 10px;
+          background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25);
+          border-radius: 6px; padding: 8px 16px;">
+          <span style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.18em; color: var(--gold);">Powered by Bloxs</span>
+          <span style="width: 1px; height: 14px; background: rgba(201,168,76,0.3);"></span>
+          <span style="font-size: 11px; color: var(--muted);">Infraestrutura regulada — CVM 88</span>
+        </div>
+      </div>
+
+      <!-- Como funciona — 4 passos -->
+      <div class="fade-in" style="margin-bottom: 56px;">
+        <p class="label" style="margin-bottom: 24px;">Como funciona</p>
+        <div style="display: grid; grid-template-columns: repeat(4,1fr); gap: 0;">
+
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
+            border-radius: 12px 0 0 12px; padding: 28px 24px; position: relative;">
+            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
+              line-height: 1; margin-bottom: 14px;">01</p>
+            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">V3 Partners</p>
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Originação</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+              Partner ou V3 identifica o ativo — imóvel, recebível, commodity.
+              Qualificação pela Regra dos 5 SIMs.
+            </p>
+          </div>
+
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
+            border-left: none; padding: 28px 24px; position: relative;">
+            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
+              line-height: 1; margin-bottom: 14px;">02</p>
+            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">V3 Partners</p>
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Estruturação</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+              SPE constituída, due diligence completa, laudos e estrutura jurídica.
+              Ativo preparado para tokenização.
+            </p>
+          </div>
+
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
+            border-left: none; padding: 28px 24px; position: relative;">
+            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
+              line-height: 1; margin-bottom: 14px;">03</p>
+            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">Bloxs</p>
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Tokenização</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+              Bloxs emite os tokens, realiza KYC dos investidores e configura
+              os smart contracts de distribuição de proventos.
+            </p>
+          </div>
+
+          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
+            border-left: none; border-radius: 0 12px 12px 0; padding: 28px 24px;">
+            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
+              line-height: 1; margin-bottom: 14px;">04</p>
+            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">Investidor</p>
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Acesso Global</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+              Investidores globais compram frações do ativo. Liquidação OTC 24/7
+              em Real ou USD. Proventos automáticos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Responsivo mobile: grid vira coluna única -->
+        <style>
+          @media (max-width: 900px) {
+            #tokenizacao .token-steps { grid-template-columns: 1fr !important; }
+            #tokenizacao .token-steps > div {
+              border-left: 1px solid rgba(201,168,76,0.12) !important;
+              border-top: none !important;
+              border-radius: 0 !important;
+            }
+            #tokenizacao .token-steps > div:first-child { border-radius: 12px 12px 0 0 !important; }
+            #tokenizacao .token-steps > div:last-child  { border-radius: 0 0 12px 12px !important; }
+          }
+        </style>
+      </div>
+
+      <!-- Ativos elegíveis — 4 cards -->
+      <div class="fade-in" style="margin-bottom: 56px;">
+        <p class="label" style="margin-bottom: 24px;">Ativos elegíveis hoje</p>
+        <div class="card-grid card-grid-4">
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Real Estate</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
+              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Imóveis Urbanos e Rurais</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
+              Imóveis de alto padrão, galpões e fazendas. SPE + Sale Leaseback.
+              Um imóvel de R$10M dividido em cotas de R$10K cada.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Crédito &amp; Recebíveis</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
+              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Recebíveis Judiciais</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
+              Precatórios e recebíveis com força jurídica. FIDC fracionado em tokens
+              com liquidez contínua e distribuição global.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">Mineração &amp; Commodities</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
+              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Ouro e Lítio</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
+              Tokenização de estoques custodiados. Acesso fracionado a commodities
+              estratégicas para investidores cross-border.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="label" style="font-size: 8px;">M&amp;A Cross-Border</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
+              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Participações Societárias</h3>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
+              Token de equity em SPE para operações M&A. Distribuição para fundos
+              asiáticos e americanos em D+0.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="fade-in" style="
+        background: var(--navy-card);
+        border: 1px solid rgba(201,168,76,0.2);
+        border-radius: 16px;
+        padding: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 32px;
+        flex-wrap: wrap;">
+        <div>
+          <p class="label" style="margin-bottom: 10px;">Tokenize seu ativo</p>
+          <h3 style="font-size: 22px; font-weight: 700; color: var(--cream);
+            margin-bottom: 10px; line-height: 1.3;">
+            Ativo real. Liquidez global.<br/>Sem abrir mão da segurança patrimonial.
+          </h3>
+          <p style="font-size: 14px; color: var(--muted); max-width: 500px; line-height: 1.7;">
+            A V3 origina, estrutura e distribui. Todo o processo regulado via Bloxs,
+            plataforma autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.
+          </p>
+        </div>
+        <a href="https://w.app/g7y2nq"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary btn-lg"
+          style="white-space: nowrap; flex-shrink: 0;">
+          MARQUE UMA DEMONSTRAÇÃO
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
        DOBRA 3.5 — ESTRUTURAÇÃO
   ══════════════════════════════════════ -->
   <section class="section" id="estruturacao" style="background: var(--navy-base);">
