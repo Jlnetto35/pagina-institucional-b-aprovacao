@@ -179,6 +179,32 @@
       flex-shrink: 0;
       margin-top: 6px;
     }
+
+    /* Grids responsivos — corrige overflow em mobile/tablet */
+    .grid-4-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    .grid-stats-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .grid-project-pilot {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .grid-4-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .grid-4-steps        { grid-template-columns: repeat(4,1fr); gap: 0; }
+      .grid-stats-4        { grid-template-columns: repeat(4,1fr); gap: 16px; }
+      .grid-project-pilot  { grid-template-columns: 1fr 1fr; gap: 48px; }
+    }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -729,7 +755,7 @@
       <!-- Como funciona — 4 passos -->
       <div class="fade-in" style="margin-bottom: 56px;">
         <p class="label" style="margin-bottom: 24px;">Como funciona</p>
-        <div style="display: grid; grid-template-columns: repeat(4,1fr); gap: 0;">
+        <div class="grid-4-steps">
 
           <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
             border-radius: 12px 0 0 12px; padding: 28px 24px; position: relative;">
@@ -956,7 +982,7 @@
       <!-- Como funciona — 4 passos -->
       <div class="fade-in" style="margin-bottom: 56px;">
         <p class="label" style="margin-bottom: 24px;">Como funciona</p>
-        <div style="display: grid; grid-template-columns: repeat(4,1fr); gap: 0;">
+        <div class="grid-4-steps">
 
           <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
             border-radius: 12px 0 0 12px; padding: 28px 24px;">
@@ -1112,7 +1138,7 @@
       </div>
 
       <!-- Stats -->
-      <div class="fade-in" style="display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 56px;">
+      <div class="fade-in grid-stats-4" style="margin-bottom: 56px;">
         <div class="card" style="text-align: center; padding: 28px 16px;">
           <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">15–20<span style="font-size: 16px; color: var(--gold);">%</span></p>
           <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Retorno estimado a.a.<br/>em dólar</p>
@@ -1176,15 +1202,11 @@
       </div>
 
       <!-- Projeto Piloto -->
-      <div class="fade-in" style="
+      <div class="fade-in grid-project-pilot" style="
         background: var(--navy-deep);
         border: 1px solid rgba(201,168,76,0.25);
         border-radius: 16px;
         padding: 48px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
-        align-items: center;
         margin-bottom: 32px;">
         <div>
           <span class="label" style="margin-bottom: 12px; display: block;">Projeto Piloto · 2026</span>
