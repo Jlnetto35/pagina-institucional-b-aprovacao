@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Qualificação de Estruturação | V3 Partners</title>
+  <meta name="description" content="Descubra em minutos qual instrumento financeiro é ideal para estruturar seu ativo — CRI Verde, FIDC ESG, Token RWA ou M&A Estruturado." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.v3partners.com.br/qualificacao.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Seu ativo está pronto para o mercado de capitais? | V3 Partners" />
+  <meta property="og:description" content="Responda 12 perguntas e receba um diagnóstico de estruturação personalizado da mesa V3 Partners." />
+  <meta property="og:url" content="https://www.v3partners.com.br/qualificacao.html" />
+  <meta property="og:image" content="https://www.v3partners.com.br/assets/img/og-image.jpeg" />
+
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://v3-partner.vercel.app https://app.v3partners.com.br; frame-ancestors 'none';" />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/v3-design-system.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    .form-section { background: var(--color-navy-900); min-height: 100vh; padding-top: 100px; padding-bottom: 80px; }
+    .form-card { background: var(--color-navy-600); border: 1px solid var(--border-default); border-radius: 16px; padding: 40px; max-width: 680px; margin: 0 auto; }
+    .bloco-titulo { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--color-gold-300); margin-bottom: 4px; }
+    .bloco-desc { font-size: 13px; color: var(--color-muted); margin-bottom: 24px; }
+    .pergunta { margin-bottom: 28px; }
+    .pergunta label { display: block; font-size: 14px; font-weight: 600; color: var(--color-cream); margin-bottom: 10px; }
+    .opcoes { display: flex; flex-direction: column; gap: 8px; }
+    .opcao { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border: 1px solid rgba(201,168,76,.15); border-radius: 10px; cursor: pointer; transition: border-color .2s, background .2s; }
+    .opcao:hover { border-color: rgba(201,168,76,.35); background: rgba(201,168,76,.04); }
+    .opcao input[type=radio], .opcao input[type=checkbox] { margin-top: 2px; accent-color: #C9A84C; flex-shrink: 0; }
+    .opcao.selected { border-color: rgba(201,168,76,.5); background: rgba(201,168,76,.07); }
+    .opcao-texto { font-size: 13px; color: var(--color-cream); line-height: 1.5; }
+    .input-field { width: 100%; background: var(--color-navy-900); border: 1px solid rgba(201,168,76,.2); border-radius: 8px; padding: 10px 14px; font-size: 14px; color: var(--color-cream); font-family: 'DM Sans', sans-serif; outline: none; box-sizing: border-box; }
+    .input-field:focus { border-color: rgba(201,168,76,.5); }
+    .input-field::placeholder { color: var(--color-muted); opacity: .6; }
+    .divider { border: none; border-top: 1px solid rgba(240,236,228,.07); margin: 32px 0; }
+    .progress-bar { height: 3px; background: rgba(201,168,76,.12); border-radius: 2px; margin-bottom: 32px; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #C9A84C, #E8C97A); border-radius: 2px; transition: width .4s ease; }
+    .btn-submit { width: 100%; padding: 14px; background: #C9A84C; color: #09081A; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background .2s, transform .1s; }
+    .btn-submit:hover { background: #E8C97A; }
+    .btn-submit:active { transform: scale(.99); }
+    .btn-submit:disabled { opacity: .5; cursor: not-allowed; }
+    .estado-sucesso { text-align: center; padding: 48px 24px; display: none; }
+    .instrumento-badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 12px 0; }
+    .erro-msg { background: rgba(248,113,113,.1); border: 1px solid rgba(248,113,113,.3); color: #fca5a5; border-radius: 8px; padding: 12px 16px; font-size: 13px; margin-top: 16px; display: none; }
+    .campo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .form-card { padding: 24px 20px; } .campo-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/v3-logo-3d-alpha.png" alt="V3 Partners — Boutique de Securitização" />
+      </a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html#verticais">Verticais</a></li>
+        <li><a href="index.html#diretoria">Diretoria</a></li>
+        <li><a href="relatorios.html">Relatórios</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="https://v3-partner.vercel.app/dashboard" class="btn btn-secondary">Área do Partner</a>
+        <a href="partners.html" class="btn btn-primary">Seja um Partner</a>
+      </div>
+      <button class="navbar-menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section style="background: var(--color-navy-900); padding: 100px 0 0; text-align: center;">
+    <div class="container" style="max-width: 600px;">
+      <span class="label">Diagnóstico de Estruturação</span>
+      <h1 style="font-size: clamp(28px,5vw,44px); font-weight: 800; color: var(--color-cream); margin: 16px 0 12px; line-height: 1.2;">
+        Seu ativo está pronto para o mercado de capitais?
+      </h1>
+      <p style="font-size: 15px; color: var(--color-muted); max-width: 480px; margin: 0 auto 40px; line-height: 1.7;">
+        Responda 12 perguntas em 5 minutos. Nossa mesa analisa o perfil do seu projeto e indica o instrumento financeiro mais adequado — CRI Verde, FIDC ESG, Token RWA ou M&A Estruturado.
+      </p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="container">
+      <div class="form-card">
+
+        <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 8%"></div></div>
+
+        <form id="formQualificacao" novalidate>
+
+          <p class="bloco-titulo">Identificação</p>
+          <div class="campo-grid" style="margin-bottom: 28px;">
+            <div>
+              <label style="font-size:13px; font-weight:600; color:var(--color-cream); display:block; margin-bottom:6px;">Nome <span style="color:#f87171">*</span></label>
+              <input type="text" name="lead_nome" class="input-field" placeholder="Seu nome completo" required />
+            </div>
+            <div>
+              <label style="font-size:13px; font-weight:600; color:var(--color-cream); display:block; margin-bottom:6px;">Email <span style="color:#f87171">*</span></label>
+              <input type="email" name="lead_email" class="input-field" placeholder="seu@email.com.br" required />
+            </div>
+            <div>
+              <label style="font-size:13px; font-weight:600; color:var(--color-cream); display:block; margin-bottom:6px;">Empresa <span style="color:#f87171">*</span></label>
+              <input type="text" name="empresa_nome" class="input-field" placeholder="Nome da empresa" required />
+            </div>
+            <div>
+              <label style="font-size:13px; font-weight:600; color:var(--color-cream); display:block; margin-bottom:6px;">Telefone / WhatsApp</label>
+              <input type="tel" name="lead_telefone" class="input-field" placeholder="(21) 99999-9999" />
+            </div>
+          </div>
+
+          <hr class="divider" />
+          <p class="bloco-titulo">Bloco 1 — Estrutura do Projeto</p>
+          <p class="bloco-desc">Queremos entender o estágio atual do ativo ou projeto.</p>
+
+          <div class="pergunta">
+            <label>1. Qual é o estágio atual do projeto?</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="projeto_estagio" value="inicial" /><div><div class="opcao-texto">Ideia estruturada, sem licenças ou contratos formalizados</div></div></label>
+              <label class="opcao"><input type="radio" name="projeto_estagio" value="em_desenvolvimento" /><div><div class="opcao-texto">Em desenvolvimento — licenças em andamento, contratos iniciais assinados</div></div></label>
+              <label class="opcao"><input type="radio" name="projeto_estagio" value="aprovado" /><div><div class="opcao-texto">Projeto aprovado com licenças obtidas e contrato formalizado</div></div></label>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <label>2. Existe contrato ou MOU com o município / concedente?</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="municipio_contrato" value="nao" /><div><div class="opcao-texto">Ainda não — estamos em negociação</div></div></label>
+              <label class="opcao"><input type="radio" name="municipio_contrato" value="mou" /><div><div class="opcao-texto">Sim — MOU ou carta de intenção assinada</div></div></label>
+              <label class="opcao"><input type="radio" name="municipio_contrato" value="formal" /><div><div class="opcao-texto">Sim — contrato de concessão formal assinado</div></div></label>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <label>3. O projeto tem SPE constituída?</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="spe_status" value="nao" /><div><div class="opcao-texto">Não — operamos pela holding principal</div></div></label>
+              <label class="opcao"><input type="radio" name="spe_status" value="em_constituicao" /><div><div class="opcao-texto">Em processo de constituição</div></div></label>
+              <label class="opcao"><input type="radio" name="spe_status" value="ativa" /><div><div class="opcao-texto">Sim — SPE ativa com CNPJ próprio</div></div></label>
+            </div>
+          </div>
+
+          <hr class="divider" />
+          <p class="bloco-titulo">Bloco 2 — Geração de Caixa</p>
+          <p class="bloco-desc">Entender as fontes de receita é essencial para definir o instrumento.</p>
+
+          <div class="pergunta">
+            <label>4. Fontes de receita previstas <span style="font-weight:400; font-size:12px; color:var(--color-muted)">(pode marcar mais de uma)</span></label>
+            <div class="opcoes">
+              <label class="opcao"><input type="checkbox" name="fontes_receita" value="biometano" /><div class="opcao-texto">Venda de biometano / biogás</div></label>
+              <label class="opcao"><input type="checkbox" name="fontes_receita" value="energia" /><div class="opcao-texto">Geração e venda de energia elétrica</div></label>
+              <label class="opcao"><input type="checkbox" name="fontes_receita" value="carbono" /><div class="opcao-texto">Venda de créditos de carbono</div></label>
+              <label class="opcao"><input type="checkbox" name="fontes_receita" value="tipping_fee" /><div class="opcao-texto">Taxa de destinação municipal (tipping fee)</div></label>
+              <label class="opcao"><input type="checkbox" name="fontes_receita" value="fertilizante" /><div class="opcao-texto">Composto orgânico / fertilizante</div></label>
+              <label class="opcao"><input type="checkbox" name="fontes_receita" value="aluguel" /><div class="opcao-texto">Receita de aluguel / sale-leaseback</div></label>
+              <label class="opcao"><input type="checkbox" name="fontes_receita" value="recebiveis" /><div class="opcao-texto">Recebíveis contratuais (contratos, precatórios, safra)</div></label>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <label>5. Projeção de receita anual em operação plena</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="receita_anual_projecao" value="ate_10m" /><div><div class="opcao-texto">Até R$ 10 milhões / ano</div></div></label>
+              <label class="opcao"><input type="radio" name="receita_anual_projecao" value="10m_40m" /><div><div class="opcao-texto">Entre R$ 10 milhões e R$ 40 milhões / ano</div></div></label>
+              <label class="opcao"><input type="radio" name="receita_anual_projecao" value="acima_40m" /><div><div class="opcao-texto">Acima de R$ 40 milhões / ano</div></div></label>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <label>6. Já existe contrato de offtake (comprador garantido)?</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="offtake_contrato" value="nao" /><div><div class="opcao-texto">Não — venda no mercado spot</div></div></label>
+              <label class="opcao"><input type="radio" name="offtake_contrato" value="em_negociacao" /><div><div class="opcao-texto">Em negociação com potencial comprador</div></div></label>
+              <label class="opcao"><input type="radio" name="offtake_contrato" value="assinado" /><div><div class="opcao-texto">Sim — contrato firmado com volume e preço definidos</div></div></label>
+            </div>
+          </div>
+
+          <hr class="divider" />
+          <p class="bloco-titulo">Bloco 3 — Crédito de Carbono <span style="font-weight:400; font-size:10px; color:var(--color-muted); letter-spacing:0">(se aplicável)</span></p>
+
+          <div class="pergunta">
+            <label>7. Estimativa de créditos de carbono por ano (tCO2e)</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="carbono_tco2e_estimativa" value="nao_calculado" /><div><div class="opcao-texto">Ainda não calculado</div></div></label>
+              <label class="opcao"><input type="radio" name="carbono_tco2e_estimativa" value="10k_50k" /><div><div class="opcao-texto">Entre 10.000 e 50.000 tCO2e / ano</div></div></label>
+              <label class="opcao"><input type="radio" name="carbono_tco2e_estimativa" value="acima_50k" /><div><div class="opcao-texto">Acima de 50.000 tCO2e / ano (estudo validado)</div></div></label>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <label>8. Metodologia de certificação considerada</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="carbono_certificacao" value="nao_definido" /><div><div class="opcao-texto">Ainda não definido</div></div></label>
+              <label class="opcao"><input type="radio" name="carbono_certificacao" value="voluntario" /><div><div class="opcao-texto">Mercado voluntário — VCS (Verra) ou Gold Standard</div></div></label>
+              <label class="opcao"><input type="radio" name="carbono_certificacao" value="regulado" /><div><div class="opcao-texto">Mercado regulado — CBIO / Lei 15.042/2024</div></div></label>
+            </div>
+          </div>
+
+          <hr class="divider" />
+          <p class="bloco-titulo">Bloco 4 — Garantias e Investidores</p>
+
+          <div class="pergunta">
+            <label>9. Garantias reais disponíveis <span style="font-weight:400; font-size:12px; color:var(--color-muted)">(pode marcar mais de uma)</span></label>
+            <div class="opcoes">
+              <label class="opcao"><input type="checkbox" name="garantias" value="terreno" /><div class="opcao-texto">Terreno / área do projeto (matrícula registrada)</div></label>
+              <label class="opcao"><input type="checkbox" name="garantias" value="equipamentos" /><div class="opcao-texto">Equipamentos e maquinário (alienação fiduciária)</div></label>
+              <label class="opcao"><input type="checkbox" name="garantias" value="concessao" /><div class="opcao-texto">Contrato de concessão / licença (cessão de direitos)</div></label>
+              <label class="opcao"><input type="checkbox" name="garantias" value="offtake" /><div class="opcao-texto">Contrato de offtake / receita futura comprometida</div></label>
+              <label class="opcao"><input type="checkbox" name="garantias" value="aval_socios" /><div class="opcao-texto">Aval pessoal dos sócios</div></label>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <label>10. Existe investidor ou fundo com interesse confirmado?</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="investidores_existentes" value="nao" /><div><div class="opcao-texto">Não — buscando o primeiro investidor âncora</div></div></label>
+              <label class="opcao"><input type="radio" name="investidores_existentes" value="interesse_informal" /><div><div class="opcao-texto">Sim — interesse informal, sem compromisso formal</div></div></label>
+              <label class="opcao"><input type="radio" name="investidores_existentes" value="loi_assinada" /><div><div class="opcao-texto">Sim — investidor âncora com LOI ou term sheet em discussão</div></div></label>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <label>11. Valor total de captação necessário</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="valor_captacao_necessario" value="ate_50m" /><div><div class="opcao-texto">Até R$ 50 milhões</div></div></label>
+              <label class="opcao"><input type="radio" name="valor_captacao_necessario" value="50m_120m" /><div><div class="opcao-texto">Entre R$ 50 milhões e R$ 120 milhões</div></div></label>
+              <label class="opcao"><input type="radio" name="valor_captacao_necessario" value="acima_120m" /><div><div class="opcao-texto">Acima de R$ 120 milhões</div></div></label>
+            </div>
+          </div>
+
+          <hr class="divider" />
+          <p class="bloco-titulo">Bloco 5 — Capacidade de Estruturação</p>
+
+          <div class="pergunta">
+            <label>12. Orçamento disponível para estruturação jurídica e tecnológica antes da captação</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="orcamento_estruturacao" value="menos_200k" /><div><div class="opcao-texto">Menos de R$ 200 mil</div></div></label>
+              <label class="opcao"><input type="radio" name="orcamento_estruturacao" value="200k_500k" /><div><div class="opcao-texto">Entre R$ 200 mil e R$ 500 mil</div></div></label>
+              <label class="opcao"><input type="radio" name="orcamento_estruturacao" value="acima_500k" /><div><div class="opcao-texto">Acima de R$ 500 mil</div></div></label>
+            </div>
+          </div>
+
+          <div class="erro-msg" id="erroMsg"></div>
+
+          <button type="submit" class="btn-submit" id="btnSubmit">
+            Receber diagnóstico da mesa V3 Partners
+          </button>
+
+          <p style="font-size:11px; color:var(--color-muted); text-align:center; margin-top:12px; opacity:.7;">
+            Seus dados são tratados com confidencialidade conforme nossa <a href="politica-de-privacidade.html" style="color:var(--color-muted);">Política de Privacidade</a>.
+          </p>
+
+        </form>
+
+        <div class="estado-sucesso" id="estadoSucesso">
+          <div style="width:56px; height:56px; border-radius:50%; background:rgba(16,185,129,.15); border:1px solid rgba(16,185,129,.3); display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:24px;">✓</div>
+          <h2 style="font-size:24px; font-weight:700; color:var(--color-cream); margin-bottom:12px;">Diagnóstico recebido</h2>
+          <p style="color:var(--color-muted); font-size:14px; max-width:440px; margin:0 auto 20px; line-height:1.7;" id="msgDiagnostico"></p>
+          <span class="instrumento-badge" id="instrumentoBadge"></span>
+          <div style="margin-top:32px; padding:20px; background:var(--color-navy-900); border-radius:12px; border:1px solid var(--border-default);">
+            <p style="font-size:13px; color:var(--color-muted); line-height:1.7; margin-bottom:16px;">
+              Nossa mesa de estruturação entrará em contato em até <strong style="color:var(--color-cream);">48 horas úteis</strong> para aprofundar a análise e apresentar as próximas etapas.
+            </p>
+            <a href="mailto:deal@v3partners.com.br" class="btn btn-primary" style="display:inline-block; text-decoration:none;">
+              Contato direto — deal@v3partners.com.br
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/img/v3-logo-3d-alpha.png" alt="V3 Partners" style="height:32px; object-fit:contain;" />
+          <p class="mt-16" style="font-size:13px; max-width:280px;">O elo entre a economia real e o mercado de capitais global.</p>
+          <p class="mt-16" style="font-size:12px; color:var(--color-muted);">CNPJ 14.219.287/0001-50<br />Rua Visconde de Pirajá, 414, Sala 718<br />Ipanema — Rio de Janeiro, RJ</p>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:16px;">Verticais</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li><a href="index.html#verticais" style="color:var(--color-muted); text-decoration:none; font-size:13px;">Real Estate Estruturado</a></li>
+            <li><a href="index.html#verticais" style="color:var(--color-muted); text-decoration:none; font-size:13px;">Crédito & Recebíveis</a></li>
+            <li><a href="index.html#verticais" style="color:var(--color-muted); text-decoration:none; font-size:13px;">Mineração & Commodities</a></li>
+            <li><a href="index.html#verticais" style="color:var(--color-muted); text-decoration:none; font-size:13px;">M&A Cross-Border</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:16px;">Estruturação</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li><a href="qualificacao.html" style="color:var(--color-gold-300); text-decoration:none; font-size:13px;">Diagnóstico gratuito</a></li>
+            <li><a href="relatorios.html" style="color:var(--color-muted); text-decoration:none; font-size:13px;">Relatórios públicos</a></li>
+            <li><a href="partners.html" style="color:var(--color-muted); text-decoration:none; font-size:13px;">Rede de Partners</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:16px;">Contato</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li><a href="mailto:deal@v3partners.com.br" style="color:var(--color-muted); text-decoration:none; font-size:13px;">deal@v3partners.com.br</a></li>
+            <li style="font-size:13px; color:var(--color-muted);">Rio de Janeiro — RJ</li>
+            <li><a href="https://instagram.com/V3Partners" target="_blank" rel="noopener noreferrer" style="color:var(--color-muted); text-decoration:none; font-size:13px;">@V3Partners</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding:24px 0; border-top:1px solid rgba(240,236,228,.06); margin-top:8px;">
+        <p style="font-size:11px; color:var(--color-muted); line-height:1.7; opacity:.7;">
+          <strong style="color:var(--color-muted);">Aviso Legal:</strong> A V3 Partners Soluções Ltda atua estritamente nos limites da legislação vigente. As informações desta página têm caráter exclusivamente institucional e informativo, não constituindo oferta pública de valores mobiliários ou recomendação de investimento.
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 V3 Partners Soluções Ltda. Todos os direitos reservados.</p>
+        <div style="display:flex; gap:20px; flex-wrap:wrap;">
+          <a href="politica-de-privacidade.html" style="font-size:11px; color:var(--color-muted); text-decoration:none;">Privacidade</a>
+          <a href="termos-de-uso.html" style="font-size:11px; color:var(--color-muted); text-decoration:none;">Termos de Uso</a>
+          <a href="index.html" style="font-size:11px; color:var(--color-muted); text-decoration:none;">Site Institucional</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('active');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+
+    document.querySelectorAll('.opcao input').forEach(input => {
+      input.addEventListener('change', () => {
+        if (input.type === 'radio') {
+          document.querySelectorAll(`input[name="${input.name}"]`).forEach(r => {
+            r.closest('.opcao').classList.remove('selected');
+          });
+        }
+        input.closest('.opcao').classList.toggle('selected', input.checked);
+        atualizarProgresso();
+      });
+    });
+
+    function atualizarProgresso() {
+      const radioNames = ['projeto_estagio','municipio_contrato','spe_status','receita_anual_projecao',
+        'offtake_contrato','carbono_tco2e_estimativa','carbono_certificacao',
+        'investidores_existentes','valor_captacao_necessario','orcamento_estruturacao'];
+      let respondidas = radioNames.filter(n => document.querySelector(`input[name="${n}"]:checked`)).length;
+      if (document.querySelector('input[name="fontes_receita"]:checked')) respondidas++;
+      if (document.querySelector('input[name="garantias"]:checked')) respondidas++;
+      document.getElementById('progressFill').style.width = Math.round((respondidas / 12) * 100) + '%';
+    }
+
+    const LABELS = {
+      CRI_VERDE:      { label: 'CRI Verde',      bg: 'rgba(16,185,129,.15)',  color: '#10b981' },
+      TOKEN_RWA:      { label: 'Token RWA',       bg: 'rgba(201,168,76,.15)', color: '#C9A84C' },
+      FIDC_ESG:       { label: 'FIDC ESG',        bg: 'rgba(96,165,250,.15)', color: '#60a5fa' },
+      EQUITY_TOKEN:   { label: 'Equity Token',    bg: 'rgba(167,139,250,.15)',color: '#a78bfa' },
+      MA_ESTRUTURADO: { label: 'M&A Estruturado', bg: 'rgba(251,146,60,.15)', color: '#fb923c' },
+      INDEFINIDO:     { label: 'A definir',       bg: 'rgba(155,175,197,.15)',color: '#9BAFC5' },
+    };
+
+    document.getElementById('formQualificacao').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const erroEl = document.getElementById('erroMsg');
+      erroEl.style.display = 'none';
+
+      const fd = new FormData(e.target);
+      const lead_nome    = fd.get('lead_nome')?.toString().trim();
+      const lead_email   = fd.get('lead_email')?.toString().trim();
+      const empresa_nome = fd.get('empresa_nome')?.toString().trim();
+
+      if (!lead_nome || !lead_email || !empresa_nome) {
+        erroEl.textContent = 'Nome, email e empresa são obrigatórios.';
+        erroEl.style.display = 'block';
+        return;
+      }
+
+      const payload = {
+        lead_nome, lead_email, empresa_nome,
+        lead_telefone:            fd.get('lead_telefone') || undefined,
+        projeto_estagio:          fd.get('projeto_estagio') || undefined,
+        municipio_contrato:       fd.get('municipio_contrato') || undefined,
+        spe_status:               fd.get('spe_status') || undefined,
+        fontes_receita:           fd.getAll('fontes_receita').length ? fd.getAll('fontes_receita') : undefined,
+        receita_anual_projecao:   fd.get('receita_anual_projecao') || undefined,
+        offtake_contrato:         fd.get('offtake_contrato') || undefined,
+        carbono_tco2e_estimativa: fd.get('carbono_tco2e_estimativa') || undefined,
+        carbono_certificacao:     fd.get('carbono_certificacao') || undefined,
+        investidores_existentes:  fd.get('investidores_existentes') || undefined,
+        valor_captacao_necessario:fd.get('valor_captacao_necessario') || undefined,
+        orcamento_estruturacao:   fd.get('orcamento_estruturacao') || undefined,
+        garantias:                fd.getAll('garantias').length ? fd.getAll('garantias') : undefined,
+      };
+
+      const btn = document.getElementById('btnSubmit');
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      try {
+        const res = await fetch('https://v3-partner.vercel.app/api/public/assessment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || 'Erro');
+
+        document.getElementById('formQualificacao').style.display = 'none';
+        const sucesso = document.getElementById('estadoSucesso');
+        sucesso.style.display = 'block';
+
+        const inst = json.instrumento_recomendado || 'INDEFINIDO';
+        const info = LABELS[inst] || LABELS.INDEFINIDO;
+        const badge = document.getElementById('instrumentoBadge');
+        badge.textContent = info.label;
+        badge.style.background = info.bg;
+        badge.style.color = info.color;
+        badge.style.border = `1px solid ${info.color}40`;
+        document.getElementById('msgDiagnostico').textContent = json.mensagem || 'Nossa mesa analisará seu perfil e entrará em contato.';
+
+      } catch {
+        erroEl.textContent = 'Erro ao enviar. Tente novamente ou escreva para deal@v3partners.com.br';
+        erroEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Receber diagnóstico da mesa V3 Partners';
+      }
+    });
+  </script>
+</body>
+</html>
