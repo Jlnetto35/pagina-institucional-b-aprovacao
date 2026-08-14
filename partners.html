@@ -213,7 +213,6 @@ section{padding:96px 80px}
 .plan-lbl{font-size:8px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gl);display:block;margin-bottom:6px}
 .plan-name{font-size:26px;font-weight:800;color:var(--cr);margin-bottom:8px}
 .plan-desc{font-size:12px;color:var(--mu);line-height:1.6;margin-bottom:28px}
-.plan-price-old{font-size:13px;color:rgba(155,175,197,.5);text-decoration:line-through;display:block;margin-bottom:2px}
 .plan-price{display:flex;align-items:baseline;gap:4px;margin-bottom:8px}
 .plan-curr{font-size:16px;font-weight:700;color:var(--go)}
 .plan-val{font-size:44px;font-weight:800;color:var(--go);line-height:1}
@@ -645,13 +644,12 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
         <span class="plan-lbl">Plano</span>
         <div class="plan-name">Partner</div>
         <p class="plan-desc">Para partners ativos com 1 a 5 operações por mês que precisam de ferramentas completas e credencial V3.</p>
-        <span class="plan-price-old">R$ 10.897,00</span>
         <div class="plan-price">
           <span class="plan-curr">R$</span>
-          <span class="plan-val">9.081</span><span class="plan-cents">,56</span>
+          <span class="plan-val">908</span><span class="plan-cents">,08</span>
         </div>
-        <p class="plan-period">à vista · pagamento anual</p>
-        <p class="plan-equiv">ou em até 5x de R$1.816,31 sem juros</p>
+        <p class="plan-period">em 12x sem juros</p>
+        <p class="plan-equiv">Total anual R$10.897,00</p>
         <ul class="plan-features">
           <li>Acesso à <strong>Plataforma OTC 24/7</strong></li>
           <li><strong>35% de comissão</strong> por deal originado</li>
@@ -672,13 +670,12 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
         <span class="plan-lbl">Plano</span>
         <div class="plan-name">Partner PRO</div>
         <p class="plan-desc">Para alta produção, co-branding exclusivo e acesso direto à diretoria V3 para fechar deals de maior porte.</p>
-        <span class="plan-price-old">R$ 15.897,00</span>
         <div class="plan-price">
           <span class="plan-curr">R$</span>
-          <span class="plan-val">13.248</span><span class="plan-cents">,56</span>
+          <span class="plan-val">1.324</span><span class="plan-cents">,75</span>
         </div>
-        <p class="plan-period">à vista · pagamento anual</p>
-        <p class="plan-equiv">ou em até 5x de R$2.649,71 sem juros</p>
+        <p class="plan-period">em 12x sem juros</p>
+        <p class="plan-equiv">Total anual R$15.897,00</p>
         <ul class="plan-features">
           <li>Tudo do Partner, <strong>mais:</strong></li>
           <li><strong>50% de comissão</strong> por deal originado</li>
@@ -697,13 +694,12 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
         <span class="plan-lbl">Plano</span>
         <div class="plan-name">Enterprise</div>
         <p class="plan-desc">Para escritórios com 5+ assessores, family offices e corretoras com demanda recorrente de originação.</p>
-        <span class="plan-price-old">R$ 49.897,00</span>
         <div class="plan-price">
           <span class="plan-curr">R$</span>
-          <span class="plan-val">41.514</span><span class="plan-cents">,30</span>
+          <span class="plan-val">4.158</span><span class="plan-cents">,08</span>
         </div>
-        <p class="plan-period">à vista · pagamento anual</p>
-        <p class="plan-equiv">ou em até 5x de R$8.302,86 sem juros</p>
+        <p class="plan-period">em 12x sem juros</p>
+        <p class="plan-equiv">Total anual R$49.897,00</p>
         <ul class="plan-features">
           <li>Tudo do Partner PRO, <strong>mais:</strong></li>
           <li><strong>55% de comissão</strong> por deal originado</li>
@@ -731,9 +727,9 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
       <thead>
         <tr>
           <th style="width:38%">Funcionalidade</th>
-          <th>Partner<br><span style="color:var(--go);font-size:11px;font-weight:600">R$9.081,56/ano</span></th>
-          <th style="background:rgba(201,168,76,.05)">Partner PRO<br><span style="color:var(--go);font-size:11px;font-weight:600">R$13.248,56/ano</span></th>
-          <th>Enterprise<br><span style="color:var(--go);font-size:11px;font-weight:600">R$41.514,30/ano</span></th>
+          <th>Partner<br><span style="color:var(--go);font-size:11px;font-weight:600">R$908,08/12x</span></th>
+          <th style="background:rgba(201,168,76,.05)">Partner PRO<br><span style="color:var(--go);font-size:11px;font-weight:600">R$1.324,75/12x</span></th>
+          <th>Enterprise<br><span style="color:var(--go);font-size:11px;font-weight:600">R$4.158,08/12x</span></th>
         </tr>
       </thead>
       <tbody>
@@ -860,17 +856,17 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
           <label class="plan-opt" id="opt-partner">
             <input type="radio" name="plano" value="partner">
             <span class="plan-opt-name">Partner</span>
-            <span class="plan-opt-price">R$9.081,56/ano · 35% comissão</span>
+            <span class="plan-opt-price">R$908,08 em 12x · 35% comissão</span>
           </label>
           <label class="plan-opt active" id="opt-pro">
             <input type="radio" name="plano" value="partner_pro" checked>
             <span class="plan-opt-name">Partner PRO</span>
-            <span class="plan-opt-price">R$13.248,56/ano · 50% comissão</span>
+            <span class="plan-opt-price">R$1.324,75 em 12x · 50% comissão</span>
           </label>
           <label class="plan-opt" id="opt-enterprise">
             <input type="radio" name="plano" value="enterprise">
             <span class="plan-opt-name">Enterprise</span>
-            <span class="plan-opt-price">R$41.514,30/ano · 55% comissão</span>
+            <span class="plan-opt-price">R$4.158,08 em 12x · 55% comissão</span>
           </label>
         </div>
 
