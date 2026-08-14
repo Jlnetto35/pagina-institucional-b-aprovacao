@@ -5,4 +5,4 @@ Allow: /
 Disallow: /members/
 
 # Sitemap
-Sitemap: https://www.v3partners.com.br/sitemap.xml
+Sitemap: https://v3partners.com.br/sitemap.xml

@@ -325,26 +325,33 @@
           <a href="https://v3partners.com.br/partners.html" class="btn btn-secondary">Inscreva-se como Partner</a>
         </div>
 
-        <!-- Stats -->
-        <div class="fade-in" style="display: flex; align-items: flex-start; gap: 0; margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(201,168,76,0.12); flex-wrap: wrap;">
+        <!-- Stats — captação ao vivo, todas as verticais -->
+        <div class="fade-in" id="v3-hero-stats" style="display: flex; align-items: flex-start; gap: 0; margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(201,168,76,0.12); flex-wrap: wrap;">
 
-          <div style="flex: 1; min-width: 120px; padding-right: 32px; text-align: center;">
-            <p style="font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 4,4B</p>
-            <p style="font-size: 12px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.4;">em pipeline<br/>mapeado</p>
+          <div style="flex: 1; min-width: 110px; padding-right: 24px; text-align: center;">
+            <p class="v3-stat-number" data-stat="ma" data-fallback="11268675200" style="font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
+            <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4;">M&amp;A e Negócios<br/>Estratégicos</p>
           </div>
 
           <div class="stat-divider" style="align-self: stretch;"></div>
 
-          <div style="flex: 1; min-width: 100px; padding: 0 32px; text-align: center;">
-            <p style="font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">4</p>
-            <p style="font-size: 12px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.4;">verticais de<br/>atuação</p>
+          <div style="flex: 1; min-width: 110px; padding: 0 24px; text-align: center;">
+            <p class="v3-stat-number" data-stat="credito" data-fallback="364814000" style="font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
+            <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4;">Crédito<br/>Estruturado</p>
           </div>
 
           <div class="stat-divider" style="align-self: stretch;"></div>
 
-          <div style="flex: 1; min-width: 100px; padding-left: 32px; text-align: center;">
-            <p style="font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">3</p>
-            <p style="font-size: 12px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.4;">sócios<br/>fundadores</p>
+          <div style="flex: 1; min-width: 110px; padding: 0 24px; text-align: center;">
+            <p class="v3-stat-number" data-stat="credito_internacional" data-fallback="156000000" style="font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
+            <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4;">Crédito<br/>Internacional</p>
+          </div>
+
+          <div class="stat-divider" style="align-self: stretch;"></div>
+
+          <div style="flex: 1; min-width: 100px; padding-left: 24px; text-align: center;">
+            <p class="v3-stat-number" data-stat="consorcio" data-fallback="35796600" style="font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
+            <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4;">Consórcio</p>
           </div>
 
         </div>
@@ -496,6 +503,139 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ══════════════════════════════════════
+       DOBRA 3.4b — VOLUME EM ORIGINAÇÃO (contadores ao vivo)
+  ══════════════════════════════════════ -->
+  <section class="section" id="numeros" style="background: var(--navy-base);">
+    <div class="container">
+
+      <div class="text-center fade-in">
+        <span class="label">Volume em Operação</span>
+        <h2 class="mt-16">O Que a V3 Está Estruturando Agora</h2>
+        <p class="mt-16" style="max-width: 560px; margin-left: auto; margin-right: auto;">
+          Volume ativo em originação e estruturação por vertical, direto da nossa mesa operacional.
+        </p>
+      </div>
+
+      <div class="fade-in" id="v3-stats-grid" style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        margin-top: 56px;
+        background: rgba(201,168,76,0.14);
+        border: 1px solid rgba(201,168,76,0.14);
+        border-radius: 12px;
+        overflow: hidden;">
+
+        <div style="background: var(--navy-deep); padding: 40px 20px; text-align: center;">
+          <p class="v3-stat-number" data-stat="ma" data-fallback="11268675200"
+            style="font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
+          <p style="font-size: 11px; color: var(--muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5;">M&amp;A e Negócios<br/>Estratégicos</p>
+        </div>
+
+        <div style="background: var(--navy-deep); padding: 40px 20px; text-align: center;">
+          <p class="v3-stat-number" data-stat="credito" data-fallback="364814000"
+            style="font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
+          <p style="font-size: 11px; color: var(--muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5;">Crédito<br/>Estruturado</p>
+        </div>
+
+        <div style="background: var(--navy-deep); padding: 40px 20px; text-align: center;">
+          <p class="v3-stat-number" data-stat="credito_internacional" data-fallback="156000000"
+            style="font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
+          <p style="font-size: 11px; color: var(--muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5;">Crédito<br/>Internacional</p>
+        </div>
+
+        <div style="background: var(--navy-deep); padding: 40px 20px; text-align: center;">
+          <p class="v3-stat-number" data-stat="consorcio" data-fallback="35796600"
+            style="font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
+          <p style="font-size: 11px; color: var(--muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5;">Consórcio</p>
+        </div>
+
+      </div>
+
+      <p class="fade-in mt-16" style="text-align: center; font-size: 10px; color: rgba(155,175,197,0.75); letter-spacing: 0.03em;">
+        Volume ativo em originação e estruturação. Não representa capital já liquidado.
+        <span id="v3-stats-updated"></span>
+      </p>
+
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var STATS_ENDPOINT = "https://app.v3partners.com.br/api/public/stats-captacao";
+      var els = Array.prototype.slice.call(document.querySelectorAll(".v3-stat-number"));
+      var grid = document.getElementById("v3-stats-grid");
+      var heroStats = document.getElementById("v3-hero-stats");
+      var updatedEl = document.getElementById("v3-stats-updated");
+      if (!els.length) return;
+
+      var liveData = null;
+      var animated = false;
+
+      function fmtBRL(value) {
+        if (value >= 1e9) return "R$ " + (value / 1e9).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " Bi";
+        if (value >= 1e6) return "R$ " + (value / 1e6).toLocaleString("pt-BR", { maximumFractionDigits: 0 }) + " Mi";
+        if (value >= 1e3) return "R$ " + (value / 1e3).toLocaleString("pt-BR", { maximumFractionDigits: 0 }) + " Mil";
+        return "R$ " + value.toLocaleString("pt-BR");
+      }
+
+      function countUp(el, target) {
+        var duration = 1400;
+        var start = null;
+        function ease(t) { return 1 - Math.pow(1 - t, 3); }
+        function step(ts) {
+          if (start === null) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var current = target * ease(progress);
+          el.textContent = fmtBRL(current);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = fmtBRL(target);
+        }
+        requestAnimationFrame(step);
+      }
+
+      function runAnimation() {
+        if (animated) return;
+        animated = true;
+        els.forEach(function (el) {
+          var key = el.getAttribute("data-stat");
+          var fallback = Number(el.getAttribute("data-fallback")) || 0;
+          var value = liveData && typeof liveData[key] === "number" ? liveData[key] : fallback;
+          countUp(el, value);
+        });
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) runAnimation();
+        });
+      }, { threshold: 0.3 });
+      if (heroStats) observer.observe(heroStats);
+      if (grid) observer.observe(grid);
+
+      var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+      var timeout = setTimeout(function () { if (controller) controller.abort(); }, 4000);
+
+      fetch(STATS_ENDPOINT, { signal: controller ? controller.signal : undefined })
+        .then(function (res) { return res.ok ? res.json() : Promise.reject(res.status); })
+        .then(function (data) {
+          clearTimeout(timeout);
+          liveData = data;
+          if (data.updated_at && updatedEl) {
+            var d = new Date(data.updated_at);
+            updatedEl.textContent = "Atualizado em " + d.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" }) + ".";
+          }
+        })
+        .catch(function () {
+          // Sem dado ao vivo: a animação usa data-fallback embutido no HTML,
+          // e a legenda de "atualizado em" fica em branco (nunca afirma uma
+          // data que não foi confirmada pela API).
+        });
+    })();
+  </script>
 
 
   <!-- ══════════════════════════════════════
@@ -739,14 +879,14 @@
         <h2 class="mt-16">Seu Ativo.<br/>Token.<br/>Liquidez Global.</h2>
         <p class="mt-16">
           Securitização digital lastreada em ativo real. A V3 origina, estrutura e distribui.
-          A Bloxs tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição
+          A infraestrutura proprietária V3 tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição
           para investidores globais — sobre o mesmo ativo que a V3 já origina.
         </p>
         <div style="margin-top: 24px; display: inline-flex; align-items: center; gap: 10px;
           background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25);
           border-radius: 6px; padding: 8px 16px;">
           <span style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.18em; color: var(--gold);">Powered by Bloxs</span>
+            letter-spacing: 0.18em; color: var(--gold);">Infraestrutura Proprietária V3</span>
           <span style="width: 1px; height: 14px; background: rgba(201,168,76,0.3);"></span>
           <span style="font-size: 11px; color: var(--muted);">Infraestrutura regulada — CVM 88</span>
         </div>
@@ -788,10 +928,10 @@
             <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
               line-height: 1; margin-bottom: 14px;">03</p>
             <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">Bloxs</p>
+              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">V3 Partners</p>
             <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Tokenização</h4>
             <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              Bloxs emite os tokens, realiza KYC dos investidores e configura
+              A plataforma tecnológica proprietária V3 emite os tokens, realiza KYC institucional dos investidores e configura
               os smart contracts de distribuição de proventos.
             </p>
           </div>
@@ -891,8 +1031,8 @@
             Ativo real. Liquidez global.<br/>Sem abrir mão da segurança patrimonial.
           </h3>
           <p style="font-size: 14px; color: var(--muted); max-width: 500px; line-height: 1.7;">
-            A V3 origina, estrutura e distribui. Todo o processo regulado via Bloxs,
-            plataforma autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.
+            A V3 origina, estrutura e distribui. Todo o processo roda sobre plataforma
+            tecnológica proprietária autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.
           </p>
         </div>
         <a href="https://w.app/g7y2nq"
@@ -966,14 +1106,14 @@
         <h2 class="mt-16">Seu Ativo.<br/>Token.<br/>Liquidez Global.</h2>
         <p class="mt-16">
           Securitização digital lastreada em ativo real. A V3 origina, estrutura e distribui.
-          A Bloxs tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição
+          A infraestrutura proprietária V3 tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição
           para investidores globais — sobre o mesmo ativo que a V3 já origina.
         </p>
         <div style="margin-top: 24px; display: inline-flex; align-items: center; gap: 10px;
           background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25);
           border-radius: 6px; padding: 8px 16px;">
           <span style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.18em; color: var(--gold);">Powered by Bloxs</span>
+            letter-spacing: 0.18em; color: var(--gold);">Infraestrutura Proprietária V3</span>
           <span style="width: 1px; height: 14px; background: rgba(201,168,76,0.3);"></span>
           <span style="font-size: 11px; color: var(--muted);">Infraestrutura regulada — CVM 88</span>
         </div>
@@ -1015,10 +1155,10 @@
             <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
               line-height: 1; margin-bottom: 14px;">03</p>
             <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">Bloxs</p>
+              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">V3 Partners</p>
             <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Tokenização</h4>
             <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              Bloxs emite os tokens, realiza KYC dos investidores e configura
+              A plataforma tecnológica proprietária V3 emite os tokens, realiza KYC institucional dos investidores e configura
               os smart contracts de distribuição de proventos.
             </p>
           </div>
@@ -1104,8 +1244,8 @@
             Ativo real. Liquidez global.<br/>Sem abrir mão da segurança patrimonial.
           </h3>
           <p style="font-size: 14px; color: var(--muted); max-width: 500px; line-height: 1.7;">
-            A V3 origina, estrutura e distribui. Todo o processo regulado via Bloxs,
-            plataforma autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.
+            A V3 origina, estrutura e distribui. Todo o processo roda sobre plataforma
+            tecnológica proprietária autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.
           </p>
         </div>
         <a href="https://wa.me/5511937639475?text=Ol%C3%A1!%20Tenho%20interesse%20em%20me%20tornar%20Partner%20e%20gostaria%20de%20agendar%20minha%20demonstra%C3%A7%C3%A3o%20para%20liberar%20meus%2030%20dias%20gr%C3%A1tis%20do%20sistema.%20Como%20podemos%20prosseguir%3F%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80"
@@ -1331,7 +1471,7 @@
             </div>
             <div style="display: flex; gap: 10px; align-items: flex-start;">
               <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
-              <p style="font-size: 13px; color: var(--muted);">Captação tokenizada via Bloxs — CVM 88 — a partir de R$10K</p>
+              <p style="font-size: 13px; color: var(--muted);">Captação tokenizada via plataforma proprietária V3 — CVM 88 — a partir de R$10K</p>
             </div>
             <div style="display: flex; gap: 10px; align-items: flex-start;">
               <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
