@@ -452,11 +452,11 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
       <a href="#formulario" class="cta-gold">Quero ser Partner</a>
       <a href="#como-funciona" class="cta-outline">Como funciona</a>
     </div>
-    <div class="stats-bar">
-      <div><span class="stat-num">R$4,4B</span><span class="stat-lbl">Pipeline mapeado</span></div>
-      <div><span class="stat-num">35-55%</span><span class="stat-lbl">Faixa de comissão</span></div>
-      <div><span class="stat-num">30+</span><span class="stat-lbl">Linhas estruturadas</span></div>
-      <div><span class="stat-num">4</span><span class="stat-lbl">Verticais de ativos</span></div>
+    <div class="stats-bar" id="v3-hero-stats">
+      <div><span class="stat-num v3-stat-number" data-stat="ma" data-fallback="11268675200">R$ 0</span><span class="stat-lbl">M&amp;A e Negócios Estratégicos</span></div>
+      <div><span class="stat-num v3-stat-number" data-stat="credito" data-fallback="364814000">R$ 0</span><span class="stat-lbl">Crédito Estruturado</span></div>
+      <div><span class="stat-num v3-stat-number" data-stat="credito_internacional" data-fallback="156000000">R$ 0</span><span class="stat-lbl">Crédito Internacional</span></div>
+      <div><span class="stat-num v3-stat-number" data-stat="consorcio" data-fallback="35796600">R$ 0</span><span class="stat-lbl">Consórcio</span></div>
     </div>
   </div>
 </section>
@@ -495,8 +495,9 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
     var STATS_ENDPOINT = "https://app.v3partners.com.br/api/public/stats-captacao";
     var els = Array.prototype.slice.call(document.querySelectorAll(".v3-stat-number"));
     var grid = document.getElementById("v3-stats-grid");
+    var heroStats = document.getElementById("v3-hero-stats");
     var updatedEl = document.getElementById("v3-stats-updated");
-    if (!els.length || !grid) return;
+    if (!els.length) return;
 
     var liveData = null;
     var animated = false;
@@ -539,7 +540,8 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
         if (entry.isIntersecting) runAnimation();
       });
     }, { threshold: 0.3 });
-    observer.observe(grid);
+    if (heroStats) observer.observe(heroStats);
+    if (grid) observer.observe(grid);
 
     var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
     var timeout = setTimeout(function () { if (controller) controller.abort(); }, 4000);
