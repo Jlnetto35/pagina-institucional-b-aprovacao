@@ -1,10 +1,17 @@
+# NOTA (19/08/2026): confirmado via curl que o site é servido por GitHub Pages
+# (Server: GitHub.com), não Hostinger. GitHub Pages NÃO honra arquivo _headers
+# (é convenção Netlify/Cloudflare Pages) — este arquivo é inerte em produção.
+# A única proteção real hoje é o <meta http-equiv> dentro de cada .html.
+# Mantido aqui só como documentação do intent, sincronizado manualmente com o
+# CSP real de index.html/partners.html. Se o hosting mudar para algo que honre
+# _headers, isto passa a valer de verdade — revisar antes de assumir que protege.
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net; frame-ancestors 'none';
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
 /members/*

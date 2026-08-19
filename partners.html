@@ -22,6 +22,10 @@
 <meta name="twitter:title" content="Seja Partner V3 — 35% a 55% de Comissão por Deal">
 <meta name="twitter:description" content="Planos anuais de parceria: Partner, Partner PRO e Enterprise. A V3 faz toda a estruturação. Você origina e recebe a comissão.">
 <meta name="twitter:image" content="https://v3partners.com.br/assets/img/hero-bg.jpeg">
+<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net; frame-ancestors 'none';" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,6 +88,70 @@
       }
     }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Programa de Parceria V3 Partners",
+  "description": "Programa de originação para assessores, advogados, contadores e gestores de patrimônio. O Partner origina o ativo, a V3 estrutura, e a comissão é de 35% a 55% por deal fechado.",
+  "provider": {
+    "@type": "Organization",
+    "name": "V3 Partners",
+    "legalName": "V3 Partners Soluções Ltda",
+    "url": "https://www.v3partners.com.br"
+  },
+  "areaServed": "BR",
+  "url": "https://v3partners.com.br/partners.html",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Planos de Parceria V3",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Partner",
+        "price": "10897.00",
+        "priceCurrency": "BRL",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "10897.00",
+          "priceCurrency": "BRL",
+          "billingDuration": "P1Y",
+          "unitText": "ano, parcelável em 12x de R$ 908,08"
+        },
+        "url": "https://v3partners.com.br/partners.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Partner PRO",
+        "price": "15897.00",
+        "priceCurrency": "BRL",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "15897.00",
+          "priceCurrency": "BRL",
+          "billingDuration": "P1Y",
+          "unitText": "ano, parcelável em 12x de R$ 1.324,75"
+        },
+        "url": "https://v3partners.com.br/partners.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise",
+        "price": "49897.00",
+        "priceCurrency": "BRL",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "49897.00",
+          "priceCurrency": "BRL",
+          "billingDuration": "P1Y",
+          "unitText": "ano, parcelável em 12x de R$ 4.158,08"
+        },
+        "url": "https://v3partners.com.br/partners.html"
+      }
+    ]
+  }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -422,6 +490,11 @@ footer{background:var(--nd);border-top:1px solid rgba(255,255,255,.06);padding:6
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-40BMZPHQ28');
+  // TODO Google Ads: quando a conta e a ação de conversão existirem,
+  // adicionar aqui: gtag('config', 'AW-CONVERSION_ID');
+  // e, no submit do formulário de Partner:
+  // gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/LABEL'});
+  // CSP já libera googleadservices.com e googleads.g.doubleclick.net.
 </script>
 
 <!-- Meta Pixel Code -->

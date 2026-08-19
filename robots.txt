@@ -1,8 +1,74 @@
 User-agent: *
 Allow: /
 
-# Bloquear área restrita de indexação
+# Bloquear área restrita e páginas sem valor de indexação
 Disallow: /members/
+Disallow: /confirmacao.html
+Disallow: /qualificacao.html
+
+# ══════════════════════════════════════
+# Crawlers de motores de busca tradicionais
+# ══════════════════════════════════════
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ══════════════════════════════════════
+# Crawlers de IA generativa e mecanismos de resposta (GEO)
+# Liberação explícita: presença em respostas de IA depende
+# de indexação por estes agentes, distintos do Googlebot padrão
+# ══════════════════════════════════════
+
+# OpenAI — treinamento e busca (ChatGPT, SearchGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google — indexação para funcionalidades de IA (Gemini, AI Overviews),
+# distinto do Googlebot de busca tradicional
+User-agent: Google-Extended
+Allow: /
+
+# Meta — treinamento de modelos
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+
+# Apple — Siri e Spotlight
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl — alimenta corpora de treinamento de vários modelos
+User-agent: CCBot
+Allow: /
 
 # Sitemap
 Sitemap: https://v3partners.com.br/sitemap.xml

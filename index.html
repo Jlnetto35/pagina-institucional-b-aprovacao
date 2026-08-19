@@ -101,7 +101,7 @@
   <meta http-equiv="X-Frame-Options" content="DENY" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net; frame-ancestors 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net; frame-ancestors 'none';" />
 
   <!-- ══════════════════════════════════════
        SITEMAP / PRECONNECT
@@ -214,6 +214,12 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-40BMZPHQ28');
+    // TODO Google Ads: quando a conta e a ação de conversão existirem,
+    // adicionar aqui: gtag('config', 'AW-CONVERSION_ID');
+    // e, no evento de conversão real (ex: envio do formulário de Partner):
+    // gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/LABEL'});
+    // CSP já libera googleadservices.com e googleads.g.doubleclick.net —
+    // não precisa mexer no CSP de novo quando o ID real chegar.
   </script>
 
   <!-- Meta Pixel Code -->
