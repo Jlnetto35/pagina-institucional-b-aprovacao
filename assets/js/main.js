@@ -23,6 +23,7 @@ if (menuBtn && navLinks) {
   menuBtn.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', isOpen);
+    menuBtn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
 
     /* Mostra itens mobile-only quando aberto */
     document.querySelectorAll('.mobile-only-nav').forEach(el => {
@@ -35,6 +36,7 @@ if (menuBtn && navLinks) {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
       menuBtn.setAttribute('aria-expanded', false);
+      menuBtn.setAttribute('aria-label', 'Abrir menu');
     });
   });
 }

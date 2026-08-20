@@ -188,7 +188,7 @@ p, .body-text {
   height: 2px;
   background: var(--cream);
   border-radius: 2px;
-  transition: all 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 /* Menu mobile aberto */
@@ -212,6 +212,7 @@ p, .body-text {
   text-decoration: none;
   transition: color 0.2s;
   padding: 4px 0;
+  touch-action: manipulation;
 }
 
 .navbar-links a:hover {
@@ -234,7 +235,8 @@ p, .body-text {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  touch-action: manipulation;
   padding: 13px 24px;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;

@@ -350,7 +350,11 @@ p, .v3-body {
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-default);
+  transition: background-color var(--duration-normal) var(--ease-default),
+    color var(--duration-normal) var(--ease-default),
+    border-color var(--duration-normal) var(--ease-default),
+    transform var(--duration-normal) var(--ease-default);
+  touch-action: manipulation;
   padding: 13px 24px;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
@@ -821,7 +825,7 @@ p, .v3-body {
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
-  transition: all var(--duration-normal);
+  transition: transform var(--duration-normal), opacity var(--duration-normal);
 }
 
 .navbar-links.open {
@@ -972,7 +976,7 @@ p, .v3-body {
   font-weight: var(--font-weight-medium);
   color: var(--text-secondary);
   text-decoration: none;
-  transition: all var(--duration-fast);
+  transition: background-color var(--duration-fast), color var(--duration-fast);
   border-radius: 0;
 }
 
