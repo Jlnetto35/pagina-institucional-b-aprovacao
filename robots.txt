@@ -2,9 +2,14 @@ User-agent: *
 Allow: /
 
 # Bloquear área restrita e páginas sem valor de indexação
+# GitHub Pages serve tanto a forma com .html quanto sem extensão para o mesmo
+# arquivo, entao as duas formas precisam constar aqui (achado 2026-08-20, ao
+# remover .html dos links internos do site)
 Disallow: /members/
 Disallow: /confirmacao.html
+Disallow: /confirmacao
 Disallow: /qualificacao.html
+Disallow: /qualificacao
 
 # ══════════════════════════════════════
 # Crawlers de motores de busca tradicionais
