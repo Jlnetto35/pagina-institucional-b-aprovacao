@@ -5,13 +5,13 @@
 
    PALETA OFICIAL:
    --navy-deep:    #09081A  (fundos principais / capa)
-   --navy-base:    #111F35  (páginas internas)
+   --navy-base:    #13223A  (páginas internas)
    --navy-card:    #162744  (cards e seções)
    --navy-mid:     #243A66  (hover, destaques)
    --gold:         #C9A84C  (logo, labels, assinaturas)
    --gold-light:   #E8C97A  (destaque secundário)
-   --cream:        #F0ECE4  (títulos, texto primário)
-   --muted:        #7A8FA8  (corpo, descrições)
+   --cream:        #F5F1E8  (títulos, texto primário)
+   --muted:        #9BAFC5  (corpo, descrições)
 
    REGRA 90/8/2: 90% navy · 8% cream/muted · 2% ouro
    NUNCA: branco, preto puro, azul, vermelho, verde, laranja
@@ -29,13 +29,13 @@
 
 :root {
   --navy-deep:  #09081A;
-  --navy-base:  #111F35;
+  --navy-base:  #13223A;
   --navy-card:  #162744;
   --navy-mid:   #243A66;
   --gold:       #C9A84C;
   --gold-light: #E8C97A;
-  --cream:      #F0ECE4;
-  --muted:      #7A8FA8;
+  --cream:      #F5F1E8;
+  --muted:      #9BAFC5;
 }
 
 html {

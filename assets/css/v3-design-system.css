@@ -48,13 +48,13 @@
 
   /* Global — Paleta Brandbook V2.0 */
   --color-navy-900:   #09081A;   /* Navy Profundo — capas, fundos principais */
-  --color-navy-700:   #111F35;   /* Navy Base — páginas internas */
+  --color-navy-700:   #13223A;   /* Navy Base — páginas internas */
   --color-navy-600:   #162744;   /* Navy Card — cards e seções */
   --color-navy-500:   #243A66;   /* Navy Médio — hover, destaques */
   --color-gold-500:   #C9A84C;   /* Ouro V3 — logo, labels, assinaturas */
   --color-gold-300:   #E8C97A;   /* Ouro Claro — destaque secundário */
-  --color-cream:      #F0ECE4;   /* Cream — títulos, texto primário */
-  --color-muted:      #7A8FA8;   /* Muted — corpo, descrições */
+  --color-cream:      #F5F1E8;   /* Cream — títulos, texto primário */
+  --color-muted:      #9BAFC5;   /* Muted — corpo, descrições */
 
   /* Feedback — apenas para apps internos (não usar no site institucional) */
   --color-success:    #4ade80;   /* Verde — status ativo, sucesso */
@@ -1251,7 +1251,7 @@ p, .v3-body {
 
   body {
     background: #09081A !important;
-    color: #F0ECE4 !important;
+    color: #F5F1E8 !important;
   }
 
   .navbar, .footer, .v3-sidebar,
