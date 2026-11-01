@@ -112,104 +112,8 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/v3-design-system.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    /* Acessibilidade e tipografia, evita viúva em títulos */
-    h1, h2 { text-wrap: balance; }
-
-    /* Diretoria — grids responsivos */
-    .diretoria-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-    @media (min-width: 768px) {
-      .diretoria-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    /* Sobre — dois blocos */
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-    @media (min-width: 1024px) {
-      .sobre-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    }
-
-    /* Governança — dois blocos */
-    .gov-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-    @media (min-width: 1024px) {
-      .gov-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    }
-
-    /* Plataforma — dois blocos */
-    .plataforma-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    @media (min-width: 1024px) {
-      .plataforma-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-      .plataforma-grid .plataforma-texto { order: 2; }
-      .plataforma-grid .plataforma-stats { order: 1; }
-    }
-
-    /* Linha separadora de stat */
-    .stat-divider {
-      width: 1px;
-      height: 48px;
-      background: rgba(201,168,76,0.2);
-    }
-
-    /* Governança bullet */
-    .gov-item {
-      display: flex;
-      gap: 16px;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(240,236,228,0.06);
-    }
-    .gov-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 6px;
-    }
-
-    /* Grids responsivos — corrige overflow em mobile/tablet */
-    .grid-4-steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2px;
-    }
-    .grid-stats-4 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .grid-project-pilot {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      align-items: center;
-    }
-    @media (min-width: 768px) {
-      .grid-4-steps { grid-template-columns: 1fr 1fr; }
-    }
-    @media (min-width: 1024px) {
-      .grid-4-steps        { grid-template-columns: repeat(4,1fr); gap: 0; }
-      .grid-stats-4        { grid-template-columns: repeat(4,1fr); gap: 16px; }
-      .grid-project-pilot  { grid-template-columns: 1fr 1fr; gap: 48px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,300&display=swap" rel="stylesheet" />
+  
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40BMZPHQ28"></script>
@@ -243,359 +147,214 @@
   src="https://www.facebook.com/tr?id=4044663455835673&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+  <link rel="preload" as="image" href="assets/img/home/predios.webp" />
+  <link rel="stylesheet" href="assets/css/home-cinema.css" />
 </head>
 <body>
+<a class="skip" href="#home">Pular para o conteúdo</a>
+<div id="plates" class="film" aria-hidden="true"><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div><div class="plate"></div></div>
+<div class="film vig"></div><div class="film grain"></div>
+<div class="bar t"></div><div class="bar b"></div>
+<div id="pre" aria-hidden="true"><div><img src="assets/img/home/logo.webp" alt=""><b id="pc">000</b></div></div>
 
-  <a href="#home" class="v3-skip-link">Pular para o conteúdo</a>
+<nav id="nav" aria-label="Principal">
+  <a href="/" class="brand"><img src="assets/img/home/logo.webp" alt="V3 Partners"></a>
+  <div class="links"><a href="#estruturacao">Soluções</a><a href="#exporte-se">Internacional</a><a href="#sobre">Empresa</a><a href="blog/">Blog</a><a href="#contato">Contato</a></div>
+  <a class="btn l mini hide-m" href="https://app.v3partners.com.br/dashboard">Área do Partner</a>
+  <a class="btn g mini" href="partners">Seja Partner V3</a>
+  <button id="mbtn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav>
+<div id="menu" hidden>
+  <div><p class="eyebrow">Soluções</p><a href="#estruturacao">Estruturação</a><a href="#portfolio">Crédito &amp; Portfólio</a><a href="bolsa-de-ativos">Balcão de Ativos</a><a href="#tokenizacao">Tokenização de Ativos</a></div>
+  <div><p class="eyebrow">Internacional</p><a href="#exporte-se">Exporte-se</a><a href="#wealth">Wealth Management</a><a href="#global">Cross-Border</a></div>
+  <div><p class="eyebrow">Empresa</p><a href="#sobre">Sobre a V3</a><a href="#verticais">Verticais de Atuação</a><a href="#diretoria">Diretoria</a><a href="#governanca">Governança</a><a href="blog/">Blog</a><a href="#contato">Contato</a><a href="https://app.v3partners.com.br/dashboard">Área do Partner</a></div>
+</div>
 
-  <!-- ══════════════════════════════════════
-       NAVBAR
-  ══════════════════════════════════════ -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="/" class="navbar-logo">
-        <img src="assets/img/v3-logo-3d-alpha.png" alt="V3 Partners, Boutique de Securitização e Estruturação Financeira" width="1536" height="1024" />
-      </a>
+<main>
+<section id="home" data-ph data-cap="Mercado"><div class="wrap">
+  <p class="eyebrow">Boutique Institucional Multiproduto</p>
+  <h1><span class="mask"><span>Transformamos Ativos Reais</span></span><span class="mask"><span style="--d:.14s"><em>em Capital Global.</em></span></span></h1>
+  <div class="row">
+    <p class="lead rv" style="--d:.5s">Home Equity, CGI, Sale Leaseback, CRI, FIDC, M&amp;A e mais de 25 linhas estruturadas — securitizadas com rigor fiduciário e conectadas ao capital institucional global. Do recebível ao título. Do ativo à liquidez.</p>
+    <div class="cta rv" style="--d:.65s"><a class="btn g" href="#portfolio">Ver Portfólio de Produtos</a><a class="btn l" href="partners">Inscreva-se como Partner</a></div>
+  </div>
+  <div class="stats rv" id="v3-hero-stats" style="--d:.8s"><div><p class="v3-stat-number" data-stat="ma" data-fallback="11268675200">R$ 0</p><small>M&amp;A e Negócios Estratégicos</small></div><div><p class="v3-stat-number" data-stat="credito" data-fallback="364814000">R$ 0</p><small>Crédito Estruturado</small></div><div><p class="v3-stat-number" data-stat="credito_internacional" data-fallback="156000000">R$ 0</p><small>Crédito Internacional</small></div><div><p class="v3-stat-number" data-stat="consorcio" data-fallback="35796600">R$ 0</p><small>Consórcio</small></div></div>
+</div></section>
 
-      <!-- Links — visíveis apenas desktop (1024px+) -->
-      <ul class="navbar-links" id="navLinks">
+<section id="sobre" class="sec" data-ph data-cap="Quem Somos"><div class="wrap">
+  <p class="eyebrow">Quem Somos</p>
+  <h2 class="rv">Enxergamos o Valor Onde <em>Outros Veem Complexidade.</em></h2>
+  <div class="two">
+    <div class="rv"><p class="lead strong">Somos o elo entre ativos da economia real e o capital global.</p><p class="lead">Uma boutique de estruturação que enxerga o que outros descartam, estrutura o que outros não sabem fazer e conecta o que parecia distante.</p></div>
+    <div class="rv" style="--d:.12s"><p class="lead">A V3 Partners nasceu da união de três trajetórias seniores em Securitização de Crédito, Gestão de Risco Fiduciário e Negócios Cross-Border — com a missão de transformar ativos complexos da economia real em produtos de capital líquidos, seguros e rentáveis para investidores globais.</p><p class="lead strong">Na V3 Partners, não vendemos produtos financeiros. Estruturamos o que o mercado não sabe precificar e conectamos quem tem ativo a quem tem capital.</p></div>
+  </div>
+  <div class="grid g3">
+    <article class="sheet rv"><p class="tag">Missão</p><h3>Transformar Ativos em Capital</h3><p>Transformar ativos complexos da economia real em produtos financeiros líquidos, seguros e transparentes, democratizando o acesso ao mercado de capitais com rigor fiduciário intransigente.</p></article>
+    <article class="sheet rv" style="--d:.1s"><p class="tag">Visão</p><h3>Referência Global em Securitização</h3><p>Ser a securitizadora independente mais confiável do Brasil, líder na estruturação de teses que unem lastro real peso pesado à agilidade da infraestrutura digital OTC.</p></article>
+    <article class="sheet rv" style="--d:.2s"><p class="tag">Valores</p><h3>O DNA de Cada Operação</h3><p>Segurança fiduciária, transparência absoluta, integridade operacional, agilidade estratégica e disciplina cooperativista — os cinco pilares que regem cada estrutura que entregamos.</p></article>
+  </div>
+</div></section>
 
-        <!-- Soluções -->
-        <li class="nav-dropdown">
-          <a href="#estruturacao">Soluções</a>
-          <div class="dropdown-menu">
-            <span class="dd-label">Estruturação</span>
-            <a href="#estruturacao">Crédito &amp; Portfólio</a>
-            <a href="bolsa-de-ativos">Balcão de Ativos</a>
-            <a href="#tokenizacao">Tokenização de Ativos</a>
-            <hr/>
-            <span class="dd-label">Internacional</span>
-            <a href="#exporte-se">Exporte-se</a>
-            <a href="#wealth">Wealth Management</a>
-          </div>
-        </li>
+<section id="manifesto"><div class="stick"><div class="wrap">
+  <p class="eyebrow">Manifesto</p>
+  <p id="mtitulo">V3 não é apenas um nome. <em>É uma tese em movimento.</em></p>
+  <p id="mtxt">Representa a convergência de três trajetórias: Estruturação de Crédito e Securitização, disciplina fiduciária e gestão de liquidez global, que juntas formam um vetor único no mercado de capitais brasileiro. Nascemos para fazer o que bancos e gestoras tradicionais não fazem: securitizar o que parece ilíquido, estruturar o que parece complexo e conectar a economia real ao capital que a reconhece. Cada deal é uma transformação. Cada estrutura de crédito, uma declaração de competência.</p>
+</div></div></section>
 
-        <!-- Empresa -->
-        <li class="nav-dropdown">
-          <a href="#sobre">Empresa</a>
-          <div class="dropdown-menu">
-            <a href="#sobre">Sobre a V3</a>
-            <a href="#verticais">Verticais de Atuação</a>
-            <a href="#diretoria">Diretoria</a>
-            <a href="#governanca">Governança</a>
-          </div>
-        </li>
+<section id="verticais"><div class="stick"><div class="rail" id="rail">
+  <article class="panel" data-ph data-cap="Crédito"><div class="wrap"><p class="eyebrow">Atuação · Verticais de Ativos</p><p class="vnum">01</p><h2>Crédito Estruturado <em>&amp; Recebíveis</em></h2><p class="lead">V3Equity, Home Equity, HomeCash, CGI, Cash Collateral, Crédito no Aval — além de CRI, FIDC e securitização de recebíveis judiciais e precatórios. A vertical de maior volume e recorrência da V3.</p><p class="note">Quatro frentes de estruturação com metodologia fiduciária própria e acesso direto a capital institucional.</p></div></article>
+  <article class="panel" data-ph data-cap="Real Estate"><div class="wrap"><p class="eyebrow">Atuação · Verticais de Ativos</p><p class="vnum">02</p><h2>Real Estate <em>Estruturado</em></h2><p class="lead">BTS, BTR, SLB, Fundo Construção (Moradia, Reforma, Construtoras e Incorporadoras), CRI e Financiamento Imobiliário — inclusive para brasileiros no exterior e estrangeiros.</p></div></article>
+  <article class="panel" data-ph data-cap="Commodities"><div class="wrap"><p class="eyebrow">Atuação · Verticais de Ativos</p><p class="vnum">03</p><h2>Mineração <em>&amp; Commodities</em></h2><p class="lead">Intermediação cross-border, estruturação de negócios e bancarização de metais preciosos e minérios estratégicos — lítio, ouro e commodities globais.</p></div></article>
+  <article class="panel" data-ph data-cap="M&amp;A"><div class="wrap"><p class="eyebrow">Atuação · Verticais de Ativos</p><p class="vnum">04</p><h2>M&amp;A e Negócios <em>Estratégicos</em></h2><p class="lead">M&amp;A buy-side e sell-side, Exporte-se (estruturação EUA), Câmbio Pronto, FINIMP, ACC, ACE e Operações Internacionais Cash Collateral a partir de U$2M — com acesso direto a fundos asiáticos, americanos e europeus.</p></div></article>
+</div></div></section>
 
-        <!-- Blog -->
-        <li><a href="blog/">Blog</a></li>
+<section id="numeros" class="sec" data-ph data-cap="Volume"><div class="wrap">
+  <p class="eyebrow">Volume em Operação</p>
+  <h2 class="rv">O Que a V3 Está <em>Estruturando Agora</em></h2>
+  <p class="lead rv">Volume ativo em originação e estruturação por vertical, direto da nossa mesa operacional.</p>
+  <div class="stats big-stats rv" id="v3-stats-grid"><div><p class="v3-stat-number" data-stat="ma" data-fallback="11268675200">R$ 0</p><small>M&amp;A e Negócios Estratégicos</small></div><div><p class="v3-stat-number" data-stat="credito" data-fallback="364814000">R$ 0</p><small>Crédito Estruturado</small></div><div><p class="v3-stat-number" data-stat="credito_internacional" data-fallback="156000000">R$ 0</p><small>Crédito Internacional</small></div><div><p class="v3-stat-number" data-stat="consorcio" data-fallback="35796600">R$ 0</p><small>Consórcio</small></div></div>
+  <p class="note rv">Volume ativo em originação e estruturação. Não representa capital já liquidado. <span id="v3-stats-updated"></span></p>
+</div></section>
 
-        <!-- Contato -->
-        <li><a href="#contato">Contato</a></li>
+<section id="portfolio" class="sec" data-ph data-cap="Portfólio"><div class="wrap">
+  <p class="eyebrow">Portfólio</p>
+  <div class="big rv" aria-hidden="true">30+</div>
+  <h2 class="rv">Linhas de Crédito <em>Estruturado</em></h2>
+  <p class="lead rv">Cada operação é desenhada com FIDC, fundo ou administradora Tier 1. Clique em cada categoria para explorar as linhas disponíveis.</p>
+</div>
+<div class="tape" aria-hidden="true"><div id="t1"></div></div>
+<div class="tape alt" aria-hidden="true"><div id="t2"></div></div>
+<div class="wrap"><div class="cats"><details open><summary><i>01</i>Crédito com Garantia Imobiliária<small>5 linhas</small></summary><div class="linhas"><div class="linha"><p class="tag">V3Equity</p><h4>V3 Equity — CGI Consórcio</h4><p>Capital de giro via consórcio com garantia imobiliária. Menor CET do mercado. Prazo até 220 meses.</p></div><div class="linha"><p class="tag">Home Equity</p><h4>Home Equity</h4><p>Capital de giro com imóvel urbano. 100% online, processo ágil, até 240 meses.</p></div><div class="linha"><p class="tag">HomeCash</p><h4>HomeCash — Compra e Recompra</h4><p>Fundo compra o imóvel com contrato de recompra garantida. Juros mensais, quitação ao final. Prazo 18 meses.</p></div><div class="linha"><p class="tag">CGI Corporativo</p><h4>CGI — Crédito Corporativo</h4><p>Empresas a partir de R$30M de faturamento. Liberação gradual por até 5 anos. Prazo até 240 meses.</p></div><div class="linha"><p class="tag">Distressed</p><h4>Home Equity Distressed</h4><p>Para clientes com restrições. Sem análise de renda. Imóvel urbano quitado como garantia. Prazo 24–48 meses.</p></div></div></details><details><summary><i>02</i>Financiamento Imobiliário &amp; Construção<small>8 linhas</small></summary><div class="linhas"><div class="linha"><p class="tag">CRI</p><h4>CRI — Certificado de Recebíveis Imobiliários</h4><p>Construção para venda. Obra com 10%+ concluída e 35%+ vendida. De R$5M a R$150M.</p></div><div class="linha"><p class="tag">Financiamento PF</p><h4>Financiamento Imobiliário</h4><p>Aquisição residencial ou comercial. SAC ou Price. Imóveis a partir de R$300K. Prazo até 240 meses.</p></div><div class="linha"><p class="tag">Internacional</p><h4>Financiamento para Brasileiros no Exterior</h4><p>Sem tradução juramentada. Disponível em SP, RJ, BH, Curitiba, POA, Florianópolis e Campinas.</p></div><div class="linha"><p class="tag">Construção PF</p><h4>Fundo Construção — Moradia</h4><p>Obra residencial para pessoa física. Até 99% do valor. Projeto aprovado pela prefeitura. Prazo até 240 meses.</p></div><div class="linha"><p class="tag">Reforma</p><h4>Fundo Construção — Reforma</h4><p>Liberação em tranches. Avaliação em até 48h. Imóvel urbano. Prazo até 240 meses com carência de 6 meses.</p></div><div class="linha"><p class="tag">Unifamiliar</p><h4>Fundo Construção — Residencial para Venda</h4><p>Pequenos e médios construtores. Garantia: terreno e/ou VGV. Prazo até 240 meses.</p></div><div class="linha"><p class="tag">Construtoras</p><h4>Fundo Construção — Construtoras (BTS)</h4><p>Estrutura BTS corporativo. De R$2M a R$100M. Amortização SAC ou Price.</p></div><div class="linha"><p class="tag">Incorporadoras</p><h4>Fundo Construção — Incorporadoras</h4><p>Multi-lançamento com holding/subholding. A partir de R$6M. Liberação em tranches conforme avanço da obra.</p></div></div></details><details><summary><i>03</i>Crédito Veicular<small>2 linhas</small></summary><div class="linhas"><div class="linha"><p class="tag">Giro Auto</p><h4>Giro Auto — Capital de Giro com Frota</h4><p>Garantia de veículos ou frotas. Sem consulta ao BACEN. Veículos leves até 9 anos, pesados até 7 anos.</p></div><div class="linha"><p class="tag">V3Auto</p><h4>V3Auto — Refinanciamento e Aquisição</h4><p>100% digital. Caminhões, ônibus, carretas novas (Scania, Volvo, Mercedes, VW, Iveco, Fachini). Prazo até 60 meses.</p></div></div></details><details><summary><i>04</i>Crédito sem Garantia Real<small>2 linhas</small></summary><div class="linhas"><div class="linha"><p class="tag">Aval PJ</p><h4>Crédito no Aval — Pessoa Jurídica</h4><p>Sem avalista ou garantia real. PJ com 3+ anos e faturamento entre R$240K e R$12M. Prazo de 6 a 60 meses.</p></div><div class="linha"><p class="tag">Cash Collateral</p><h4>Cash Collateral</h4><p>Garantia líquida (dinheiro bloqueado, CDB, títulos públicos). Taxas reduzidas. Aprovação em 15–30 dias.</p></div></div></details><details><summary><i>05</i>Agro, Consórcio &amp; Sale Leaseback<small>5 linhas</small></summary><div class="linhas"><div class="linha"><p class="tag">CPR Agro</p><h4>CPR Agro — Antecipação de CPR</h4><p>Produtores rurais. Antecipa CPR emitida para valor presente. A partir de R$500K. Prazo até vencimento da CPR.</p></div><div class="linha"><p class="tag">Maquinários</p><h4>Capital Maquinários</h4><p>Linha amarela, carretas e caminhões com até 5 anos. De R$25K a R$10M. Prazo até 60 meses com carência de 1 ano.</p></div><div class="linha"><p class="tag">Consórcio</p><h4>Consórcio Curado V3</h4><p>PF e PJ. Curadoria das melhores administradoras do mercado. Gestão completa da carteira. Prazo de 24 a 220 meses.</p></div><div class="linha"><p class="tag">Carta Contemplada</p><h4>Cartas de Crédito Contempladas</h4><p>Carta já sorteada ou contemplada por lance. Aquisição planejada e rápida. Estruturação em 7 a 30 dias.</p></div><div class="linha"><p class="tag">Sale Leaseback</p><h4>Sale Leaseback — Imóvel / Agro</h4><p>Fundo compra e arrenda de volta o imóvel rural ou urbano. De R$2M a R$100M. Juros anuais, quitação em 10 anos.</p></div></div></details><details><summary><i>06</i>Operações Internacionais &amp; Cross-Border<small>6 linhas</small></summary><div class="linhas"><div class="linha"><p class="tag">Int. Cash Collateral</p><h4>Op. Internacional — Cash Collateral (25%)</h4><p>Projetos de expansão. A partir de U$2M. 25% em garantia bloqueada em banco AAA. Prazo 10 anos, 3 de carência.</p></div><div class="linha"><p class="tag">Int. Imóvel</p><h4>Op. Internacional — Garantia Imobiliária</h4><p>Faturamento mínimo R$25M/ano. LTV 50%. A partir de U$10M. Prazo 10 anos, 2 de carência.</p></div><div class="linha"><p class="tag">Câmbio</p><h4>Câmbio Pronto</h4><p>Conversão imediata entre moedas. Liquidação D+0 a D+2. Pagamentos internacionais, remessas e investimentos no exterior.</p></div><div class="linha"><p class="tag">FINIMP</p><h4>FINIMP — Financiamento de Importação</h4><p>Crédito em moeda estrangeira com isenção de IOF. Proteção cambial via hedge. Prazo de 90 dias a 5 anos.</p></div><div class="linha"><p class="tag">ACC</p><h4>ACC — Adiantamento Pré-Embarque</h4><p>Exportadores. Antecipa capital antes do envio da mercadoria. Taxas internacionais. Prazo até 360 dias.</p></div><div class="linha"><p class="tag">ACE</p><h4>ACE — Adiantamento Pós-Embarque</h4><p>Antecipa recebíveis internacionais após o embarque. Transforma vendas externas em liquidez imediata. Prazo 180–540 dias.</p></div></div></details><details><summary><i>07</i>Seguros<small>Corporativo · Patrimonial · Agro</small></summary><div class="linhas"><div class="linha"><p class="tag">Corporativo</p><h4>Seguros Corporativos</h4><p>Empresarial · Saúde Empresarial · Vida em Grupo · Auto Frota · RC Profissional · Seguro Garantia · Carga · Risco de Engenharia.</p></div><div class="linha"><p class="tag">Patrimonial</p><h4>Seguros Patrimoniais &amp; Operacionais</h4><p>Automóvel · RD Equipamentos · Náutico · Aeronáutico (Jatos, Turbohélices, Helicópteros).</p></div><div class="linha"><p class="tag">Agro</p><h4>Seguros Agro &amp; Especializados</h4><p>Equino/Bovino · Colheita Garantida (soja, milho, algodão) · Bike.</p></div></div></details><details><summary><i>08</i>M&amp;A e Expansão Internacional<small>2 linhas</small></summary><div class="linhas"><div class="linha"><p class="tag">M&amp;A</p><h4>M&amp;A — Fusões e Aquisições</h4><p>Buy-side e sell-side. Centenas de empresas em esteira. 1/3 da comissão líquida para o partner que captou o ativo.</p></div><div class="linha"><p class="tag">Exporte-se</p><h4>Exporte-se — Estruturação nos EUA</h4><p>LLC americana, conta bancária, dolarização do capital, real estate nos EUA, planejamento sucessório e patrimonial.</p></div></div></details></div></div></section>
 
-        <!-- Mobile extra -->
-        <li style="display: none;" class="mobile-only-nav">
-          <a href="https://v3-partner.vercel.app/dashboard" style="color: var(--gold);">Área do Partner</a>
-        </li>
-      </ul>
+<section id="tokenizacao" class="sec" data-ph data-cap="Tokenização"><div class="wrap">
+  <p class="eyebrow">Tokenização de Ativos Reais</p>
+  <h2 class="rv">Seu Ativo. <em>Token.</em><br>Liquidez Global.</h2>
+  <p class="lead rv">Securitização digital lastreada em ativo real. A V3 origina, estrutura e distribui. A infraestrutura proprietária V3 tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição para investidores globais — sobre o mesmo ativo que a V3 já origina.</p>
+  <p class="pill rv"><b>Infraestrutura Proprietária V3</b><span>Infraestrutura regulada — CVM 88</span></p>
+  <p class="eyebrow mt">Como funciona</p>
+  <div class="grid g4">
+    <article class="sheet rv"><p class="n">01</p><p class="tag">V3 Partners</p><h3>Originação</h3><p>Partner ou V3 identifica o ativo — imóvel, recebível, commodity. Qualificação pela Regra dos 5 SIMs.</p></article>
+    <article class="sheet rv" style="--d:.08s"><p class="n">02</p><p class="tag">V3 Partners</p><h3>Estruturação</h3><p>SPE constituída, due diligence completa, laudos e estrutura jurídica. Ativo preparado para tokenização.</p></article>
+    <article class="sheet rv" style="--d:.16s"><p class="n">03</p><p class="tag">V3 Partners</p><h3>Tokenização</h3><p>A plataforma tecnológica proprietária V3 emite os tokens, realiza KYC institucional dos investidores e configura os smart contracts de distribuição de proventos.</p></article>
+    <article class="sheet rv" style="--d:.24s"><p class="n">04</p><p class="tag">Investidor</p><h3>Acesso Global</h3><p>Investidores globais compram frações do ativo. Liquidação OTC 24/7 em Real ou USD. Proventos automáticos.</p></article>
+  </div>
+  <p class="eyebrow mt">Ativos elegíveis hoje</p>
+  <div class="grid g4">
+    <article class="sheet rv"><p class="tag">Real Estate</p><h3>Imóveis Urbanos e Rurais</h3><p>Imóveis de alto padrão, galpões e fazendas. SPE + Sale Leaseback. Um imóvel de R$10M dividido em cotas de R$10K cada.</p></article>
+    <article class="sheet rv" style="--d:.08s"><p class="tag">Crédito &amp; Recebíveis</p><h3>Recebíveis Judiciais</h3><p>Precatórios e recebíveis com força jurídica. FIDC fracionado em tokens com liquidez contínua e distribuição global.</p></article>
+    <article class="sheet rv" style="--d:.16s"><p class="tag">Mineração &amp; Commodities</p><h3>Ouro e Lítio</h3><p>Tokenização de estoques custodiados. Acesso fracionado a commodities estratégicas para investidores cross-border.</p></article>
+    <article class="sheet rv" style="--d:.24s"><p class="tag">M&amp;A Cross-Border</p><h3>Participações Societárias</h3><p>Token de equity em SPE para operações M&amp;A. Distribuição para fundos asiáticos e americanos em D+0.</p></article>
+  </div>
+  <div class="sheet wide rv"><div><p class="tag">Tokenize seu ativo</p><h3 class="lg">Ativo real. Liquidez global. <em>Sem abrir mão da segurança patrimonial.</em></h3><p>A V3 origina, estrutura e distribui. Todo o processo roda sobre plataforma tecnológica proprietária autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.</p></div><a class="btn g" href="https://wa.me/5511937639475?text=Ol%C3%A1!%20Tenho%20interesse%20em%20me%20tornar%20Partner%20e%20gostaria%20de%20agendar%20minha%20demonstra%C3%A7%C3%A3o%20para%20liberar%20meus%2030%20dias%20gr%C3%A1tis%20do%20sistema.%20Como%20podemos%20prosseguir%3F%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80">Agendar Demonstração</a></div>
+</div></section>
 
-      <!-- CTA — visível apenas desktop -->
-      <div class="navbar-cta">
-        <a href="https://v3-partner.vercel.app/dashboard" class="btn btn-secondary">Área do Partner</a>
-        <a href="partners" class="btn btn-primary">Seja Partner V3</a>
-      </div>
+<section id="estruturacao" class="sec" data-ph data-cap="Estruturação"><div class="wrap">
+  <p class="eyebrow">Estruturação</p>
+  <h2 class="rv">Arquitetura de Crédito e <em>Financiamento Estruturado</em></h2>
+  <p class="lead rv">Com mais de 30 linhas de crédito estruturado, a V3 desenha a operação certa para cada ativo. Atuamos junto a FIDCs, fundos de investimento e administradoras Tier 1 em todo o ciclo — da originação à liquidação.</p>
+  <div class="grid g2">
+    <article class="sheet rv"><p class="tag">Home Equity &amp; Bridge Loans</p><h3>CGI — Crédito com Garantia de Imóvel</h3><p>Estruturação de crédito com garantia de imóvel para alavancagem rápida de projetos, ideal para aquisição de terrenos e fases pré-incorporação imobiliária.</p></article>
+    <article class="sheet rv" style="--d:.1s"><p class="tag">Recebíveis Judiciais &amp; Precatórios</p><h3>FIDC de Recebíveis Judiciais</h3><p>Securitização de direitos creditórios judiciais em FIDC com estrutura de cotas sênior/subordinada. Precatórios federais e estaduais estruturados com deságio calculado e cessão regulada perante CVM e COAF.</p></article>
+    <article class="sheet rv"><p class="tag">Mercado de Capitais</p><h3>Project Finance — CRI / CRA / FIDC</h3><p>Empacotamento da dívida ou recebíveis do seu negócio em títulos do mercado de capitais para captação de alto volume junto a fundos institucionais.</p></article>
+    <article class="sheet rv" style="--d:.1s"><p class="tag">Corporate Credit</p><h3>Crédito Corporativo B2B</h3><p>Intermediação e estruturação de linhas de crédito corporativo para expansão comercial e otimização de fluxo de caixa de empresas em crescimento.</p></article>
+  </div>
+</div></section>
 
-      <!-- Hamburguer — visível apenas mobile -->
-      <button class="navbar-menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+<section id="exporte-se" class="sec" data-ph data-cap="Exporte-se"><div class="wrap">
+  <p class="eyebrow">Exporte-se · Internacionalização Patrimonial</p>
+  <h2 class="rv">Seu patrimônio. <em>Em dólar.</em><br>Com estrutura.</h2>
+  <p class="lead rv">Plataforma completa de internacionalização para empresários e investidores brasileiros. LLC americana, imóveis na Flórida, dolarização patrimonial, sucessão simplificada e renda passiva turnkey — tudo estruturado pela V3 com execução local nos EUA.</p>
+  <div class="facts rv"><div><b>15–20%</b><span>Retorno estimado a.a. em dólar</span></div><div><b>24m</b><span>Prazo de execução · Coconut Grove 101</span></div><div><b>R$ 10K</b><span>Ticket mínimo via lâminas tokenizadas</span></div><div><b>US$ 5M</b><span>Capital total · Projeto piloto</span></div></div>
+  <p class="eyebrow mt">6 Pilares da Plataforma</p>
+  <div class="grid g3">
+    <article class="sheet rv"><p class="tag">Pilar 01</p><h3>Estrutura Empresarial nos EUA</h3><p>LLC americana, contas bancárias e documentação completa. Base jurídica para operar globalmente com segurança.</p></article>
+    <article class="sheet rv" style="--d:.08s"><p class="tag">Pilar 02</p><h3>Planejamento Tributário e Sucessório</h3><p>Holdings, trusts e otimização fiscal. ITCMD substituído por estrutura americana eficiente e previsível.</p></article>
+    <article class="sheet rv" style="--d:.16s"><p class="tag">Pilar 03</p><h3>Investimento Imobiliário</h3><p>Acesso a projetos curados pela V3 na Flórida: unifamiliares, multifamiliares e vacation homes.</p></article>
+    <article class="sheet rv"><p class="tag">Pilar 04</p><h3>Dolarização Patrimonial</h3><p>Conversão de capital para dólar com eficiência tributária. Remessa e registros legais completos.</p></article>
+    <article class="sheet rv" style="--d:.08s"><p class="tag">Pilar 05</p><h3>Renda Passiva Turnkey</h3><p>Aquisição, reforma, locação e desinvestimento gerenciados. Rendimento em dólar sem operar o ativo.</p></article>
+    <article class="sheet rv" style="--d:.16s"><p class="tag">Pilar 06</p><h3>Suporte Especializado Local</h3><p>Rede de jurídico, contabilidade e banco nos EUA. Presença local para representar e proteger o investidor.</p></article>
+  </div>
+  <article class="sheet wide proj rv">
+    <div><p class="tag">Projeto Piloto · 2026</p><h3 class="lg">Coconut Grove 101</h3><p class="strong">Miami, Flórida — EUA</p><p>Build-to-Suit em um dos bairros mais valorizados de Miami. Estudo de viabilidade concluído. Captação Fase 1 de R$9,99M via crowdfunding tokenizado + financiamento americano. Estratégia de saída estruturada em 24 meses.</p><a class="btn g" href="https://wa.me/5511937639475?text=Ol%C3%A1!%20Tenho%20interesse%20em%20me%20tornar%20Partner%20e%20gostaria%20de%20agendar%20minha%20demonstra%C3%A7%C3%A3o%20para%20liberar%20meus%2030%20dias%20gr%C3%A1tis%20do%20sistema.%20Como%20podemos%20prosseguir%3F%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80">Solicitar Lâmina de Investimento</a></div>
+    <dl><div><dt>Captação Fase 1</dt><dd>R$ 9.990.000</dd></div><div><dt>Retorno estimado</dt><dd>15% – 20% a.a. em dólar</dd></div><div><dt>Prazo de execução</dt><dd>24 meses</dd></div><div><dt>Ticket mínimo</dt><dd>R$ 10.000</dd></div></dl>
+  </article>
+  <p class="note rv">Projeções baseadas em estudo de viabilidade concluído. Retornos não garantem resultados futuros. Investimento sujeito a riscos de mercado, câmbio e execução.</p>
+  <div class="grid g3">
+    <article class="sheet rv"><p class="tag">V3 Partners</p><h3>Inteligência que Estrutura</h3><p>Originação, estruturação e distribuição. O elo entre o capital brasileiro e o mercado americano.</p></article>
+    <article class="sheet rv" style="--d:.08s"><p class="tag">Nova Corporate Group</p><h3>Execução Local nos EUA</h3><p>Liderado por Eduardo Abreu. 30+ anos de maestria em engenharia e design em Miami.</p></article>
+    <article class="sheet rv" style="--d:.16s"><p class="tag">DEXCAP</p><h3>Auditoria Blockchain</h3><p>Smart contracts ERC-3643, KYC/AML e compliance. Cada transação imutável e auditável em tempo real.</p></article>
+  </div>
+</div></section>
 
+<section id="wealth" class="sec" data-ph data-cap="Wealth"><div class="wrap">
+  <p class="eyebrow">Wealth Management</p>
+  <h2 class="rv">Proteção, rentabilidade <em>e liberdade patrimonial.</em></h2>
+  <p class="lead rv">A V3 Partners oferece duas soluções complementares de wealth management para quem busca blindar e rentabilizar patrimônio com estrutura institucional — em dólar, com segurança jurídica real.</p>
+  <div class="grid g2">
+    <article class="sheet rv"><p class="tag">Proteção &amp; Crescimento</p><h3 class="lg">IUL — Indexed Universal Life</h3><p>Seguro de vida americano vinculado ao S&amp;P 500. Crescimento patrimonial com <b>0% de perda garantida</b> — o investidor participa da alta do mercado sem exposição às quedas. Estrutura ideal para planejamento sucessório e preservação de longo prazo.</p><ul class="chk"><li>Crescimento vinculado ao S&amp;P 500 com floor de 0%</li><li>Proteção familiar + acumulação + sucessão em uma estrutura</li><li>Produto americano. Capital protegido fora do Brasil.</li></ul><a class="btn g" href="https://wa.me/5511937639475?text=Ol%C3%A1!%20Tenho%20interesse%20em%20me%20tornar%20Partner%20e%20gostaria%20de%20agendar%20minha%20demonstra%C3%A7%C3%A3o%20para%20liberar%20meus%2030%20dias%20gr%C3%A1tis%20do%20sistema.%20Como%20podemos%20prosseguir%3F%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80">Agendar Demonstração</a></article>
+    <article class="sheet rv" style="--d:.1s"><p class="tag">Internacionalização &amp; Rentabilidade</p><h3 class="lg">Exporte-se — Patrimônio nos EUA</h3><p>Plataforma completa para quem quer internacionalizar capital com estrutura. LLC americana, imóveis na Flórida, dolarização e renda passiva — com retorno estimado de <b>15% a 20% a.a. em dólar</b>.</p><ul class="chk"><li>Projeto piloto: Coconut Grove 101 — Miami, FL</li><li>Captação tokenizada via plataforma proprietária V3 — CVM 88 — a partir de R$10K</li><li>LLC + Sucessão + Dolarização patrimonial integrados</li></ul><a class="btn l" href="#exporte-se">Ver Detalhes do Projeto</a></article>
+  </div>
+  <div class="sheet wide rv"><h3>Não sabe qual estrutura faz mais sentido para o seu perfil?</h3><a class="btn g" href="https://wa.me/5511937639475?text=Ol%C3%A1!%20Tenho%20interesse%20em%20me%20tornar%20Partner%20e%20gostaria%20de%20agendar%20minha%20demonstra%C3%A7%C3%A3o%20para%20liberar%20meus%2030%20dias%20gr%C3%A1tis%20do%20sistema.%20Como%20podemos%20prosseguir%3F%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80">Agendar Demonstração</a></div>
+</div></section>
 
-  <!-- ══════════════════════════════════════
-       DOBRA 1 — HERO
-  ══════════════════════════════════════ -->
-  <section class="hero" id="home" style="
-    background-image:
-      linear-gradient(to right, rgba(9,8,26,0.93) 0%, rgba(9,8,26,0.80) 50%, rgba(9,8,26,0.50) 100%),
-      url('assets/img/hero-bg.jpeg');
-    background-size: cover;
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    scroll-margin-top: 80px;
-  ">
-    <div class="container">
-      <div style="max-width: 760px;">
+<section id="global" class="sec" data-ph data-cap="Cross-Border"><div class="wrap">
+  <p class="eyebrow">Cross-Border</p>
+  <h2 class="rv">Liquidez Global. <em>Liquidação OTC.</em></h2>
+  <p class="lead rv">O capital não tem fronteiras. A V3 Partners conecta a economia real latino-americana à liquidez dos principais polos financeiros mundiais, com trânsito ágil via infraestrutura OTC.</p>
+  <div class="grid g2">
+    <article class="sheet rv"><p class="tag">Estados Unidos</p><h3>USA Wealth Accelerator</h3><p>Assessoria estratégica e originação de teses focadas na construção de Real Estate de alto padrão e alocação segura de patrimônio institucional nos Estados Unidos.</p></article>
+    <article class="sheet rv" style="--d:.1s"><p class="tag">Ásia &amp; Global</p><h3>Conexão com Fundos Globais</h3><p>Estruturação de teses de investimento em ativos reais voltadas para atração de capital de fundos imobiliários japoneses e investidores institucionais internacionais.</p></article>
+    <article class="sheet rv"><p class="tag">América Latina</p><h3>Trade Finance &amp; Expansão LatAm</h3><p>Assessoria em comércio exterior, abertura de rotas comerciais e estruturação corporativa internacional para expansão e otimização logística global.</p></article>
+    <article class="sheet rv" style="--d:.1s"><p class="tag">Commodities Globais</p><h3>Trading Estratégico</h3><p>Compliance, bancarização e intermediação direta com clientes internacionais em operações de grande volume de Ouro e Carbonato de Lítio.</p></article>
+  </div>
+</div></section>
 
-        <!-- Badge — destaque claro em mobile -->
-        <div class="fade-in">
-          <span class="badge" style="font-size: 12px; padding: 8px 16px; letter-spacing: 0.14em;">
-            Boutique Institucional Multiproduto
-          </span>
-        </div>
+<section id="diretoria" class="sec" data-ph data-cap="Diretoria"><div class="wrap">
+  <p class="eyebrow">Liderança</p>
+  <h2 class="rv">Managing Partners</h2>
+  <p class="lead rv">Três trajetórias. Uma tese. Execução sem terceirizar.</p>
+  <div class="team">
+    <figure class="pc rv"><img src="assets/img/home/joao.webp" alt="João Lemos Netto" loading="lazy"><figcaption><small>Head de Originação &amp; Ativos</small><b>João Lemos Netto</b><span>Lidera a originação de ativos e a estruturação de crédito nas 4 verticais. Expertise em CGI, CRI, FIDC, securitização de recebíveis e operações cross-border. Executor com foco em identificar e estruturar o que o mercado convencional descarta.</span></figcaption></figure>
+    <figure class="pc rv" style="--d:.12s"><img src="assets/img/home/robson.webp" alt="Robson Lino dos Santos" loading="lazy"><figcaption><small>COO e Compliance</small><b>Robson Lino dos Santos</b><span>Responsável pela integridade operacional, compliance regulatório e análise de risco fiduciário. Com sólida trajetória na gestão de grandes carteiras PJ e Agro, garante que todas as estruturas operem com blindagem jurídica irretocável perante CVM e COAF.</span></figcaption></figure>
+    <figure class="pc rv" style="--d:.24s"><img src="assets/img/home/hamilton.webp" alt="Hamilton Santos" loading="lazy"><figcaption><small>CFO e Relações Institucionais</small><b>Hamilton Santos</b><span>Lidera a gestão de liquidez e as relações com investidores institucionais. Especialista em estruturação de crédito e operações cross-border, conecta o lastro originado à infraestrutura OTC, garantindo agilidade e eficiência transacional para fundos globais.</span></figcaption></figure>
+  </div>
+</div></section>
 
-        <!-- Headline — equilibrado entre mobile e desktop -->
-        <div class="mt-24 fade-in">
-          <h1 style="font-size: clamp(28px, 5vw, 52px); font-weight: 800; color: var(--cream); line-height: 1.1; letter-spacing: -0.02em; max-width: 680px; text-wrap: balance;">
-            Transformamos Ativos Reais em Capital Global.
-          </h1>
-        </div>
+<section id="governanca" class="sec" data-ph data-cap="Governança"><div class="wrap">
+  <p class="eyebrow">Cultura &amp; Governança</p>
+  <h2 class="rv">O Padrão Ouro <em>em Governança</em></h2>
+  <p class="lead rv">Operamos sob a premissa de que o mercado de capitais não tolera ineficiência. Nossa cultura interna é o reflexo direto da nossa atuação externa: blindada, técnica, pragmática e orientada exclusivamente a resultados.</p>
+  <div class="grid g4">
+    <article class="sheet rv"><h3>Meritocracia Implacável</h3><p>Recompensamos a performance técnica, a estruturação de negócios sólidos e a execução impecável. Não há atalhos.</p></article>
+    <article class="sheet rv" style="--d:.08s"><h3>Transparência Fiduciária</h3><p>Comunicação direta como pilar de mitigação de risco. Decisões sempre baseadas em dados reais, nunca em suposições.</p></article>
+    <article class="sheet rv" style="--d:.16s"><h3>Inteligência Transacional</h3><p>Arquiteturas jurídicas e financeiras modernas para reduzir custo de transação e acelerar a liquidez dos ativos.</p></article>
+    <article class="sheet rv" style="--d:.24s"><h3>Neutralidade Institucional</h3><p>Atuação estritamente técnica. Foco absoluto no dever fiduciário e na rentabilidade do capital dos nossos clientes.</p></article>
+  </div>
+  <div class="facts rv"><div><small>Liquidação</small><b>D+0 OTC</b><span>Liquidação cross-border em tempo real</span></div><div><small>Operação</small><b>24/7</b><span>Infraestrutura operando continuamente, sem janelas de mercado</span></div><div><small>Compliance</small><b>CVM + COAF</b><span>Estruturas blindadas sob as normas regulatórias vigentes</span></div></div>
+  <div class="sheet wide rv"><div><p class="tag">Infraestrutura</p><h3 class="lg">Liquidez Global. Liquidação OTC.</h3><p>Nossa infraestrutura de distribuição digital transforma ativos ilíquidos em instrumentos de mercado negociáveis, reduzindo o atrito transacional e conectando sua operação à liquidez global em D+0.</p><p>KYC automatizado, compliance integrado e capacidade de liquidação em múltiplas jurisdições garantem a segurança e a agilidade que operações de alto valor exigem.</p></div><a class="btn g" href="partners">Acessar Plataforma OTC</a></div>
+</div></section>
 
-        <div class="mt-24 fade-in">
-          <p style="font-size: clamp(15px, 2vw, 18px); color: var(--muted); max-width: 580px; line-height: 1.85;">
-            Home Equity, CGI, Sale Leaseback, CRI, FIDC, M&A e mais de 25 linhas estruturadas —
-            securitizadas com rigor fiduciário e conectadas ao capital institucional global.
-            Do recebível ao título. Do ativo à liquidez.
-          </p>
-        </div>
+<section id="elo" data-ph data-cap="V3"><div class="wrap">
+  <h2 class="rv">Você também pode ser <em>o elo.</em></h2>
+  <p class="lead rv">Acesse o portfólio completo de 30+ linhas de crédito estruturado, relatórios diários de inteligência e tecnologia proprietária de originação. Comissão de 25% a 55% por deal fechado — sem cobrança por resultado.</p>
+  <div class="cta rv"><a class="btn g" href="partners">Ver planos Partners</a></div>
+</div></section>
+</main>
 
-        <div class="fade-in" style="display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap;">
-          <a href="#portfolio" class="btn btn-primary">Ver Portfólio de Produtos</a>
-          <a href="https://v3partners.com.br/partners" class="btn btn-secondary">Inscreva-se como Partner</a>
-        </div>
+<footer id="contato"><div class="wrap">
+  <div class="fg">
+    <div><img src="assets/img/home/logo.webp" alt="V3 Partners" width="110"><p>O elo entre a economia real e o mercado de capitais global.</p><p>CNPJ 14.219.287/0001-50<br>Rua Visconde de Pirajá, 414, Sala 718<br>Ipanema — Rio de Janeiro, RJ</p></div>
+    <div><p class="eyebrow">Verticais</p><a href="#verticais">Real Estate Estruturado</a><a href="#verticais">Crédito &amp; Recebíveis</a><a href="bolsa-de-ativos">Balcão de Ativos</a><a href="#verticais">Mineração &amp; Commodities</a><a href="#verticais">M&amp;A Cross-Border</a><a href="#tokenizacao">Tokenização de Ativos</a><a href="#exporte-se">Exporte-se</a><a href="#wealth">Wealth Management</a></div>
+    <div><p class="eyebrow">Plataforma</p><a href="blog/">Blog</a><a href="partners">Planos Partners</a><a href="https://app.v3partners.com.br/dashboard">Área do Partner</a></div>
+    <div><p class="eyebrow">Contato</p><a href="mailto:deal@v3partners.com.br">deal@v3partners.com.br</a><span>Rio de Janeiro — RJ</span><a href="https://instagram.com/V3Partners">@V3Partners</a></div>
+  </div>
+  <p class="legal">Aviso Legal: A V3 Partners Soluções Ltda atua estritamente nos limites da legislação vigente aplicável a companhias securitizadoras e correspondentes não regulados. Fica expressamente vedado à Companhia o exercício de atividades privativas de instituições financeiras que dependam de autorização prévia do Banco Central do Brasil (BACEN) ou captação pública fora das normativas da Comissão de Valores Mobiliários (CVM). As informações disponibilizadas neste site têm caráter exclusivamente institucional e informativo, não constituindo oferta pública de valores mobiliários ou recomendação de investimento.</p>
+  <div class="fb"><span>© 2026 V3 Partners Soluções Ltda. Todos os direitos reservados.</span><span><a href="politica-de-privacidade">Privacidade</a><a href="termos-de-uso">Termos de Uso</a><a href="politica-de-cookies">Cookies</a></span></div>
+</div></footer>
 
-        <!-- Stats — captação ao vivo, todas as verticais -->
-        <div class="fade-in" id="v3-hero-stats" style="display: flex; align-items: flex-start; gap: 0; margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(201,168,76,0.12); flex-wrap: wrap;">
+<div id="hud" aria-hidden="true"><span id="cap">Mercado</span><svg viewBox="0 0 1000 30" preserveAspectRatio="none"><path class="bg" id="sb"/><path id="sf" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg></div>
 
-          <div style="flex: 1; min-width: 110px; padding-right: 24px; text-align: center;">
-            <p class="v3-stat-number" data-stat="ma" data-fallback="11268675200" style="font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
-            <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4;">M&amp;A e Negócios<br/>Estratégicos</p>
-          </div>
-
-          <div class="stat-divider" style="align-self: stretch;"></div>
-
-          <div style="flex: 1; min-width: 110px; padding: 0 24px; text-align: center;">
-            <p class="v3-stat-number" data-stat="credito" data-fallback="364814000" style="font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
-            <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4;">Crédito<br/>Estruturado</p>
-          </div>
-
-          <div class="stat-divider" style="align-self: stretch;"></div>
-
-          <div style="flex: 1; min-width: 110px; padding: 0 24px; text-align: center;">
-            <p class="v3-stat-number" data-stat="credito_internacional" data-fallback="156000000" style="font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
-            <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4;">Crédito<br/>Internacional</p>
-          </div>
-
-          <div class="stat-divider" style="align-self: stretch;"></div>
-
-          <div style="flex: 1; min-width: 100px; padding-left: 24px; text-align: center;">
-            <p class="v3-stat-number" data-stat="consorcio" data-fallback="35796600" style="font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
-            <p style="font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4;">Consórcio</p>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 2 — QUEM SOMOS
-  ══════════════════════════════════════ -->
-  <section class="section" id="sobre" style="background: var(--navy-base);">
-    <div class="container">
-
-      <!-- Cabeçalho da seção -->
-      <div class="fade-in" style="max-width: 680px; margin-bottom: 64px;">
-        <span class="label">Quem Somos</span>
-        <h2 class="mt-16">Enxergamos o Valor Onde<br/>Outros Veem Complexidade.</h2>
-
-        <p class="mt-16">
-          Somos o elo entre ativos da economia real e o capital global.
-          Uma boutique de estruturação que enxerga o que outros descartam,
-          estrutura o que outros não sabem fazer e conecta o que parecia distante.
-        </p>
-        <p class="mt-16">
-          A V3 Partners nasceu da união de três trajetórias seniores em Securitização de Crédito,
-          Gestão de Risco Fiduciário e Negócios Cross-Border — com a missão de transformar ativos
-          complexos da economia real em produtos de capital líquidos, seguros e rentáveis para investidores globais.
-        </p>
-        <p class="mt-24" style="color: var(--gold-light); font-weight: 700; font-size: 17px; line-height: 1.6; border-left: 3px solid var(--gold); padding-left: 20px;">
-          Na V3 Partners, não vendemos produtos financeiros.<br/>Estruturamos o que o mercado não sabe precificar e conectamos quem tem ativo a quem tem capital.
-        </p>
-      </div>
-
-      <!-- Cards Missão / Visão / Valores -->
-      <div class="card-grid card-grid-3 fade-in">
-
-        <div class="card-highlight">
-          <span class="label">Missão</span>
-          <h3 class="mt-16">Transformar Ativos em Capital</h3>
-          <p class="mt-12">Transformar ativos complexos da economia real em produtos financeiros líquidos, seguros e transparentes, democratizando o acesso ao mercado de capitais com rigor fiduciário intransigente.</p>
-        </div>
-
-        <div class="card-highlight">
-          <span class="label">Visão</span>
-          <h3 class="mt-16">Referência Global em Securitização</h3>
-          <p class="mt-12">Ser a securitizadora independente mais confiável do Brasil, líder na estruturação de teses que unem lastro real peso pesado à agilidade da infraestrutura digital OTC.</p>
-        </div>
-
-        <div class="card-highlight">
-          <span class="label">Valores</span>
-          <h3 class="mt-16">O DNA de Cada Operação</h3>
-          <p class="mt-12">Segurança fiduciária, transparência absoluta, integridade operacional, agilidade estratégica e disciplina cooperativista — os cinco pilares que regem cada estrutura que entregamos.</p>
-        </div>
-
-      </div>
-
-      <!-- Manifesto -->
-      <div class="fade-in" style="margin-top: 32px; background: var(--navy-deep); border: 1px solid rgba(201,168,76,0.18); border-radius: 12px; padding: 48px; position: relative; overflow: hidden;">
-        <!-- Acento visual -->
-        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gold);"></div>
-        <span class="label">Manifesto</span>
-        <h3 class="mt-16" style="font-size: 24px; max-width: 700px;">
-          V3 não é apenas um nome. É uma tese em movimento.
-        </h3>
-        <p class="mt-16" style="max-width: 780px; font-size: 16px; line-height: 1.9;">
-          Representa a convergência de três trajetórias: Estruturação de Crédito e Securitização,
-          disciplina fiduciária e gestão de liquidez global, que juntas formam um vetor único no
-          mercado de capitais brasileiro. Nascemos para fazer o que bancos e gestoras tradicionais
-          não fazem: securitizar o que parece ilíquido, estruturar o que parece complexo e conectar
-          a economia real ao capital que a reconhece.
-          Cada deal é uma transformação. Cada estrutura de crédito, uma declaração de competência.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 3 — VERTICAIS DE ATUAÇÃO
-  ══════════════════════════════════════ -->
-  <section class="section bg-deep" id="verticais">
-    <div class="container">
-
-      <div class="text-center fade-in">
-        <span class="label">Atuação</span>
-        <h2 class="mt-16">Verticais de Ativos</h2>
-        <div style="display: flex; justify-content: center; margin-top: 16px;">
-
-        </div>
-        <p class="mt-16" style="max-width: 520px; margin-left: auto; margin-right: auto;">
-          Quatro frentes de estruturação com metodologia fiduciária própria e acesso direto a capital institucional.
-        </p>
-      </div>
-
-      <div class="card-grid card-grid-4 fade-in" style="margin-top: 56px;">
-
-        <div class="card">
-          <p class="vertical-number">01</p>
-          <div class="vertical-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
-              <rect x="2" y="7" width="20" height="14" rx="2"/>
-              <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-              <line x1="12" y1="12" x2="12" y2="16"/>
-            </svg>
-          </div>
-          <h3 style="font-size: clamp(17px, 2vw, 21px); margin-bottom: 12px;">Crédito Estruturado & Recebíveis</h3>
-          <p>V3Equity, Home Equity, HomeCash, CGI, Cash Collateral, Crédito no Aval — além de CRI, FIDC e securitização de recebíveis judiciais e precatórios. A vertical de maior volume e recorrência da V3.</p>
-        </div>
-
-        <div class="card">
-          <p class="vertical-number">02</p>
-          <div class="vertical-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-          </div>
-          <h3 style="font-size: clamp(17px, 2vw, 21px); margin-bottom: 12px;">Real Estate Estruturado</h3>
-          <p>BTS, BTR, SLB, Fundo Construção (Moradia, Reforma, Construtoras e Incorporadoras), CRI e Financiamento Imobiliário — inclusive para brasileiros no exterior e estrangeiros.</p>
-        </div>
-
-        <div class="card">
-          <p class="vertical-number">03</p>
-          <div class="vertical-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-          </div>
-          <h3 style="font-size: clamp(17px, 2vw, 21px); margin-bottom: 12px;">Mineração & Commodities</h3>
-          <p>Intermediação cross-border, estruturação de negócios e bancarização de metais preciosos e minérios estratégicos — lítio, ouro e commodities globais.</p>
-        </div>
-
-        <div class="card">
-          <p class="vertical-number">04</p>
-          <div class="vertical-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="2" y1="12" x2="22" y2="12"/>
-              <path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
-            </svg>
-          </div>
-          <h3 style="font-size: clamp(17px, 2vw, 21px); margin-bottom: 12px;">M&A e Negócios Estratégicos</h3>
-          <p>M&A buy-side e sell-side, Exporte-se (estruturação EUA), Câmbio Pronto, FINIMP, ACC, ACE e Operações Internacionais Cash Collateral a partir de U$2M — com acesso direto a fundos asiáticos, americanos e europeus.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 3.4b — VOLUME EM ORIGINAÇÃO (contadores ao vivo)
-  ══════════════════════════════════════ -->
-  <section class="section" id="numeros" style="background: var(--navy-base);">
-    <div class="container">
-
-      <div class="text-center fade-in">
-        <span class="label">Volume em Operação</span>
-        <h2 class="mt-16">O Que a V3 Está Estruturando Agora</h2>
-        <p class="mt-16" style="max-width: 560px; margin-left: auto; margin-right: auto;">
-          Volume ativo em originação e estruturação por vertical, direto da nossa mesa operacional.
-        </p>
-      </div>
-
-      <div class="fade-in" id="v3-stats-grid" style="
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1px;
-        margin-top: 56px;
-        background: rgba(201,168,76,0.14);
-        border: 1px solid rgba(201,168,76,0.14);
-        border-radius: 12px;
-        overflow: hidden;">
-
-        <div style="background: var(--navy-deep); padding: 40px 20px; text-align: center;">
-          <p class="v3-stat-number" data-stat="ma" data-fallback="11268675200"
-            style="font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
-          <p style="font-size: 11px; color: var(--muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5;">M&amp;A e Negócios<br/>Estratégicos</p>
-        </div>
-
-        <div style="background: var(--navy-deep); padding: 40px 20px; text-align: center;">
-          <p class="v3-stat-number" data-stat="credito" data-fallback="364814000"
-            style="font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
-          <p style="font-size: 11px; color: var(--muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5;">Crédito<br/>Estruturado</p>
-        </div>
-
-        <div style="background: var(--navy-deep); padding: 40px 20px; text-align: center;">
-          <p class="v3-stat-number" data-stat="credito_internacional" data-fallback="156000000"
-            style="font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
-          <p style="font-size: 11px; color: var(--muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5;">Crédito<br/>Internacional</p>
-        </div>
-
-        <div style="background: var(--navy-deep); padding: 40px 20px; text-align: center;">
-          <p class="v3-stat-number" data-stat="consorcio" data-fallback="35796600"
-            style="font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; color: var(--cream); line-height: 1; letter-spacing: -0.02em;">R$ 0</p>
-          <p style="font-size: 11px; color: var(--muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5;">Consórcio</p>
-        </div>
-
-      </div>
-
-      <p class="fade-in mt-16" style="text-align: center; font-size: 10px; color: rgba(155,175,197,0.75); letter-spacing: 0.03em;">
-        Volume ativo em originação e estruturação. Não representa capital já liquidado.
-        <span id="v3-stats-updated"></span>
-      </p>
-
-    </div>
-  </section>
-
-  <script>
+<script>
     (function () {
       var STATS_ENDPOINT = "https://app.v3partners.com.br/api/public/stats-captacao";
       var els = Array.prototype.slice.call(document.querySelectorAll(".v3-stat-number"));
@@ -672,1171 +431,9 @@
         });
     })();
   </script>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 3.5 — PORTFÓLIO COMPLETO
-  ══════════════════════════════════════ -->
-  <section class="section bg-deep" id="portfolio">
-    <div class="container">
-
-      <div class="text-center fade-in" style="margin-bottom: 56px;">
-        <span class="label">Portfólio</span>
-        <h2 class="mt-16">30+ Linhas de Crédito Estruturado</h2>
-        <p class="mt-16" style="max-width: 520px; margin-left: auto; margin-right: auto;">
-          Cada operação é desenhada com FIDC, fundo ou administradora Tier 1. Clique em cada categoria para explorar as linhas disponíveis.
-        </p>
-      </div>
-
-      <style>
-        .pf-accordion { display: flex; flex-direction: column; gap: 8px; }
-        .pf-cat {
-          border: 1px solid rgba(201,168,76,0.14);
-          border-radius: 10px;
-          overflow: hidden;
-          background: var(--navy-card);
-        }
-        .pf-cat-btn {
-          width: 100%; background: none; border: none; cursor: pointer;
-          display: flex; align-items: center; gap: 16px;
-          padding: 20px 24px; text-align: left;
-        }
-        .pf-cat-btn:hover { background: rgba(36,58,102,0.5); }
-        .pf-cat-num {
-          font-size: 10px; font-weight: 700; text-transform: uppercase;
-          letter-spacing: 0.16em; color: var(--gold); min-width: 28px;
-        }
-        .pf-cat-name {
-          font-size: 15px; font-weight: 700; color: var(--cream); flex: 1;
-        }
-        .pf-cat-count {
-          font-size: 11px; color: var(--muted);
-          background: rgba(122,143,168,0.12); border-radius: 99px;
-          padding: 3px 10px; white-space: nowrap;
-        }
-        .pf-cat-arrow {
-          color: var(--gold); transition: transform 0.25s;
-          display: flex; align-items: center;
-        }
-        .pf-cat-btn[aria-expanded="true"] .pf-cat-arrow { transform: rotate(180deg); }
-        .pf-cat-body {
-          display: none; padding: 0 24px 24px;
-          border-top: 1px solid rgba(201,168,76,0.08);
-        }
-        .pf-cat-body.open { display: block; }
-        .pf-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-          gap: 12px; margin-top: 20px;
-        }
-        .pf-card {
-          background: var(--navy-base);
-          border: 1px solid rgba(240,236,228,0.06);
-          border-radius: 8px; padding: 16px 18px;
-        }
-        .pf-card:hover { border-color: rgba(201,168,76,0.2); }
-        .pf-tag {
-          font-size: 9px; font-weight: 700; text-transform: uppercase;
-          letter-spacing: 0.16em; color: var(--gold); display: block; margin-bottom: 8px;
-        }
-        .pf-name { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px; line-height: 1.3; }
-        .pf-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
-      </style>
-
-      <div class="pf-accordion fade-in">
-
-        <!-- CAT 01 -->
-        <div class="pf-cat">
-          <button class="pf-cat-btn" aria-expanded="false" onclick="pfToggle(this)">
-            <span class="pf-cat-num">01</span>
-            <span class="pf-cat-name">Crédito com Garantia Imobiliária</span>
-            <span class="pf-cat-count">5 linhas</span>
-            <span class="pf-cat-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </button>
-          <div class="pf-cat-body">
-            <div class="pf-grid">
-              <div class="pf-card"><span class="pf-tag">V3Equity</span><p class="pf-name">V3 Equity — CGI Consórcio</p><p class="pf-desc">Capital de giro via consórcio com garantia imobiliária. Menor CET do mercado. Prazo até 220 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">Home Equity</span><p class="pf-name">Home Equity</p><p class="pf-desc">Capital de giro com imóvel urbano. 100% online, processo ágil, até 240 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">HomeCash</span><p class="pf-name">HomeCash — Compra e Recompra</p><p class="pf-desc">Fundo compra o imóvel com contrato de recompra garantida. Juros mensais, quitação ao final. Prazo 18 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">CGI Corporativo</span><p class="pf-name">CGI — Crédito Corporativo</p><p class="pf-desc">Empresas a partir de R$30M de faturamento. Liberação gradual por até 5 anos. Prazo até 240 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">Distressed</span><p class="pf-name">Home Equity Distressed</p><p class="pf-desc">Para clientes com restrições. Sem análise de renda. Imóvel urbano quitado como garantia. Prazo 24–48 meses.</p></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAT 02 -->
-        <div class="pf-cat">
-          <button class="pf-cat-btn" aria-expanded="false" onclick="pfToggle(this)">
-            <span class="pf-cat-num">02</span>
-            <span class="pf-cat-name">Financiamento Imobiliário & Construção</span>
-            <span class="pf-cat-count">8 linhas</span>
-            <span class="pf-cat-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </button>
-          <div class="pf-cat-body">
-            <div class="pf-grid">
-              <div class="pf-card"><span class="pf-tag">CRI</span><p class="pf-name">CRI — Certificado de Recebíveis Imobiliários</p><p class="pf-desc">Construção para venda. Obra com 10%+ concluída e 35%+ vendida. De R$5M a R$150M.</p></div>
-              <div class="pf-card"><span class="pf-tag">Financiamento PF</span><p class="pf-name">Financiamento Imobiliário</p><p class="pf-desc">Aquisição residencial ou comercial. SAC ou Price. Imóveis a partir de R$300K. Prazo até 240 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">Internacional</span><p class="pf-name">Financiamento para Brasileiros no Exterior</p><p class="pf-desc">Sem tradução juramentada. Disponível em SP, RJ, BH, Curitiba, POA, Florianópolis e Campinas.</p></div>
-              <div class="pf-card"><span class="pf-tag">Construção PF</span><p class="pf-name">Fundo Construção — Moradia</p><p class="pf-desc">Obra residencial para pessoa física. Até 99% do valor. Projeto aprovado pela prefeitura. Prazo até 240 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">Reforma</span><p class="pf-name">Fundo Construção — Reforma</p><p class="pf-desc">Liberação em tranches. Avaliação em até 48h. Imóvel urbano. Prazo até 240 meses com carência de 6 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">Unifamiliar</span><p class="pf-name">Fundo Construção — Residencial para Venda</p><p class="pf-desc">Pequenos e médios construtores. Garantia: terreno e/ou VGV. Prazo até 240 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">Construtoras</span><p class="pf-name">Fundo Construção — Construtoras (BTS)</span><p class="pf-desc">Estrutura BTS corporativo. De R$2M a R$100M. Amortização SAC ou Price.</p></div>
-              <div class="pf-card"><span class="pf-tag">Incorporadoras</span><p class="pf-name">Fundo Construção — Incorporadoras</p><p class="pf-desc">Multi-lançamento com holding/subholding. A partir de R$6M. Liberação em tranches conforme avanço da obra.</p></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAT 03 -->
-        <div class="pf-cat">
-          <button class="pf-cat-btn" aria-expanded="false" onclick="pfToggle(this)">
-            <span class="pf-cat-num">03</span>
-            <span class="pf-cat-name">Crédito Veicular</span>
-            <span class="pf-cat-count">2 linhas</span>
-            <span class="pf-cat-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </button>
-          <div class="pf-cat-body">
-            <div class="pf-grid">
-              <div class="pf-card"><span class="pf-tag">Giro Auto</span><p class="pf-name">Giro Auto — Capital de Giro com Frota</p><p class="pf-desc">Garantia de veículos ou frotas. Sem consulta ao BACEN. Veículos leves até 9 anos, pesados até 7 anos.</p></div>
-              <div class="pf-card"><span class="pf-tag">V3Auto</span><p class="pf-name">V3Auto — Refinanciamento e Aquisição</p><p class="pf-desc">100% digital. Caminhões, ônibus, carretas novas (Scania, Volvo, Mercedes, VW, Iveco, Fachini). Prazo até 60 meses.</p></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAT 04 -->
-        <div class="pf-cat">
-          <button class="pf-cat-btn" aria-expanded="false" onclick="pfToggle(this)">
-            <span class="pf-cat-num">04</span>
-            <span class="pf-cat-name">Crédito sem Garantia Real</span>
-            <span class="pf-cat-count">2 linhas</span>
-            <span class="pf-cat-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </button>
-          <div class="pf-cat-body">
-            <div class="pf-grid">
-              <div class="pf-card"><span class="pf-tag">Aval PJ</span><p class="pf-name">Crédito no Aval — Pessoa Jurídica</p><p class="pf-desc">Sem avalista ou garantia real. PJ com 3+ anos e faturamento entre R$240K e R$12M. Prazo de 6 a 60 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">Cash Collateral</span><p class="pf-name">Cash Collateral</p><p class="pf-desc">Garantia líquida (dinheiro bloqueado, CDB, títulos públicos). Taxas reduzidas. Aprovação em 15–30 dias.</p></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAT 05 -->
-        <div class="pf-cat">
-          <button class="pf-cat-btn" aria-expanded="false" onclick="pfToggle(this)">
-            <span class="pf-cat-num">05</span>
-            <span class="pf-cat-name">Agro, Consórcio & Sale Leaseback</span>
-            <span class="pf-cat-count">5 linhas</span>
-            <span class="pf-cat-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </button>
-          <div class="pf-cat-body">
-            <div class="pf-grid">
-              <div class="pf-card"><span class="pf-tag">CPR Agro</span><p class="pf-name">CPR Agro — Antecipação de CPR</p><p class="pf-desc">Produtores rurais. Antecipa CPR emitida para valor presente. A partir de R$500K. Prazo até vencimento da CPR.</p></div>
-              <div class="pf-card"><span class="pf-tag">Maquinários</span><p class="pf-name">Capital Maquinários</p><p class="pf-desc">Linha amarela, carretas e caminhões com até 5 anos. De R$25K a R$10M. Prazo até 60 meses com carência de 1 ano.</p></div>
-              <div class="pf-card"><span class="pf-tag">Consórcio</span><p class="pf-name">Consórcio Curado V3</p><p class="pf-desc">PF e PJ. Curadoria das melhores administradoras do mercado. Gestão completa da carteira. Prazo de 24 a 220 meses.</p></div>
-              <div class="pf-card"><span class="pf-tag">Carta Contemplada</span><p class="pf-name">Cartas de Crédito Contempladas</p><p class="pf-desc">Carta já sorteada ou contemplada por lance. Aquisição planejada e rápida. Estruturação em 7 a 30 dias.</p></div>
-              <div class="pf-card"><span class="pf-tag">Sale Leaseback</span><p class="pf-name">Sale Leaseback — Imóvel / Agro</p><p class="pf-desc">Fundo compra e arrenda de volta o imóvel rural ou urbano. De R$2M a R$100M. Juros anuais, quitação em 10 anos.</p></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAT 06 -->
-        <div class="pf-cat">
-          <button class="pf-cat-btn" aria-expanded="false" onclick="pfToggle(this)">
-            <span class="pf-cat-num">06</span>
-            <span class="pf-cat-name">Operações Internacionais & Cross-Border</span>
-            <span class="pf-cat-count">6 linhas</span>
-            <span class="pf-cat-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </button>
-          <div class="pf-cat-body">
-            <div class="pf-grid">
-              <div class="pf-card"><span class="pf-tag">Int. Cash Collateral</span><p class="pf-name">Op. Internacional — Cash Collateral (25%)</p><p class="pf-desc">Projetos de expansão. A partir de U$2M. 25% em garantia bloqueada em banco AAA. Prazo 10 anos, 3 de carência.</p></div>
-              <div class="pf-card"><span class="pf-tag">Int. Imóvel</span><p class="pf-name">Op. Internacional — Garantia Imobiliária</p><p class="pf-desc">Faturamento mínimo R$25M/ano. LTV 50%. A partir de U$10M. Prazo 10 anos, 2 de carência.</p></div>
-              <div class="pf-card"><span class="pf-tag">Câmbio</span><p class="pf-name">Câmbio Pronto</p><p class="pf-desc">Conversão imediata entre moedas. Liquidação D+0 a D+2. Pagamentos internacionais, remessas e investimentos no exterior.</p></div>
-              <div class="pf-card"><span class="pf-tag">FINIMP</span><p class="pf-name">FINIMP — Financiamento de Importação</p><p class="pf-desc">Crédito em moeda estrangeira com isenção de IOF. Proteção cambial via hedge. Prazo de 90 dias a 5 anos.</p></div>
-              <div class="pf-card"><span class="pf-tag">ACC</span><p class="pf-name">ACC — Adiantamento Pré-Embarque</p><p class="pf-desc">Exportadores. Antecipa capital antes do envio da mercadoria. Taxas internacionais. Prazo até 360 dias.</p></div>
-              <div class="pf-card"><span class="pf-tag">ACE</span><p class="pf-name">ACE — Adiantamento Pós-Embarque</p><p class="pf-desc">Antecipa recebíveis internacionais após o embarque. Transforma vendas externas em liquidez imediata. Prazo 180–540 dias.</p></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAT 07 -->
-        <div class="pf-cat">
-          <button class="pf-cat-btn" aria-expanded="false" onclick="pfToggle(this)">
-            <span class="pf-cat-num">07</span>
-            <span class="pf-cat-name">Seguros</span>
-            <span class="pf-cat-count">Corporativo · Patrimonial · Agro</span>
-            <span class="pf-cat-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </button>
-          <div class="pf-cat-body">
-            <div class="pf-grid">
-              <div class="pf-card"><span class="pf-tag">Corporativo</span><p class="pf-name">Seguros Corporativos</p><p class="pf-desc">Empresarial · Saúde Empresarial · Vida em Grupo · Auto Frota · RC Profissional · Seguro Garantia · Carga · Risco de Engenharia.</p></div>
-              <div class="pf-card"><span class="pf-tag">Patrimonial</span><p class="pf-name">Seguros Patrimoniais & Operacionais</p><p class="pf-desc">Automóvel · RD Equipamentos · Náutico · Aeronáutico (Jatos, Turbohélices, Helicópteros).</p></div>
-              <div class="pf-card"><span class="pf-tag">Agro</span><p class="pf-name">Seguros Agro & Especializados</p><p class="pf-desc">Equino/Bovino · Colheita Garantida (soja, milho, algodão) · Bike.</p></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAT 08 -->
-        <div class="pf-cat">
-          <button class="pf-cat-btn" aria-expanded="false" onclick="pfToggle(this)">
-            <span class="pf-cat-num">08</span>
-            <span class="pf-cat-name">M&A e Expansão Internacional</span>
-            <span class="pf-cat-count">2 linhas</span>
-            <span class="pf-cat-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </button>
-          <div class="pf-cat-body">
-            <div class="pf-grid">
-              <div class="pf-card"><span class="pf-tag">M&A</span><p class="pf-name">M&A — Fusões e Aquisições</p><p class="pf-desc">Buy-side e sell-side. Centenas de empresas em esteira. 1/3 da comissão líquida para o partner que captou o ativo.</p></div>
-              <div class="pf-card"><span class="pf-tag">Exporte-se</span><p class="pf-name">Exporte-se — Estruturação nos EUA</p><p class="pf-desc">LLC americana, conta bancária, dolarização do capital, real estate nos EUA, planejamento sucessório e patrimonial.</p></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <script>
-        function pfToggle(btn) {
-          var isOpen = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-          btn.nextElementSibling.classList.toggle('open', !isOpen);
-        }
-      </script>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 3.6 — TOKENIZAÇÃO
-  ══════════════════════════════════════ -->
-  <section class="section" id="tokenizacao" style="background: var(--navy-deep);">
-    <div class="container">
-
-      <div class="fade-in" style="max-width: 640px; margin-bottom: 56px;">
-        <span class="label">Tokenização de Ativos Reais</span>
-        <h2 class="mt-16">Seu Ativo.<br/>Token.<br/>Liquidez Global.</h2>
-        <p class="mt-16">
-          Securitização digital lastreada em ativo real. A V3 origina, estrutura e distribui.
-          A infraestrutura proprietária V3 tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição
-          para investidores globais — sobre o mesmo ativo que a V3 já origina.
-        </p>
-        <div style="margin-top: 24px; display: inline-flex; align-items: center; gap: 10px;
-          background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25);
-          border-radius: 6px; padding: 8px 16px;">
-          <span style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.18em; color: var(--gold);">Infraestrutura Proprietária V3</span>
-          <span style="width: 1px; height: 14px; background: rgba(201,168,76,0.3);"></span>
-          <span style="font-size: 11px; color: var(--muted);">Infraestrutura regulada — CVM 88</span>
-        </div>
-      </div>
-
-      <!-- Como funciona — 4 passos -->
-      <div class="fade-in" style="margin-bottom: 56px;">
-        <p class="label" style="margin-bottom: 24px;">Como funciona</p>
-        <div class="grid-4-steps">
-
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
-            border-radius: 12px 0 0 12px; padding: 28px 24px; position: relative;">
-            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
-              line-height: 1; margin-bottom: 14px;">01</p>
-            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">V3 Partners</p>
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Originação</h4>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              Partner ou V3 identifica o ativo — imóvel, recebível, commodity.
-              Qualificação pela Regra dos 5 SIMs.
-            </p>
-          </div>
-
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
-            border-left: none; padding: 28px 24px; position: relative;">
-            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
-              line-height: 1; margin-bottom: 14px;">02</p>
-            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">V3 Partners</p>
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Estruturação</h4>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              SPE constituída, due diligence completa, laudos e estrutura jurídica.
-              Ativo preparado para tokenização.
-            </p>
-          </div>
-
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
-            border-left: none; padding: 28px 24px; position: relative;">
-            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
-              line-height: 1; margin-bottom: 14px;">03</p>
-            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">V3 Partners</p>
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Tokenização</h4>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              A plataforma tecnológica proprietária V3 emite os tokens, realiza KYC institucional dos investidores e configura
-              os smart contracts de distribuição de proventos.
-            </p>
-          </div>
-
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
-            border-left: none; border-radius: 0 12px 12px 0; padding: 28px 24px;">
-            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
-              line-height: 1; margin-bottom: 14px;">04</p>
-            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">Investidor</p>
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Acesso Global</h4>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              Investidores globais compram frações do ativo. Liquidação OTC 24/7
-              em Real ou USD. Proventos automáticos.
-            </p>
-          </div>
-        </div>
-
-        <!-- Responsivo mobile: grid vira coluna única -->
-        <style>
-          @media (max-width: 900px) {
-            #tokenizacao .token-steps { grid-template-columns: 1fr !important; }
-            #tokenizacao .token-steps > div {
-              border-left: 1px solid rgba(201,168,76,0.12) !important;
-              border-top: none !important;
-              border-radius: 0 !important;
-            }
-            #tokenizacao .token-steps > div:first-child { border-radius: 12px 12px 0 0 !important; }
-            #tokenizacao .token-steps > div:last-child  { border-radius: 0 0 12px 12px !important; }
-          }
-        </style>
-      </div>
-
-      <!-- Ativos elegíveis — 4 cards -->
-      <div class="fade-in" style="margin-bottom: 56px;">
-        <p class="label" style="margin-bottom: 24px;">Ativos elegíveis hoje</p>
-        <div class="card-grid card-grid-4">
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Real Estate</span>
-            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
-              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Imóveis Urbanos e Rurais</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
-              Imóveis de alto padrão, galpões e fazendas. SPE + Sale Leaseback.
-              Um imóvel de R$10M dividido em cotas de R$10K cada.
-            </p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Crédito &amp; Recebíveis</span>
-            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
-              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Recebíveis Judiciais</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
-              Precatórios e recebíveis com força jurídica. FIDC fracionado em tokens
-              com liquidez contínua e distribuição global.
-            </p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Mineração &amp; Commodities</span>
-            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
-              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Ouro e Lítio</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
-              Tokenização de estoques custodiados. Acesso fracionado a commodities
-              estratégicas para investidores cross-border.
-            </p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">M&amp;A Cross-Border</span>
-            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
-              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Participações Societárias</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
-              Token de equity em SPE para operações M&A. Distribuição para fundos
-              asiáticos e americanos em D+0.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="fade-in" style="
-        background: var(--navy-card);
-        border: 1px solid rgba(201,168,76,0.2);
-        border-radius: 16px;
-        padding: 48px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 32px;
-        flex-wrap: wrap;">
-        <div>
-          <p class="label" style="margin-bottom: 10px;">Tokenize seu ativo</p>
-          <h3 style="font-size: 22px; font-weight: 700; color: var(--cream);
-            margin-bottom: 10px; line-height: 1.3;">
-            Ativo real. Liquidez global.<br/>Sem abrir mão da segurança patrimonial.
-          </h3>
-          <p style="font-size: 14px; color: var(--muted); max-width: 500px; line-height: 1.7;">
-            A V3 origina, estrutura e distribui. Todo o processo roda sobre plataforma
-            tecnológica proprietária autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.
-          </p>
-        </div>
-        <a href="https://w.app/g7y2nq"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary btn-lg"
-          style="white-space: nowrap; flex-shrink: 0;">
-          MARQUE UMA DEMONSTRAÇÃO
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 3.5 — ESTRUTURAÇÃO
-  ══════════════════════════════════════ -->
-  <section class="section" id="estruturacao" style="background: var(--navy-base);">
-    <div class="container">
-
-      <div class="fade-in" style="max-width: 600px; margin-bottom: 48px;">
-        <span class="label">Estruturação</span>
-        <h2 class="mt-16">Arquitetura de Crédito e Financiamento Estruturado</h2>
-
-        <p class="mt-16">
-          Com mais de 30 linhas de crédito estruturado, a V3 desenha a operação certa para cada ativo.
-          Atuamos junto a FIDCs, fundos de investimento e administradoras Tier 1 em todo o ciclo — da originação à liquidação.
-        </p>
-      </div>
-
-      <div class="card-grid card-grid-2 fade-in">
-
-        <div class="card">
-          <span class="label">Home Equity & Bridge Loans</span>
-          <h3 class="mt-12 text-cream">CGI — Crédito com Garantia de Imóvel</h3>
-          <p class="mt-8">Estruturação de crédito com garantia de imóvel para alavancagem rápida de projetos, ideal para aquisição de terrenos e fases pré-incorporação imobiliária.</p>
-        </div>
-
-        <div class="card">
-          <span class="label">Recebíveis Judiciais & Precatórios</span>
-          <h3 class="mt-12 text-cream">FIDC de Recebíveis Judiciais</h3>
-          <p class="mt-8">Securitização de direitos creditórios judiciais em FIDC com estrutura de cotas sênior/subordinada. Precatórios federais e estaduais estruturados com deságio calculado e cessão regulada perante CVM e COAF.</p>
-        </div>
-
-        <div class="card">
-          <span class="label">Mercado de Capitais</span>
-          <h3 class="mt-12 text-cream">Project Finance — CRI / CRA / FIDC</h3>
-          <p class="mt-8">Empacotamento da dívida ou recebíveis do seu negócio em títulos do mercado de capitais para captação de alto volume junto a fundos institucionais.</p>
-        </div>
-
-        <div class="card">
-          <span class="label">Corporate Credit</span>
-          <h3 class="mt-12 text-cream">Crédito Corporativo B2B</h3>
-          <p class="mt-8">Intermediação e estruturação de linhas de crédito corporativo para expansão comercial e otimização de fluxo de caixa de empresas em crescimento.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 3.6 — TOKENIZAÇÃO
-  ══════════════════════════════════════ -->
-  <section class="section" id="tokenizacao" style="background: var(--navy-deep);">
-    <div class="container">
-
-      <div class="fade-in" style="max-width: 640px; margin-bottom: 56px;">
-        <span class="label">Tokenização de Ativos Reais</span>
-        <h2 class="mt-16">Seu Ativo.<br/>Token.<br/>Liquidez Global.</h2>
-        <p class="mt-16">
-          Securitização digital lastreada em ativo real. A V3 origina, estrutura e distribui.
-          A infraestrutura proprietária V3 tokeniza e regula. O resultado: liquidez contínua 24/7, fracionamento e distribuição
-          para investidores globais — sobre o mesmo ativo que a V3 já origina.
-        </p>
-        <div style="margin-top: 24px; display: inline-flex; align-items: center; gap: 10px;
-          background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25);
-          border-radius: 6px; padding: 8px 16px;">
-          <span style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.18em; color: var(--gold);">Infraestrutura Proprietária V3</span>
-          <span style="width: 1px; height: 14px; background: rgba(201,168,76,0.3);"></span>
-          <span style="font-size: 11px; color: var(--muted);">Infraestrutura regulada — CVM 88</span>
-        </div>
-      </div>
-
-      <!-- Como funciona — 4 passos -->
-      <div class="fade-in" style="margin-bottom: 56px;">
-        <p class="label" style="margin-bottom: 24px;">Como funciona</p>
-        <div class="grid-4-steps">
-
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
-            border-radius: 12px 0 0 12px; padding: 28px 24px;">
-            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
-              line-height: 1; margin-bottom: 14px;">01</p>
-            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">V3 Partners</p>
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Originação</h4>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              Partner ou V3 identifica o ativo — imóvel, recebível, commodity.
-              Qualificação pela Regra dos 5 SIMs.
-            </p>
-          </div>
-
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
-            border-left: none; padding: 28px 24px;">
-            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
-              line-height: 1; margin-bottom: 14px;">02</p>
-            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--gold); margin-bottom: 8px;">V3 Partners</p>
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Estruturação</h4>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              SPE constituída, due diligence completa, laudos e estrutura jurídica.
-              Ativo preparado para tokenização.
-            </p>
-          </div>
-
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
-            border-left: none; padding: 28px 24px;">
-            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
-              line-height: 1; margin-bottom: 14px;">03</p>
-            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">V3 Partners</p>
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Tokenização</h4>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              A plataforma tecnológica proprietária V3 emite os tokens, realiza KYC institucional dos investidores e configura
-              os smart contracts de distribuição de proventos.
-            </p>
-          </div>
-
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.12);
-            border-left: none; border-radius: 0 12px 12px 0; padding: 28px 24px;">
-            <p style="font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.12);
-              line-height: 1; margin-bottom: 14px;">04</p>
-            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 0.18em; color: var(--muted); margin-bottom: 8px;">Investidor</p>
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Acesso Global</h4>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">
-              Investidores globais compram frações do ativo. Liquidação OTC 24/7
-              em Real ou USD. Proventos automáticos.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ativos elegíveis — 4 cards -->
-      <div class="fade-in" style="margin-bottom: 56px;">
-        <p class="label" style="margin-bottom: 24px;">Ativos elegíveis hoje</p>
-        <div class="card-grid card-grid-4">
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Real Estate</span>
-            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
-              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Imóveis Urbanos e Rurais</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
-              Imóveis de alto padrão, galpões e fazendas. SPE + Sale Leaseback.
-              Um imóvel de R$10M dividido em cotas de R$10K cada.
-            </p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Crédito &amp; Recebíveis</span>
-            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
-              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Recebíveis Judiciais</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
-              Precatórios e recebíveis com força jurídica. FIDC fracionado em tokens
-              com liquidez contínua e distribuição global.
-            </p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Mineração &amp; Commodities</span>
-            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
-              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Ouro e Lítio</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
-              Tokenização de estoques custodiados. Acesso fracionado a commodities
-              estratégicas para investidores cross-border.
-            </p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">M&amp;A Cross-Border</span>
-            <h3 style="font-size: 16px; font-weight: 700; color: var(--cream);
-              margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Participações Societárias</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">
-              Token de equity em SPE para operações M&A. Distribuição para fundos
-              asiáticos e americanos em D+0.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="fade-in" style="
-        background: var(--navy-card);
-        border: 1px solid rgba(201,168,76,0.2);
-        border-radius: 16px;
-        padding: 48px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 32px;
-        flex-wrap: wrap;">
-        <div>
-          <p class="label" style="margin-bottom: 10px;">Tokenize seu ativo</p>
-          <h3 style="font-size: 22px; font-weight: 700; color: var(--cream);
-            margin-bottom: 10px; line-height: 1.3;">
-            Ativo real. Liquidez global.<br/>Sem abrir mão da segurança patrimonial.
-          </h3>
-          <p style="font-size: 14px; color: var(--muted); max-width: 500px; line-height: 1.7;">
-            A V3 origina, estrutura e distribui. Todo o processo roda sobre plataforma
-            tecnológica proprietária autorizada pela CVM. Ticket mínimo R$2M. Prazo médio 60–90 dias.
-          </p>
-        </div>
-        <a href="https://wa.me/5511937639475?text=Ol%C3%A1!%20Tenho%20interesse%20em%20me%20tornar%20Partner%20e%20gostaria%20de%20agendar%20minha%20demonstra%C3%A7%C3%A3o%20para%20liberar%20meus%2030%20dias%20gr%C3%A1tis%20do%20sistema.%20Como%20podemos%20prosseguir%3F%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary btn-lg"
-          style="white-space: nowrap; flex-shrink: 0;">
-          AGENDAR DEMONSTRAÇÃO
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 4 — EXPORTE-SE
-  ══════════════════════════════════════ -->
-  <section class="section" id="exporte-se" style="background: var(--navy-base);">
-    <div class="container">
-
-      <div class="fade-in" style="max-width: 680px; margin-bottom: 56px;">
-        <span class="label">Exporte-se · Internacionalização Patrimonial</span>
-        <h2 class="mt-16">Seu patrimônio.<br/>Em dólar.<br/>Com estrutura.</h2>
-        <p class="mt-16">
-          Plataforma completa de internacionalização para empresários e investidores brasileiros.
-          LLC americana, imóveis na Flórida, dolarização patrimonial, sucessão simplificada
-          e renda passiva turnkey — tudo estruturado pela V3 com execução local nos EUA.
-        </p>
-      </div>
-
-      <!-- Stats -->
-      <div class="fade-in grid-stats-4" style="margin-bottom: 56px;">
-        <div class="card" style="text-align: center; padding: 28px 16px;">
-          <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">15–20<span style="font-size: 16px; color: var(--gold);">%</span></p>
-          <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Retorno estimado a.a.<br/>em dólar</p>
-        </div>
-        <div class="card" style="text-align: center; padding: 28px 16px;">
-          <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">24<span style="font-size: 16px; color: var(--gold);">m</span></p>
-          <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Prazo de execução<br/>Coconut Grove 101</p>
-        </div>
-        <div class="card" style="text-align: center; padding: 28px 16px;">
-          <p style="font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">R$<span style="font-size: 20px; color: var(--gold);">10K</span></p>
-          <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Ticket mínimo<br/>via lâminas tokenizadas</p>
-        </div>
-        <div class="card" style="text-align: center; padding: 28px 16px;">
-          <p style="font-size: 28px; font-weight: 800; color: var(--cream); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;">US$<span style="font-size: 18px; color: var(--gold);">5M</span></p>
-          <p style="font-size: 11px; color: var(--muted); line-height: 1.5;">Capital total<br/>Projeto piloto</p>
-        </div>
-      </div>
-
-      <!-- 6 Pilares -->
-      <div class="fade-in" style="margin-bottom: 56px;">
-        <p class="label" style="margin-bottom: 24px;">6 Pilares da Plataforma</p>
-        <div class="card-grid card-grid-3">
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Pilar 01</span>
-            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Estrutura Empresarial nos EUA</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">LLC americana, contas bancárias e documentação completa. Base jurídica para operar globalmente com segurança.</p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Pilar 02</span>
-            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Planejamento Tributário e Sucessório</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Holdings, trusts e otimização fiscal. ITCMD substituído por estrutura americana eficiente e previsível.</p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Pilar 03</span>
-            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Investimento Imobiliário</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Acesso a projetos curados pela V3 na Flórida: unifamiliares, multifamiliares e vacation homes.</p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Pilar 04</span>
-            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Dolarização Patrimonial</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Conversão de capital para dólar com eficiência tributária. Remessa e registros legais completos.</p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Pilar 05</span>
-            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Renda Passiva Turnkey</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Aquisição, reforma, locação e desinvestimento gerenciados. Rendimento em dólar sem operar o ativo.</p>
-          </div>
-
-          <div class="card">
-            <span class="label" style="font-size: 8px;">Pilar 06</span>
-            <h3 style="font-size: 15px; font-weight: 700; color: var(--cream); margin-top: 10px; margin-bottom: 8px; line-height: 1.3;">Suporte Especializado Local</h3>
-            <p style="font-size: 13px; color: var(--muted); line-height: 1.65;">Rede de jurídico, contabilidade e banco nos EUA. Presença local para representar e proteger o investidor.</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Projeto Piloto -->
-      <div class="fade-in grid-project-pilot" style="
-        background: var(--navy-deep);
-        border: 1px solid rgba(201,168,76,0.25);
-        border-radius: 16px;
-        padding: 48px;
-        margin-bottom: 32px;">
-        <div>
-          <span class="label" style="margin-bottom: 12px; display: block;">Projeto Piloto · 2026</span>
-          <h3 style="font-size: 28px; font-weight: 800; color: var(--cream); line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em;">Coconut Grove 101<br/><span style="color: var(--gold);">Miami, Flórida — EUA</span></h3>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px;">
-            Build-to-Suit em um dos bairros mais valorizados de Miami. Estudo de viabilidade concluído.
-            Captação Fase 1 de R$9,99M via crowdfunding tokenizado + financiamento americano.
-            Estratégia de saída estruturada em 24 meses.
-          </p>
-          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="https://wa.me/5511987654321" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Solicitar Lâmina de Investimento
-            </a>
-          </div>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 12px; color: var(--muted);">Captação Fase 1</span>
-            <span style="font-size: 15px; font-weight: 700; color: var(--cream);">R$ 9.990.000</span>
-          </div>
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 12px; color: var(--muted);">Retorno estimado</span>
-            <span style="font-size: 15px; font-weight: 700; color: var(--gold);">15% – 20% a.a. em dólar</span>
-          </div>
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 12px; color: var(--muted);">Prazo de execução</span>
-            <span style="font-size: 15px; font-weight: 700; color: var(--cream);">24 meses</span>
-          </div>
-          <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 12px; color: var(--muted);">Ticket mínimo</span>
-            <span style="font-size: 15px; font-weight: 700; color: var(--cream);">R$ 10.000</span>
-          </div>
-          <p style="font-size: 10px; color: rgba(122,143,168,0.6); line-height: 1.5; margin-top: 4px;">
-            Projeções baseadas em estudo de viabilidade concluído. Retornos não garantem resultados futuros.
-            Investimento sujeito a riscos de mercado, câmbio e execução.
-          </p>
-        </div>
-      </div>
-
-      <!-- Ecossistema -->
-      <div class="fade-in" style="display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;">
-        <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 12px; padding: 24px;">
-          <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 10px;">V3 Partners</p>
-          <h4 style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Inteligência que Estrutura</h4>
-          <p style="font-size: 12px; color: var(--muted); line-height: 1.6;">Originação, estruturação e distribuição. O elo entre o capital brasileiro e o mercado americano.</p>
-        </div>
-        <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 12px; padding: 24px;">
-          <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 10px;">Nova Corporate Group</p>
-          <h4 style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Execução Local nos EUA</h4>
-          <p style="font-size: 12px; color: var(--muted); line-height: 1.6;">Liderado por Eduardo Abreu. 30+ anos de maestria em engenharia e design em Miami.</p>
-        </div>
-        <div style="background: var(--navy-card); border: 1px solid rgba(201,168,76,0.1); border-radius: 12px; padding: 24px;">
-          <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 10px;">DEXCAP</p>
-          <h4 style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 8px;">Auditoria Blockchain</h4>
-          <p style="font-size: 12px; color: var(--muted); line-height: 1.6;">Smart contracts ERC-3643, KYC/AML e compliance. Cada transação imutável e auditável em tempo real.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 4.5 — WEALTH MANAGEMENT
-  ══════════════════════════════════════ -->
-  <section class="section" id="wealth" style="background: var(--navy-deep);">
-    <div class="container">
-
-      <div class="fade-in" style="max-width: 640px; margin-bottom: 56px;">
-        <span class="label">Wealth Management</span>
-        <h2 class="mt-16">Proteção, rentabilidade<br/>e liberdade patrimonial.</h2>
-        <p class="mt-16">
-          A V3 Partners oferece duas soluções complementares de wealth management para quem busca
-          blindar e rentabilizar patrimônio com estrutura institucional — em dólar, com segurança jurídica real.
-        </p>
-      </div>
-
-      <div class="fade-in card-grid card-grid-2" style="margin-bottom: 48px;">
-
-        <!-- IUL -->
-        <div class="card" style="border-color: rgba(201,168,76,0.25); padding: 40px;">
-          <span class="label" style="font-size: 8px; margin-bottom: 16px; display: block;">Proteção &amp; Crescimento</span>
-          <h3 style="font-size: 22px; font-weight: 800; color: var(--cream); margin-bottom: 16px; line-height: 1.2;">IUL — Indexed Universal Life</h3>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px;">
-            Seguro de vida americano vinculado ao S&amp;P 500. Crescimento patrimonial com
-            <strong style="color: var(--cream);">0% de perda garantida</strong> —
-            o investidor participa da alta do mercado sem exposição às quedas.
-            Estrutura ideal para planejamento sucessório e preservação de longo prazo.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
-            <div style="display: flex; gap: 10px; align-items: flex-start;">
-              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
-              <p style="font-size: 13px; color: var(--muted);">Crescimento vinculado ao S&amp;P 500 com floor de 0%</p>
-            </div>
-            <div style="display: flex; gap: 10px; align-items: flex-start;">
-              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
-              <p style="font-size: 13px; color: var(--muted);">Proteção familiar + acumulação + sucessão em uma estrutura</p>
-            </div>
-            <div style="display: flex; gap: 10px; align-items: flex-start;">
-              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
-              <p style="font-size: 13px; color: var(--muted);">Produto americano. Capital protegido fora do Brasil.</p>
-            </div>
-          </div>
-          <a href="https://wa.me/5511937639475?text=Ol%C3%A1!%20Tenho%20interesse%20em%20me%20tornar%20Partner%20e%20gostaria%20de%20agendar%20minha%20demonstra%C3%A7%C3%A3o%20para%20liberar%20meus%2030%20dias%20gr%C3%A1tis%20do%20sistema.%20Como%20podemos%20prosseguir%3F%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
-            AGENDAR DEMONSTRAÇÃO
-          </a>
-        </div>
-
-        <!-- Exporte-se -->
-        <div class="card" style="border-color: rgba(201,168,76,0.25); padding: 40px;">
-          <span class="label" style="font-size: 8px; margin-bottom: 16px; display: block;">Internacionalização &amp; Rentabilidade</span>
-          <h3 style="font-size: 22px; font-weight: 800; color: var(--cream); margin-bottom: 16px; line-height: 1.2;">Exporte-se — Patrimônio nos EUA</h3>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px;">
-            Plataforma completa para quem quer internacionalizar capital com estrutura.
-            LLC americana, imóveis na Flórida, dolarização e renda passiva —
-            com retorno estimado de <strong style="color: var(--cream);">15% a 20% a.a. em dólar</strong>.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
-            <div style="display: flex; gap: 10px; align-items: flex-start;">
-              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
-              <p style="font-size: 13px; color: var(--muted);">Projeto piloto: Coconut Grove 101 — Miami, FL</p>
-            </div>
-            <div style="display: flex; gap: 10px; align-items: flex-start;">
-              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
-              <p style="font-size: 13px; color: var(--muted);">Captação tokenizada via plataforma proprietária V3 — CVM 88 — a partir de R$10K</p>
-            </div>
-            <div style="display: flex; gap: 10px; align-items: flex-start;">
-              <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px;"></div>
-              <p style="font-size: 13px; color: var(--muted);">LLC + Sucessão + Dolarização patrimonial integrados</p>
-            </div>
-          </div>
-          <a href="#exporte-se" class="btn btn-secondary" style="width: 100%; justify-content: center; text-align: center;">
-            Ver Detalhes do Projeto
-          </a>
-        </div>
-
-      </div>
-
-      <div class="fade-in" style="text-align: center;">
-        <p style="font-size: 14px; color: var(--muted); margin-bottom: 24px;">
-          Não sabe qual estrutura faz mais sentido para o seu perfil?
-        </p>
-        <a href="https://wa.me/5511937639475?text=Ol%C3%A1!%20Tenho%20interesse%20em%20me%20tornar%20Partner%20e%20gostaria%20de%20agendar%20minha%20demonstra%C3%A7%C3%A3o%20para%20liberar%20meus%2030%20dias%20gr%C3%A1tis%20do%20sistema.%20Como%20podemos%20prosseguir%3F%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-          AGENDAR DEMONSTRAÇÃO
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 5 — GLOBAL REACH
-  ══════════════════════════════════════ -->
-  <section class="section global-bg" id="global" style="background-color: var(--navy-deep);">
-    <div class="container">
-
-      <div class="text-center fade-in" style="margin-bottom: 56px;">
-        <span class="label">Cross-Border</span>
-        <h2 class="mt-16">Liquidez Global. Liquidação OTC.</h2>
-        <div style="display: flex; justify-content: center; margin-top: 16px;">
-
-        </div>
-        <p class="mt-16" style="max-width: 560px; margin-left: auto; margin-right: auto;">
-          O capital não tem fronteiras. A V3 Partners conecta a economia real latino-americana
-          à liquidez dos principais polos financeiros mundiais, com trânsito ágil via
-          infraestrutura OTC.
-        </p>
-      </div>
-
-      <div class="card-grid card-grid-2 fade-in">
-
-        <div class="card">
-          <span class="label">Estados Unidos</span>
-          <h3 class="mt-12 text-cream">USA Wealth Accelerator</h3>
-          <p class="mt-8">Assessoria estratégica e originação de teses focadas na construção de Real Estate de alto padrão e alocação segura de patrimônio institucional nos Estados Unidos.</p>
-        </div>
-
-        <div class="card">
-          <span class="label">Ásia & Global</span>
-          <h3 class="mt-12 text-cream">Conexão com Fundos Globais</h3>
-          <p class="mt-8">Estruturação de teses de investimento em ativos reais voltadas para atração de capital de fundos imobiliários japoneses e investidores institucionais internacionais.</p>
-        </div>
-
-        <div class="card">
-          <span class="label">América Latina</span>
-          <h3 class="mt-12 text-cream">Trade Finance & Expansão LatAm</h3>
-          <p class="mt-8">Assessoria em comércio exterior, abertura de rotas comerciais e estruturação corporativa internacional para expansão e otimização logística global.</p>
-        </div>
-
-        <div class="card">
-          <span class="label">Commodities Globais</span>
-          <h3 class="mt-12 text-cream">Trading Estratégico</h3>
-          <p class="mt-8">Compliance, bancarização e intermediação direta com clientes internacionais em operações de grande volume de Ouro e Carbonato de Lítio.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 5 — DIRETORIA
-  ══════════════════════════════════════ -->
-  <section class="section" id="diretoria" style="background: var(--navy-card);">
-    <div class="container">
-
-      <div class="text-center fade-in" style="margin-bottom: 56px;">
-        <span class="label">Liderança</span>
-        <h2 class="mt-16">Managing Partners</h2>
-        <div style="display: flex; justify-content: center; margin-top: 16px;">
-
-        </div>
-        <p class="mt-16" style="max-width: 480px; margin-left: auto; margin-right: auto;">
-          Três trajetórias. Uma tese. Execução sem terceirizar.
-        </p>
-      </div>
-
-      <div class="card-grid card-grid-3 fade-in">
-
-        <!-- João -->
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-          <div class="photo-placeholder" style="padding: 0; overflow: hidden;">
-            <img src="assets/img/joao-lemos-netto.png" alt="João Lemos Netto, Head de M&A e Estruturação" width="1080" height="1350" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 12%; display: block;" />
-          </div>
-          <div>
-            <span class="label">Head de Originação & Ativos</span>
-            <h3 class="mt-8 text-cream">João Lemos Netto</h3>
-            <p class="mt-8">Lidera a originação de ativos e a estruturação de crédito nas 4 verticais. Expertise em CGI, CRI, FIDC, securitização de recebíveis e operações cross-border. Executor com foco em identificar e estruturar o que o mercado convencional descarta.</p>
-          </div>
-        </div>
-
-        <!-- Robson -->
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-          <div class="photo-placeholder" style="padding: 0; overflow: hidden;">
-            <img src="assets/img/robson-lino.png" alt="Robson Lino dos Santos, COO e Compliance" width="2048" height="2072" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 12%; display: block;" />
-          </div>
-          <div>
-            <span class="label">COO e Compliance</span>
-            <h3 class="mt-8 text-cream">Robson Lino dos Santos</h3>
-            <p class="mt-8">Responsável pela integridade operacional, compliance regulatório e análise de risco fiduciário. Com sólida trajetória na gestão de grandes carteiras PJ e Agro, garante que todas as estruturas operem com blindagem jurídica irretocável perante CVM e COAF.</p>
-          </div>
-        </div>
-
-        <!-- Hamilton -->
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-          <div class="photo-placeholder" style="padding: 0; overflow: hidden;">
-            <img src="assets/img/hamilton-santos.jpeg" alt="Hamilton Santos, CFO e Relações Institucionais" width="1080" height="1350" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 12%; display: block;" />
-          </div>
-          <div>
-            <span class="label">CFO e Relações Institucionais</span>
-            <h3 class="mt-8 text-cream">Hamilton Santos</h3>
-            <p class="mt-8">Lidera a gestão de liquidez e as relações com investidores institucionais. Especialista em estruturação de crédito e operações cross-border, conecta o lastro originado à infraestrutura OTC, garantindo agilidade e eficiência transacional para fundos globais.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 6 — GOVERNANÇA
-  ══════════════════════════════════════ -->
-  <section class="section bg-deep" id="governanca">
-    <div class="container">
-      <div class="gov-grid">
-
-        <div class="fade-in">
-          <span class="label">Cultura & Governança</span>
-          <h2 class="mt-16">O Padrão Ouro em Governança</h2>
-
-          <p class="mt-16">
-            Operamos sob a premissa de que o mercado de capitais não tolera ineficiência.
-            Nossa cultura interna é o reflexo direto da nossa atuação externa:
-            blindada, técnica, pragmática e orientada exclusivamente a resultados.
-          </p>
-        </div>
-
-        <div class="fade-in">
-          <div class="gov-item">
-            <div class="gov-dot"></div>
-            <div>
-              <p style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px;">Meritocracia Implacável</p>
-              <p>Recompensamos a performance técnica, a estruturação de negócios sólidos e a execução impecável. Não há atalhos.</p>
-            </div>
-          </div>
-          <div class="gov-item">
-            <div class="gov-dot"></div>
-            <div>
-              <p style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px;">Transparência Fiduciária</p>
-              <p>Comunicação direta como pilar de mitigação de risco. Decisões sempre baseadas em dados reais, nunca em suposições.</p>
-            </div>
-          </div>
-          <div class="gov-item">
-            <div class="gov-dot"></div>
-            <div>
-              <p style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px;">Inteligência Transacional</p>
-              <p>Arquiteturas jurídicas e financeiras modernas para reduzir custo de transação e acelerar a liquidez dos ativos.</p>
-            </div>
-          </div>
-          <div class="gov-item" style="border-bottom: none;">
-            <div class="gov-dot"></div>
-            <div>
-              <p style="font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px;">Neutralidade Institucional</p>
-              <p>Atuação estritamente técnica. Foco absoluto no dever fiduciário e na rentabilidade do capital dos nossos clientes.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 7 — PLATAFORMA OTC
-  ══════════════════════════════════════ -->
-  <section class="section" style="background: var(--navy-base);">
-    <div class="container">
-      <div class="plataforma-grid">
-
-        <div class="fade-in plataforma-stats" style="display: flex; flex-direction: column; gap: 16px;">
-          <div class="card" style="border-color: rgba(201,168,76,0.2);">
-            <span class="label">Liquidação</span>
-            <p style="font-size: 28px; font-weight: 800; color: var(--cream); margin-top: 8px;">D+0 OTC</p>
-            <p class="mt-4">Liquidação cross-border em tempo real</p>
-          </div>
-          <div class="card">
-            <span class="label">Operação</span>
-            <p style="font-size: 28px; font-weight: 800; color: var(--cream); margin-top: 8px;">24/7</p>
-            <p class="mt-4">Infraestrutura operando continuamente, sem janelas de mercado</p>
-          </div>
-          <div class="card">
-            <span class="label">Compliance</span>
-            <p style="font-size: 28px; font-weight: 800; color: var(--cream); margin-top: 8px;">CVM + COAF</p>
-            <p class="mt-4">Estruturas blindadas sob as normas regulatórias vigentes</p>
-          </div>
-        </div>
-
-        <div class="fade-in plataforma-texto">
-          <span class="label">Infraestrutura</span>
-          <h2 class="mt-16">Liquidez Global.<br/>Liquidação OTC.</h2>
-
-          <p class="mt-16">
-            Nossa infraestrutura de distribuição digital transforma ativos ilíquidos em
-            instrumentos de mercado negociáveis, reduzindo o atrito transacional e conectando
-            sua operação à liquidez global em D+0.
-          </p>
-          <p class="mt-16">
-            KYC automatizado, compliance integrado e capacidade de liquidação em múltiplas
-            jurisdições garantem a segurança e a agilidade que operações de alto valor exigem.
-          </p>
-          <a href="partners" class="btn btn-primary" style="margin-top: 32px;">Acessar Plataforma OTC</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       DOBRA 8 — CTA PARTNERS
-  ══════════════════════════════════════ -->
-  <section class="section-sm" style="background: var(--navy-card); border-top: 1px solid rgba(201,168,76,0.1);">
-    <div class="container text-center fade-in">
-      <span class="label">Rede V3</span>
-      <h2 class="mt-16">Você também pode ser o elo.</h2>
-      <p class="mt-8" style="max-width: 500px; margin-left: auto; margin-right: auto;">
-        Acesse o portfólio completo de 30+ linhas de crédito estruturado, relatórios diários de inteligência
-        e tecnologia proprietária de originação. Comissão de 35% a 55% por deal fechado — sem cobrança por resultado.
-      </p>
-      <div style="display: flex; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
-        <a href="partners" class="btn btn-primary">Ver planos Partners</a>
-        <a href="relatorios.html" class="btn btn-secondary">Relatórios públicos</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
-  <footer class="footer" id="contato">
-    <div class="container">
-      <div class="footer-grid">
-
-        <div>
-          <img src="assets/img/v3-logo-3d-alpha.png" alt="V3 Partners, Securitizadora Rio de Janeiro" width="1536" height="1024" loading="lazy" style="height: 32px; width: auto; object-fit: contain;" />
-          <p class="mt-16" style="font-size: 13px; max-width: 280px;">
-            O elo entre a economia real e o mercado de capitais global.
-          </p>
-          <p class="mt-16" style="font-size: 12px; color: var(--muted);">
-            CNPJ 14.219.287/0001-50<br />
-            Rua Visconde de Pirajá, 414, Sala 718<br />
-            Ipanema — Rio de Janeiro, RJ
-          </p>
-        </div>
-
-        <div>
-          <p class="label" style="margin-bottom: 16px;">Verticais</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-            <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Real Estate Estruturado</a></li>
-            <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Crédito & Recebíveis</a></li>
-            <li><a href="bolsa-de-ativos" style="color: var(--muted); text-decoration: none; font-size: 13px;">Balcão de Ativos</a></li>
-            <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">Mineração & Commodities</a></li>
-            <li><a href="#verticais" style="color: var(--muted); text-decoration: none; font-size: 13px;">M&A Cross-Border</a></li>
-            <li><a href="#tokenizacao" style="color: var(--muted); text-decoration: none; font-size: 13px;">Tokenização de Ativos</a></li>
-            <li><a href="#exporte-se" style="color: var(--muted); text-decoration: none; font-size: 13px;">Exporte-se</a></li>
-            <li><a href="#wealth" style="color: var(--muted); text-decoration: none; font-size: 13px;">Wealth Management</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="label" style="margin-bottom: 16px;">Plataforma</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-            <li><a href="blog/" style="color: var(--muted); text-decoration: none; font-size: 13px;">Blog</a></li>
-            <li><a href="relatorios.html" style="color: var(--muted); text-decoration: none; font-size: 13px;">Relatórios</a></li>
-            <li><a href="partners" style="color: var(--muted); text-decoration: none; font-size: 13px;">Planos Partners</a></li>
-            <li><a href="https://v3-partner.vercel.app/dashboard" style="color: var(--muted); text-decoration: none; font-size: 13px;">Área do Partner</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="label" style="margin-bottom: 16px;">Contato</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-            <li><a href="mailto:deal@v3partners.com.br" style="color: var(--muted); text-decoration: none; font-size: 13px;">deal@v3partners.com.br</a></li>
-            <li><a href="mailto:deal@v3partners.com.br" style="color: var(--muted); text-decoration: none; font-size: 13px;">Rio de Janeiro — RJ</a></li>
-            <li><a href="https://instagram.com/V3Partners" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; font-size: 13px;">@V3Partners</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Disclaimer regulatório -->
-      <div style="padding: 24px 0; border-top: 1px solid rgba(240,236,228,0.06); border-bottom: 1px solid rgba(240,236,228,0.06); margin-top: 8px;">
-        <p style="font-size: 11px; color: var(--muted); line-height: 1.7; opacity: 0.7;">
-          <strong style="color: var(--muted);">Aviso Legal:</strong> A V3 Partners Soluções Ltda atua estritamente nos limites da legislação vigente aplicável a companhias securitizadoras e correspondentes não regulados. Fica expressamente vedado à Companhia o exercício de atividades privativas de instituições financeiras que dependam de autorização prévia do Banco Central do Brasil (BACEN) ou captação pública fora das normativas da Comissão de Valores Mobiliários (CVM). As informações disponibilizadas neste site têm caráter exclusivamente institucional e informativo, não constituindo oferta pública de valores mobiliários ou recomendação de investimento.
-        </p>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 V3 Partners Soluções Ltda. Todos os direitos reservados.</p>
-        <div style="display: flex; gap: 24px;">
-          <a href="politica-de-privacidade" style="color: var(--muted); font-size: 12px; text-decoration: none;">Privacidade</a>
-          <a href="termos-de-uso" style="color: var(--muted); font-size: 12px; text-decoration: none;">Termos de Uso</a>
-          <a href="politica-de-cookies" style="color: var(--muted); font-size: 12px; text-decoration: none;">Cookies</a>
-        </div>
-      </div>
-
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/cookies.js"></script>
+<script>window.V3_FOTOS=["assets/img/home/predios.webp", "assets/img/home/contrato.webp", "assets/img/home/grafico.webp", "assets/img/home/obra.webp", "assets/img/home/ouro.webp", "assets/img/home/acordo.webp", "assets/img/home/avenida.webp", "assets/img/home/metropole.webp", "assets/img/home/datacenter.webp", "assets/img/home/analise.webp", "assets/img/home/miami.webp", "assets/img/home/executivo.webp", "assets/img/home/terra.webp", "assets/img/home/noite.webp", "assets/img/home/sede.webp", "assets/img/home/rio.webp"];</script>
+<script src="assets/js/lenis.min.js"></script>
+<script src="assets/js/home-cinema.js"></script>
+<script src="assets/js/cookies.js"></script>
 </body>
 </html>
